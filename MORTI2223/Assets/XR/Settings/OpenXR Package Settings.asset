@@ -51,7 +51,7 @@ MonoBehaviour:
   required: 1
   disableFirstPersonObserver: 0
   enablePoseUpdateOnBeforeRender: 0
-  validationRuleTarget: 0
+  validationRuleTarget: 1
 --- !u!114 &-7227487471940568775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -484,7 +484,7 @@ MonoBehaviour:
   - {fileID: 7351111522035545113}
   - {fileID: 1561726942737210267}
   m_renderMode: 1
-  m_depthSubmissionMode: 0
+  m_depthSubmissionMode: 1
 --- !u!114 &5323375205196458546
 MonoBehaviour:
   m_ObjectHideFlags: 0
