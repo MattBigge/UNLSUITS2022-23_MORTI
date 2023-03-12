@@ -37,7 +37,6 @@ public class ConnScript : MonoBehaviour
     {
         // Updates the websocket once per frame
         tss.Update();
-        Debug.Log(TeleLIB.getTimer());
     }
 
     public async void Connect()
