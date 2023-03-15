@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1875246217207493285}
   - component: {fileID: 1875246217207493286}
   m_Layer: 0
-  m_Name: Directionals
+  m_Name: Directionals-PW
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
