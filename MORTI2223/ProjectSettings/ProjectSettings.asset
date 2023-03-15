@@ -135,10 +135,7 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleVersion: 0.1.0
-  preloadedAssets:
-  - {fileID: 11400000, guid: c677e5c4eb85b7849a8da406775c299d, type: 2}
-  - {fileID: 5851304249179962386, guid: eee8c00064388e3469ca5dcedead29da, type: 2}
-  - {fileID: 5294764013208681183, guid: a1ff13e646eb3c44194f84085523234f, type: 2}
+  preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -808,11 +805,11 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: com.unity.template-starter-kit
   metroPackageVersion: 1.0.0.0
-  metroCertificatePath: 
+  metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: 
-  metroCertificateIssuer: 
-  metroCertificateNotAfter: 0000000000000000
+  metroCertificateSubject: DefaultCompany
+  metroCertificateIssuer: DefaultCompany
+  metroCertificateNotAfter: 00b910cc0272da01
   metroApplicationDescription: com.unity.template-starter-kit
   wsaImages: {}
   metroTileShortName: MORTI2223
