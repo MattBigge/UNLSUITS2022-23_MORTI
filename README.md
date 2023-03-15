@@ -30,7 +30,8 @@ Charlie McIver - [Team Lead], Freshman Computer Engineering<br />
 Preston Ward - [Team Lead], Freshman Computer Engineering<br />
 Peyton Comer - [Team Lead], Freshman Computer Science <br />
 Eli Schoneweis - [Team Role], Sophomore Computer Science<br />
-Lindsey Johnson- Graphic Design(UI), Freshman Studio Art and Graphic Design<br />
+Lindsey Johnson - Graphic Design(UI), Freshman Studio Art and Graphic Design<br />
+Bowen Dick-Burkey - Developer, Freshman Software Engineering<br />
 
 ### Faculty Advisor:<br />
 Dr Chris Bourke, Associate Professor of Practice, School of Computing, University of Nebraska-Lincoln<br />
