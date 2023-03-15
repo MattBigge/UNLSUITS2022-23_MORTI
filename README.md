@@ -36,7 +36,7 @@ Lindsey Johnson- Graphic Design(UI), Freshman Studio Art and Graphic Design<br /
 Dr Chris Bourke, Associate Professor of Practice, School of Computing, University of Nebraska-Lincoln<br />
 https://chrisbourke.unl.edu/ <br />
 
-### NASA Advisor<br />
+### NASA Advisor:<br />
 James Berck, Deputry Project Manager, NASA Johnson Space Center<br />
 https://www.linkedin.com/in/james-berck-5668b694/ <br />
 
