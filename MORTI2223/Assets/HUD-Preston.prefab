@@ -3263,7 +3263,7 @@ GameObject:
   - component: {fileID: 1277372674224742377}
   - component: {fileID: 1277372674224742376}
   m_Layer: 5
-  m_Name: HUD
+  m_Name: HUD-Preston
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
