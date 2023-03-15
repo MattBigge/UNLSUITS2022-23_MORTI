@@ -6,6 +6,14 @@ public class TeleLIB : MonoBehaviour
 {
     public ConnScript connection;
     static EVAContainer biometricsContainer;
+
+    public static string globalURI = "http://ec2-3-137-219-57.us-east-2.compute.amazonaws.com:8080/api";
+    
+    void Start(){
+       StartCoroutine(startSim());
+       StartCoroutine(stopSim());
+    }
+    
     public static void setContainer(EVAContainer container){
         biometricsContainer = container;
     }
@@ -128,6 +136,52 @@ public class TeleLIB : MonoBehaviour
     }
     public static string getUpdatedAt(){
         return biometricsContainer.getUpdatedAt();
+    }
+
+     public static IEnumerator startSim()
+    {
+        using (UnityWebRequest webRequest = UnityWebRequest.Get(globalURI + "/simulationcontrol/sim/1/stop"))
+        {
+            yield return webRequest.SendWebRequest();
+            switch(webRequest.result)
+            {
+                case UnityWebRequest.Result.ConnectionError:
+                    Debug.Log("Connection Error");
+                    break;
+                case UnityWebRequest.Result.DataProcessingError:
+                    Debug.Log("Data Processing Error");
+                    break;
+                case UnityWebRequest.Result.ProtocolError:
+                    Debug.Log("Protocol Error");
+                    break;
+                case UnityWebRequest.Result.Success:
+                    Debug.Log("Success" + " " + webRequest.downloadHandler.text);
+                    break;
+            }
+        }
+    }
+
+    public static IEnumerator stopSim()
+    {
+       using (UnityWebRequest webRequest = UnityWebRequest.Get(globalURI + "/simulationcontrol/sim/1/start"))
+        {
+            yield return webRequest.SendWebRequest();
+            switch(webRequest.result)
+            {
+                case UnityWebRequest.Result.ConnectionError:
+                    Debug.Log("Connection Error");
+                    break;
+                case UnityWebRequest.Result.DataProcessingError:
+                    Debug.Log("Data Processing Error");
+                    break;
+                case UnityWebRequest.Result.ProtocolError:
+                    Debug.Log("Protocol Error");
+                    break;
+                case UnityWebRequest.Result.Success:
+                    Debug.Log("Success" + " " + webRequest.downloadHandler.text);
+                    break;
+            }
+        }
     }
 
 }
