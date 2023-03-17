@@ -742,7 +742,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4204912736660743305}
-  - component: {fileID: 4204912736660743318}
+  - component: {fileID: 5887711248741855104}
+  - component: {fileID: 253908870782391298}
   m_Layer: 5
   m_Name: Reference
   m_TagString: Untagged
@@ -770,7 +771,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &4204912736660743318
+--- !u!114 &5887711248741855104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4204912736660743304}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88bf6c6cc6eecf54d964463497f388c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  batteryTime: {fileID: 4444971207002164495}
+  oxygenTime: {fileID: 2398076723313062527}
+  waterTime: {fileID: 4777775827833831836}
+--- !u!114 &253908870782391298
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

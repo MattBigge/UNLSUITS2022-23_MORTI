@@ -6,8 +6,7 @@ using TMPro;
 
 public class TelemetryDisplay : MonoBehaviour
 {
-
-    //hud TeleLIB displays
+    //hud data displays
     public TMP_Text heartRate;
     public TMP_Text bodyTemp;
     public TMP_Text currentEVALength;
@@ -15,7 +14,7 @@ public class TelemetryDisplay : MonoBehaviour
     public TMP_Text oxygenTime;
     public TMP_Text waterTime;
 
-    //menu TeleLIB points
+    //menu data points
     // public TMP_Text evaTime;
     // public TMP_Text externalPressure;
     // public TMP_Text suitPressure;
@@ -30,7 +29,7 @@ public class TelemetryDisplay : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
+    {   
         //hud
         heartRate.text = TeleLIB.getHeartBpm().ToString();
         bodyTemp.text = TeleLIB.getTSub().ToString();
