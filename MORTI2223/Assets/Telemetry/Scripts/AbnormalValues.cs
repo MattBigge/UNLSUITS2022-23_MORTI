@@ -32,10 +32,10 @@ public class AbnormalValues : MonoBehaviour
     }
 
     public bool SuitPressureLow(){
-        return TeleLIB.getPSop() < 2;
+        return TeleLIB.getPSuit() < 2;
     }
     public bool SuitPressureHigh(){
-        return TeleLIB.getPSop() > 4;
+        return TeleLIB.getPSuit() > 4;
     }
     public bool FanSpeedHigh(){
         return TeleLIB.getVFan() > 40000;

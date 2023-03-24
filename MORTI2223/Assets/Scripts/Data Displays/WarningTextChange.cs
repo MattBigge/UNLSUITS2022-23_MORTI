@@ -15,7 +15,7 @@ public class WarningTextChange : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        listOfWarnings.Clear();
     }
 
     // Update is called once per frame

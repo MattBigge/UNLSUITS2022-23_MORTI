@@ -6,6 +6,7 @@ using TMPro;
 
 public class TelemetryDisplay : MonoBehaviour
 {
+
     //hud data displays
     public TMP_Text heartRate;
     public TMP_Text bodyTemp;
@@ -30,26 +31,7 @@ public class TelemetryDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   
-        //hud
-        heartRate.text = TeleLIB.getHeartBpm().ToString();
-        bodyTemp.text = TeleLIB.getTSub().ToString();
-        currentEVALength.text = TeleLIB.getTimer().ToString();
-        batteryTime.text = TeleLIB.getTBattery().ToString();
-        oxygenTime.text = TeleLIB.getTOxygen().ToString();
-        waterTime.text = TeleLIB.getTWater().ToString();
 
-        //menu
-        // evaTime.text = TeleLIB.getTime().ToString();
-        // externalPressure.text = TeleLIB.getPSub().ToString();
-        // suitPressure.text = TeleLIB.getPSuit().ToString();
-        // fanSpeed.text = TeleLIB.getVFan().ToString();
-        // primaryOxygenPressure.text = TeleLIB.getPO2().ToString();
-        // primaryOxygenFlowRate.text = TeleLIB.getRateO2().ToString();
-        // batteryCapacity.text = TeleLIB.getCapBattery().ToString();
-        // waterGasPressure.text = TeleLIB.getPH2OG().ToString();
-        // waterLiquidPressure.text = TeleLIB.getPH2OL().ToString();
-        // secondaryOxygenPressure.text = TeleLIB.getPSop().ToString();
-        // secondaryOxygenFlowrate.text = TeleLIB.getRateSop().toString();
     }
 
     // Update is called once per frame
@@ -58,7 +40,7 @@ public class TelemetryDisplay : MonoBehaviour
 
         heartRate.text = TeleLIB.getHeartBpm().ToString();
         bodyTemp.text = TeleLIB.getTSub().ToString();
-        currentEVALength.text = TeleLIB.getTime().ToString();
+        currentEVALength.text = TeleLIB.getTimer().ToString();
         batteryTime.text = TeleLIB.getTBattery().ToString();
         oxygenTime.text = TeleLIB.getTOxygen().ToString();
         waterTime.text = TeleLIB.getTWater().ToString();
