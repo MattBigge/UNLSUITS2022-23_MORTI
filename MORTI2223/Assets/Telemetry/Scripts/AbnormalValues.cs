@@ -8,87 +8,87 @@ public class AbnormalValues : MonoBehaviour
    
 
     // Update is called once per frame
-    bool PrimaryOxygenLow(){
+    public bool PrimaryOxygenLow(){
         return TeleLIB.getOxPrimary() < 0.2;
     }
-    bool SecondaryOxygenLow(){
+    public bool SecondaryOxygenLow(){
         return TeleLIB.getOxSecondary() < 0.2;
     }
 
-    bool BPMLow(){
+    public bool BPMLow(){
         return TeleLIB.getHeartBpm() < 80;
     }
 
-    bool BPMHigh(){
+    public bool BPMHigh(){
         return TeleLIB.getHeartBpm() > 120;
     }
 
-    bool SubPressureLow(){
+    public bool SubPressureLow(){
         return TeleLIB.getPSub() < 2;
     }
 
-    bool SubPressureHigh(){
+    public bool SubPressureHigh(){
         return TeleLIB.getPSub() > 4;
     }
 
-    bool SuitPressureLow(){
-        return TeleLIB.getPSop() < 2;
+    public bool SuitPressureLow(){
+        return TeleLIB.getPSuit() < 2;
     }
-    bool SuitPressureHigh(){
-        return TeleLIB.getPSop() > 4;
+    public bool SuitPressureHigh(){
+        return TeleLIB.getPSuit() > 4;
     }
-    bool FanSpeedHigh(){
+    public bool FanSpeedHigh(){
         return TeleLIB.getVFan() > 40000;
     }
-    bool FanSpeedLow(){
+    public bool FanSpeedLow(){
         return TeleLIB.getVFan() < 20000;
     }
 
-    bool OxygenPressureLow(){
+    public bool OxygenPressureLow(){
         return TeleLIB.getPO2() < 750;
     }
-    bool OxygenPressureHigh(){
+    public bool OxygenPressureHigh(){
         return TeleLIB.getPO2() > 950;
     }
-    bool OxygenRateLow(){
+    public bool OxygenRateLow(){
         return TeleLIB.getRateO2() < 0.5;
     }
-    bool OxygenRateHigh(){
+    public bool OxygenRateHigh(){
         return TeleLIB.getRateO2() > 1;
     }
-    bool BatteryCapacityLow(){
+    public bool BatteryCapacityLow(){
         return TeleLIB.getCapBattery() < 5;
     }
-    bool H20GasPressureLow(){
+    public bool H20GasPressureLow(){
         return TeleLIB.getPH2OG() < 14;
     }
-    bool H20GasPressureHigh(){
+    public bool H20GasPressureHigh(){
         return TeleLIB.getPH2OG() > 16;
     }
-    bool H20LiquidPressureLow(){
+    public bool H20LiquidPressureLow(){
         return TeleLIB.getPH2OL() < 14;
     }
-    bool H20LiquidPressureHigh(){
+    public bool H20LiquidPressureHigh(){
         return TeleLIB.getPH2OL() > 16;
     }
 
-    bool SecondaryOxygenPressureLow(){
+    public bool SecondaryOxygenPressureLow(){
         return TeleLIB.getPSop() < 750;
     }
 
-    bool SecondaryOxygenPressureHigh(){
+    public bool SecondaryOxygenPressureHigh(){
         return TeleLIB.getPSop() > 950;
     }
 
-    bool SecondaryOxygenRateLow(){
+    public bool SecondaryOxygenRateLow(){
         return TeleLIB.getRateSop() < 0.5;
     }
 
-    bool SecondaryOxygenRateHigh(){
+    public bool SecondaryOxygenRateHigh(){
         return TeleLIB.getRateSop() > 1;
     }
 
-    bool BatteryLow(){
+    public bool BatteryLow(){
         return TeleLIB.getBatteryPercent() < 0.2;
     }
 
