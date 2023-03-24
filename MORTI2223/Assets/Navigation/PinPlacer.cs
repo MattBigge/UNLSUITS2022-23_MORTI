@@ -24,24 +24,24 @@ public class PinPlacer : MonoBehaviour
     Vector3 currentRightLocation;
     private void ProcessRightHand(InputAction.CallbackContext ctx)
     {
-        ProcessHand(ctx, rightHand);
         if (canSpawn)
         {
             canSpawn = false;
-            print("trying to instanciate");
-            Instantiate(objectToSpawn).transform.position = rightHand.transform.position;
+            print(currentRightLocation);
+            Instantiate(objectToSpawn).transform.position = currentRightLocation;
         }
+        ProcessHand(ctx, rightHand);
     }
 
     private void ProcessLeftHand(InputAction.CallbackContext ctx)
     {
-        ProcessHand(ctx, leftHand);
         if (canSpawn)
         {
             canSpawn = false;
-            print("trying to instanciate");
-            Instantiate(objectToSpawn).transform.position = leftHand.transform.position;
+            print(currentLeftLocation);
+            Instantiate(objectToSpawn).transform.position = currentLeftLocation;
         }
+        ProcessHand(ctx, leftHand);
     }
 
     private void ProcessHand(InputAction.CallbackContext ctx, GameObject g)
@@ -50,6 +50,8 @@ public class PinPlacer : MonoBehaviour
     }
     private void Update()
     {
+        currentRightLocation = rightHand.transform.position;
+        currentLeftLocation = leftHand.transform.position;
         if (!canSpawn && (SpawnTimer < MaxTimeForSpawn))
         {
             SpawnTimer += Time.deltaTime;
