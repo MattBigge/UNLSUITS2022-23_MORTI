@@ -18,7 +18,6 @@ public class TimeCheck : MonoBehaviour
     private double oxygen;
     private double water;
 
-    // Start is called before the first frame update
     void Start()
     {
         batteryTime.SetActive(false);
@@ -46,28 +45,28 @@ public class TimeCheck : MonoBehaviour
         // }
     }
 
-    // Update is called once per frame
     void Update()
     {
         battery = Convert.ToDouble(TeleLIB.getTBattery());
         oxygen = Convert.ToDouble(TeleLIB.getTOxygen());
         water = Convert.ToDouble(TeleLIB.getTWater());
 
-        if ((battery < oxygen) && (battery < water)){
-            oxygenTime.SetActive(false);
-            waterTime.SetActive(false);
-            batteryTime.SetActive(true);
-        }
-        if((oxygen < battery) && (oxygen < water)){
-            batteryTime.SetActive(false);
-            waterTime.SetActive(false);
-            oxygenTime.SetActive(true);
-        }
-        if((water < battery) && (water < oxygen)){
-            batteryTime.SetActive(false);
-            oxygenTime.SetActive(false);
-            waterTime.SetActive(true);
+
+        // if ((battery < oxygen) && (battery < water)){
+        //     oxygenTime.SetActive(false);
+        //     waterTime.SetActive(false);
+        //     batteryTime.SetActive(true);
+        // }
+        // if((oxygen < battery) && (oxygen < water)){
+        //     batteryTime.SetActive(false);
+        //     waterTime.SetActive(false);
+        //     oxygenTime.SetActive(true);
+        // }
+        // if((water < battery) && (water < oxygen)){
+        //     batteryTime.SetActive(false);
+        //     oxygenTime.SetActive(false);
+        //     waterTime.SetActive(true);
             
-        }
+        
     }
 }
