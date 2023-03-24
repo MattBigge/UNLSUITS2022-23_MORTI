@@ -5,6 +5,7 @@ using System.Globalization;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Threading;
 
 public class TimeCheck : MonoBehaviour
 {
@@ -23,26 +24,26 @@ public class TimeCheck : MonoBehaviour
         batteryTime.SetActive(false);
         waterTime.SetActive(false);
         oxygenTime.SetActive(false);
+        
+        // battery = Convert.ToDouble(TeleLIB.getTBattery());
+        // oxygen = Convert.ToDouble(TeleLIB.getTOxygen());
+        // water = Convert.ToDouble(TeleLIB.getTWater());
 
-        battery = Convert.ToDouble(TeleLIB.getTBattery());
-        oxygen = Convert.ToDouble(TeleLIB.getTOxygen());
-        water = Convert.ToDouble(TeleLIB.getTWater());
-
-        if ((battery < oxygen) && (battery < water)){
-            oxygenTime.SetActive(false);
-            waterTime.SetActive(false);
-            batteryTime.SetActive(true);
-        }
-        else if((oxygen < battery) && (oxygen < water)){
-            batteryTime.SetActive(false);
-            waterTime.SetActive(false);
-            oxygenTime.SetActive(true);
-        }
-        else if((water < battery) && (water < oxygen)){
-            batteryTime.SetActive(false);
-            oxygenTime.SetActive(false);
-            waterTime.SetActive(true);
-        }
+        // if ((battery < oxygen) && (battery < water)){
+        //     oxygenTime.SetActive(false);
+        //     waterTime.SetActive(false);
+        //     batteryTime.SetActive(true);
+        // }
+        // else if((oxygen < battery) && (oxygen < water)){
+        //     batteryTime.SetActive(false);
+        //     waterTime.SetActive(false);
+        //     oxygenTime.SetActive(true);
+        // }
+        // else if((water < battery) && (water < oxygen)){
+        //     batteryTime.SetActive(false);
+        //     oxygenTime.SetActive(false);
+        //     waterTime.SetActive(true);
+        // }
     }
 
     // Update is called once per frame
