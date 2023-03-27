@@ -45,7 +45,7 @@ public class TeleLIB : MonoBehaviour
         return biometricsContainer.getStartedAt();
     }
 
-    public static int getHeartBpm(){
+    public static  int getHeartBpm(){
         return biometricsContainer.getHeartBpm();
     }
 
@@ -65,7 +65,7 @@ public class TeleLIB : MonoBehaviour
         return biometricsContainer.getVFan();
     }
 
-    public static float getPO2(){
+    public static  float getPO2(){
         return biometricsContainer.getPO2();
     }
 
@@ -114,7 +114,7 @@ public class TeleLIB : MonoBehaviour
         return biometricsContainer.getTOxygenSec();
     }
 
-    public static float getOxPrimary(){
+    public static  float getOxPrimary(){
         return biometricsContainer.getOxPrimary();
     }
 
