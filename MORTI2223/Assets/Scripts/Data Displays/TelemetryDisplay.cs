@@ -6,7 +6,7 @@ using TMPro;
 
 public class TelemetryDisplay : MonoBehaviour
 {
-    private float delay = 2;
+    private bool flag = false;
 
     //hud data displays
     public TMP_Text heartRate;
@@ -32,22 +32,45 @@ public class TelemetryDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   
+        currentEVALength.text = "00:00:00";
+        StartCoroutine(UpdateValues1Sec());
+        StartCoroutine(UpdateValues2Sec());
+    }
 
+    IEnumerator UpdateValues2Sec()
+    {
+        yield return new WaitForSeconds(1);
+        while (true)
+        {
+            heartRate.text = TeleLIB.getHeartBpm().ToString();
+            bodyTemp.text = TeleLIB.getTSub().ToString();
+            yield return new WaitForSeconds(2);
+        }
+    }
+
+    IEnumerator UpdateValues1Sec()
+    {
+        yield return new WaitForSeconds(1);
+        while (true)
+        {
+            if(flag){
+            currentEVALength.text = TeleLIB.getTimer().ToString();
+            batteryTime.text = TeleLIB.getTBattery().ToString();
+            oxygenTime.text = TeleLIB.getTOxygen().ToString();
+            waterTime.text = TeleLIB.getTWater().ToString();
+            flag = false;
+            }else{
+            currentEVALength.text = TimeToInt.SecToTime(TimeToInt.TimeToSec(currentEVALength.text) + 1);
+            Debug.Log("currentEVALength.text = " + currentEVALength.text);
+            flag = true;
+            }
+            yield return new WaitForSeconds(1);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        delay-= Time.deltaTime;
-
-        if(delay < 0){
-            heartRate.text = TeleLIB.getHeartBpm().ToString();
-            bodyTemp.text = TeleLIB.getTSub().ToString();
-            currentEVALength.text = TeleLIB.getTimer().ToString();
-            batteryTime.text = TeleLIB.getTBattery().ToString();
-            oxygenTime.text = TeleLIB.getTOxygen().ToString();
-            waterTime.text = TeleLIB.getTWater().ToString();
-        }
 
         // evaTime.text = TeleLIB.getTimer().ToString();
         // externalPressure.text = TeleLIB.getPSub().ToString();
