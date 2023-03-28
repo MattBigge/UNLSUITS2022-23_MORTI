@@ -23,32 +23,43 @@ public class TimeCheck : MonoBehaviour
         batteryTime.SetActive(false);
         waterTime.SetActive(false);
         oxygenTime.SetActive(false);
+        StartCoroutine(UpdateValues());
         
         
     }
 
-    void Update()
+    IEnumerator UpdateValues()
     {
-        battery = TimeToInt.TimeToSec(TeleLIB.getTBattery());
-        oxygen = TimeToInt.TimeToSec(TeleLIB.getTOxygen());
-        water = TimeToInt.TimeToSec(TeleLIB.getTWater());
+        yield return new WaitForSeconds(1);
+        while (true)
+        {
+            battery = TimeToInt.TimeToSec(TeleLIB.getTBattery());
+            oxygen = TimeToInt.TimeToSec(TeleLIB.getTOxygen());
+            water = TimeToInt.TimeToSec(TeleLIB.getTWater());
         
 
-        if ((battery < oxygen) && (battery < water)){
-            oxygenTime.SetActive(false);
-            waterTime.SetActive(false);
-            batteryTime.SetActive(true);
+            if ((battery < oxygen) && (battery < water)){
+                oxygenTime.SetActive(false);
+                waterTime.SetActive(false);
+                batteryTime.SetActive(true);
+            }
+            if((oxygen < battery) && (oxygen < water)){
+                batteryTime.SetActive(false);
+                waterTime.SetActive(false);
+                oxygenTime.SetActive(true);
+            }
+            if((water < battery) && (water < oxygen)){
+                batteryTime.SetActive(false);
+                oxygenTime.SetActive(false);
+                waterTime.SetActive(true);
+                
+            }
+            yield return new WaitForSeconds(1);
         }
-        if((oxygen < battery) && (oxygen < water)){
-            batteryTime.SetActive(false);
-            waterTime.SetActive(false);
-            oxygenTime.SetActive(true);
-        }
-        if((water < battery) && (water < oxygen)){
-            batteryTime.SetActive(false);
-            oxygenTime.SetActive(false);
-            waterTime.SetActive(true);
-            
-         }
+    }
+
+    void Update()
+    {
+        
 }
 }
