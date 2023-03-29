@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class TelemetryDisplay : MonoBehaviour
+public class TelemetryDisplayHUD : MonoBehaviour
 {
     private float delay = 2;
 

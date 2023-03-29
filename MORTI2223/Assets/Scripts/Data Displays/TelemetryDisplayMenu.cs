@@ -32,17 +32,17 @@ public class TelemetryDisplayMenu : MonoBehaviour
         delay-= Time.deltaTime;
 
         if(delay < 0){
-            evaTime.text = TeleLIB.getTimer().ToString();
-            externalPressure.text = TeleLIB.getPSub().ToString();
-            suitPressure.text = TeleLIB.getPSuit().ToString();
-            fanSpeed.text = TeleLIB.getVFan().ToString();
-            primaryOxygenPressure.text = TeleLIB.getPO2().ToString();
-            primaryOxygenFlowRate.text = TeleLIB.getRateO2().ToString();
-            batteryCapacity.text = TeleLIB.getCapBattery().ToString();
-            waterGasPressure.text = TeleLIB.getPH2OG().ToString();
-            waterLiquidPressure.text = TeleLIB.getPH2OL().ToString();
-            secondaryOxygenPressure.text = TeleLIB.getPSop().ToString();
-            secondaryOxygenFlowrate.text = TeleLIB.getRateSop().toString();
+            evaTime.text = "" + TeleLIB.getTimer();
+            externalPressure.text = "" + TeleLIB.getPSub();
+            suitPressure.text = "" + TeleLIB.getPSuit();
+            fanSpeed.text = "" + TeleLIB.getVFan();
+            primaryOxygenPressure.text = "" + TeleLIB.getPO2();
+            primaryOxygenFlowRate.text = "" + TeleLIB.getRateO2();
+            batteryCapacity.text = "" + TeleLIB.getCapBattery();
+            waterGasPressure.text = "" + TeleLIB.getPH2OG();
+            waterLiquidPressure.text = "" + TeleLIB.getPH2OL();
+            secondaryOxygenPressure.text = "" + TeleLIB.getPSop();
+            secondaryOxygenFlowrate.text = "" + TeleLIB.getRateSop();
     }
 }
 }
