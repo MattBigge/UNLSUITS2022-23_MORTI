@@ -7,6 +7,8 @@ using UnityEngine.InputSystem;
 
 public class PinPlacer : MonoBehaviour
 {
+    public bool PlaceDisable = false;
+    public List<GameObject> PinList = new List<GameObject>(); 
     private bool canSpawn = false;
     private float SpawnTimer = 0;
     private float MaxTimeForSpawn = 3;
@@ -24,22 +26,23 @@ public class PinPlacer : MonoBehaviour
     Vector3 currentRightLocation;
     private void ProcessRightHand(InputAction.CallbackContext ctx)
     {
-        if (canSpawn)
+        if (canSpawn && !PlaceDisable)
         {
             canSpawn = false;
-            print(currentRightLocation);
-            Instantiate(objectToSpawn).transform.position = currentRightLocation;
+            PinList.Add(Instantiate(objectToSpawn));
+            PinList[PinList.Count-1].transform.position = currentRightLocation;
         }
         //ProcessHand(ctx, rightHand);
     }
 
     private void ProcessLeftHand(InputAction.CallbackContext ctx)
     {
-        if (canSpawn)
+        if (canSpawn && !PlaceDisable)
         {
             canSpawn = false;
             print(currentLeftLocation);
-            Instantiate(objectToSpawn).transform.position = currentLeftLocation;
+            PinList.Add(Instantiate(objectToSpawn));
+            PinList[PinList.Count-1].transform.position = currentLeftLocation;
         }
         //ProcessHand(ctx, leftHand);
     }

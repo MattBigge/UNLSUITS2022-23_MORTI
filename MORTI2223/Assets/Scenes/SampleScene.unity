@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &183857055 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5727148871348114051, guid: 4d7e2f87fefe0ba468719b15288b46e7,
+    type: 3}
+  m_PrefabInstance: {fileID: 588002945}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &207010966
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,7 +379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToSpawn: {fileID: 536658351}
   leftHand: {fileID: 588002946}
-  rightHand: {fileID: 588002946}
+  rightHand: {fileID: 183857055}
   leftHandReference: {fileID: -294446728694031702, guid: 18c412191cdc9274897f101c7fd5316f,
     type: 3}
   rightHandReference: {fileID: 2995356199736570127, guid: 18c412191cdc9274897f101c7fd5316f,
@@ -520,18 +526,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 771495726}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &483514537 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5345892616551654198, guid: 6c30a42e322cecd44bdd0f802db3e478,
-    type: 3}
-  m_PrefabInstance: {fileID: 4204912735915350438}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &546996158
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -547,7 +541,7 @@ PrefabInstance:
     - target: {fileID: 1493181712350348476, guid: 536690e187e8a9946b2eaba4c99dcede,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1493181712350348476, guid: 536690e187e8a9946b2eaba4c99dcede,
         type: 3}
@@ -711,7 +705,7 @@ PrefabInstance:
     - target: {fileID: 3999624710716490223, guid: dc9070ac2bd19e74eb3a6d850088f1e3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3999624710716490223, guid: dc9070ac2bd19e74eb3a6d850088f1e3,
         type: 3}
@@ -972,7 +966,7 @@ PrefabInstance:
     - target: {fileID: 519152263196663743, guid: 6c30a42e322cecd44bdd0f802db3e478,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 519152263196663743, guid: 6c30a42e322cecd44bdd0f802db3e478,
         type: 3}

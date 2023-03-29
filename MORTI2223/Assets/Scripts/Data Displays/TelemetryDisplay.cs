@@ -6,7 +6,7 @@ using TMPro;
 
 public class TelemetryDisplay : MonoBehaviour
 {
-
+    float delay = 1;
     //hud data displays
     public TMP_Text heartRate;
     public TMP_Text bodyTemp;
@@ -37,13 +37,16 @@ public class TelemetryDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        heartRate.text = TeleLIB.getHeartBpm().ToString();
-        bodyTemp.text = TeleLIB.getTSub().ToString();
-        currentEVALength.text = TeleLIB.getTimer().ToString();
-        batteryTime.text = TeleLIB.getTBattery().ToString();
-        oxygenTime.text = TeleLIB.getTOxygen().ToString();
-        waterTime.text = TeleLIB.getTWater().ToString();
+        delay -= Time.deltaTime;
+        if (delay < 0)
+        {
+            heartRate.text = TeleLIB.getHeartBpm().ToString();
+            bodyTemp.text = TeleLIB.getTSub().ToString();
+            currentEVALength.text = TeleLIB.getTimer().ToString();
+            batteryTime.text = TeleLIB.getTBattery().ToString();
+            oxygenTime.text = TeleLIB.getTOxygen().ToString();
+            waterTime.text = TeleLIB.getTWater().ToString();
+        }
 
         // evaTime.text = TeleLIB.getTimer().ToString();
         // externalPressure.text = TeleLIB.getPSub().ToString();
