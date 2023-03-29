@@ -65,8 +65,8 @@ public class PinPlacer : MonoBehaviour
     }
     private void Start()
     {
-        leftHand.SetActive(false);
-        rightHand.SetActive(false);
+        //leftHand.SetActive(false);
+        //rightHand.SetActive(false);
         leftHandReference.action.performed += ProcessLeftHand;
         rightHandReference.action.performed += ProcessRightHand;
     }
