@@ -6,6 +6,7 @@ public class TeleLIB : MonoBehaviour
 {
     public ConnScript connection;
     static EVAContainer biometricsContainer;
+    static Position positionContainer;
 
     public static string globalURI = "http://ec2-3-137-219-57.us-east-2.compute.amazonaws.com:8080/api";
     
@@ -14,9 +15,19 @@ public class TeleLIB : MonoBehaviour
        StartCoroutine(stopSim());
     }
     
-    public static void setContainer(EVAContainer container){
+    public static void setBioContainer(EVAContainer container){
         biometricsContainer = container;
     }
+
+    public static void setPosContainer(Position container){
+        positionContainer = container;
+    }
+
+    public static float[] getPos(){
+        return positionContainer.getPos();
+    }
+
+
      public static int getId(){
         return biometricsContainer.getId();
     }

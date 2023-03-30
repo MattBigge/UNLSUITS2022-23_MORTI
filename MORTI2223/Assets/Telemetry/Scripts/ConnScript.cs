@@ -6,6 +6,7 @@ using TSS;
 public class ConnScript : MonoBehaviour
 {
     EVAContainer evaContainer;
+    Position position;
     TSSConnection tss;
     string tssUri;
 
@@ -21,8 +22,10 @@ public class ConnScript : MonoBehaviour
     async void Start()
     {
         tss = new TSSConnection();
+        position = new Position();
         evaContainer = new EVAContainer();
-        TeleLIB.setContainer(evaContainer);
+        TeleLIB.setBioContainer(evaContainer);
+        TeleLIB.setPosContainer(position);
         //inputField = GameObject.Find("Socket URI Input Field").GetComponent<TMPro.TMP_InputField>();
 
         //gpsMsgBox = GameObject.Find("GPS Msg Box").GetComponent<TMPro.TMP_Text>();
@@ -54,7 +57,8 @@ public class ConnScript : MonoBehaviour
 
             if (telemMsg.GPS.Count > 0)
             {
-                //gpsMsgBox.text = "GPS Msg: " + JsonUtility.ToJson(telemMsg.GPS[0], prettyPrint: true);
+                //print("GPS Msg: " + JsonUtility.ToJson(telemMsg.GPS[0]));
+                position.setPos(JsonUtility.ToJson(telemMsg.GPS[0]));
             }
             else
             {
