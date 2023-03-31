@@ -6,6 +6,7 @@ using TMPro;
 
 public class TelemetryDisplay : MonoBehaviour
 {
+    private bool flag = false;
 
     //hud data displays
     public TMP_Text heartRate;
@@ -15,46 +16,41 @@ public class TelemetryDisplay : MonoBehaviour
     public TMP_Text oxygenTime;
     public TMP_Text waterTime;
 
-    //menu data points
-    // public TMP_Text evaTime;
-    // public TMP_Text externalPressure;
-    // public TMP_Text suitPressure;
-    // public TMP_Text fanSpeed;
-    // public TMP_Text primaryOxygenPressure;
-    // public TMP_Text primaryOxygenFlowRate;
-    // public TMP_Text batteryCapacity;
-    // public TMP_Text waterGasPressure;
-    // public TMP_Text waterLiquidPressure;
-    // public TMP_Text secondaryOxygenPressure;
-    // public TMP_Text secondaryOxygenFlowrate;
-
-    // Start is called before the first frame update
     void Start()
     {   
-
+        currentEVALength.text = "00:00:00";
+        StartCoroutine(UpdateValues1Sec());
+        StartCoroutine(UpdateValues2Sec());
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator UpdateValues2Sec()
     {
+        yield return new WaitForSeconds(1);
+        while (true)
+        {
+            heartRate.text = TeleLIB.getHeartBpm().ToString();
+            bodyTemp.text = TeleLIB.getTSub().ToString();
+            yield return new WaitForSeconds(2);
+        }
+    }
 
-        heartRate.text = TeleLIB.getHeartBpm().ToString();
-        bodyTemp.text = TeleLIB.getTSub().ToString();
-        currentEVALength.text = TeleLIB.getTimer().ToString();
-        batteryTime.text = TeleLIB.getTBattery().ToString();
-        oxygenTime.text = TeleLIB.getTOxygen().ToString();
-        waterTime.text = TeleLIB.getTWater().ToString();
-
-        // evaTime.text = TeleLIB.getTimer().ToString();
-        // externalPressure.text = TeleLIB.getPSub().ToString();
-        // suitPressure.text = TeleLIB.getPSuit().ToString();
-        // fanSpeed.text = TeleLIB.getVFan().ToString();
-        // primaryOxygenPressure.text = TeleLIB.getPO2().ToString();
-        // primaryOxygenFlowRate.text = TeleLIB.getRateO2().ToString();
-        // batteryCapacity.text = TeleLIB.getCapBattery().ToString();
-        // waterGasPressure.text = TeleLIB.getPH2OG().ToString();
-        // waterLiquidPressure.text = TeleLIB.getPH2OL().ToString();
-        // secondaryOxygenPressure.text = TeleLIB.getPSop().ToString();
-        // secondaryOxygenFlowrate.text = TeleLIB.getRateSop().toString();
+    IEnumerator UpdateValues1Sec()
+    {
+        yield return new WaitForSeconds(1);
+        while (true)
+        {
+            if(flag){
+            currentEVALength.text = TeleLIB.getTimer().ToString();
+            batteryTime.text = TeleLIB.getTBattery().ToString();
+            oxygenTime.text = TeleLIB.getTOxygen().ToString();
+            waterTime.text = TeleLIB.getTWater().ToString();
+            flag = false;
+            }else{
+            currentEVALength.text = TimeToInt.SecToTime(TimeToInt.TimeToSec(currentEVALength.text) + 1);
+            Debug.Log("currentEVALength.text = " + currentEVALength.text);
+            flag = true;
+            }
+            yield return new WaitForSeconds(1);
+        }
     }
 }
