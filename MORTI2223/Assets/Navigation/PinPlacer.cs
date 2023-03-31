@@ -17,7 +17,8 @@ public class PinPlacer : MonoBehaviour
     private GameObject leftHand;
     [SerializeField]
     private GameObject rightHand;
-
+    private bool isRightPinch= false;
+    private bool isLeftPinch=false;
     [SerializeField]
     private InputActionReference leftHandReference;
     [SerializeField]
@@ -26,26 +27,71 @@ public class PinPlacer : MonoBehaviour
     Vector3 currentRightLocation;
     private void ProcessRightHand(InputAction.CallbackContext ctx)
     {
-        if (canSpawn && !PlaceDisable)
+        print("im being held down omg help");
+        if (isRightPinch)
         {
-            canSpawn = false;
-            PinList.Add(Instantiate(objectToSpawn));
-            PinList[PinList.Count-1].transform.position = currentRightLocation;
-        }
-        //ProcessHand(ctx, rightHand);
-    }
+            isRightPinch = false;
 
+        }
+        else
+        {
+            isRightPinch = true;
+            StartCoroutine(pinchRightUpdate());
+        }
+        
+    }
+    private IEnumerator pinchRightUpdate()
+    {
+        int i = 0;
+        while (isRightPinch)
+        {
+            i++;
+            yield return new WaitForSeconds(1);
+        }
+        if (i >= 3)
+        {
+            if (canSpawn&&!PlaceDisable)
+            {
+                canSpawn = false;
+                PinList.Add(Instantiate(objectToSpawn));
+                PinList[PinList.Count - 1].transform.position = currentRightLocation;
+            }
+        }
+    }
+    private IEnumerator pinchLeftUpdate()
+    {
+        int i = 0;
+        while (isLeftPinch)
+        {
+            i++;
+            yield return new WaitForSeconds(1);
+        }
+        if (i >= 3)
+        {
+            if (canSpawn && !PlaceDisable)
+            {
+                canSpawn = false;
+                print(currentLeftLocation);
+                PinList.Add(Instantiate(objectToSpawn));
+                PinList[PinList.Count - 1].transform.position = currentLeftLocation;
+            }
+        }
+    }
     private void ProcessLeftHand(InputAction.CallbackContext ctx)
     {
-        if (canSpawn && !PlaceDisable)
+        if (isLeftPinch)
         {
-            canSpawn = false;
-            print(currentLeftLocation);
-            PinList.Add(Instantiate(objectToSpawn));
-            PinList[PinList.Count-1].transform.position = currentLeftLocation;
+            isLeftPinch = false;
+
         }
+        else
+        {
+            isLeftPinch = true;
+            StartCoroutine(pinchLeftUpdate());
+        }
+        
         //ProcessHand(ctx, leftHand);
-    }
+    } 
 
     private void ProcessHand(InputAction.CallbackContext ctx, GameObject g)
     {
