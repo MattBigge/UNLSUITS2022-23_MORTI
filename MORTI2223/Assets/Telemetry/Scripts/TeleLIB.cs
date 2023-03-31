@@ -84,7 +84,6 @@ public class TeleLIB : MonoBehaviour
         return biometricsContainer.getRateO2();
     }
 
-
     public static float getBatteryPercent(){
         return biometricsContainer.getBatteryPercent();
     }

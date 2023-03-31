@@ -30,7 +30,7 @@ public class PinPlacer : MonoBehaviour
             print(currentRightLocation);
             Instantiate(objectToSpawn).transform.position = currentRightLocation;
         }
-        ProcessHand(ctx, rightHand);
+       // ProcessHand(ctx, rightHand);
     }
 
     private void ProcessLeftHand(InputAction.CallbackContext ctx)
@@ -41,7 +41,7 @@ public class PinPlacer : MonoBehaviour
             print(currentLeftLocation);
             Instantiate(objectToSpawn).transform.position = currentLeftLocation;
         }
-        ProcessHand(ctx, leftHand);
+        //ProcessHand(ctx, leftHand);
     }
 
     private void ProcessHand(InputAction.CallbackContext ctx, GameObject g)
