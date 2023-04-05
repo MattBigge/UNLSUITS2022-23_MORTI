@@ -6,9 +6,28 @@ public class TeleLIB : MonoBehaviour
 {
     public ConnScript connection;
     static EVAContainer biometricsContainer;
-    public static void setContainer(EVAContainer container){
+    static Position positionContainer;
+
+    public static string globalURI = "http://ec2-3-137-219-57.us-east-2.compute.amazonaws.com:8080/api";
+    
+    void Start(){
+       StartCoroutine(startSim());
+       StartCoroutine(stopSim());
+    }
+    
+    public static void setBioContainer(EVAContainer container){
         biometricsContainer = container;
     }
+
+    public static void setPosContainer(Position container){
+        positionContainer = container;
+    }
+
+    public static float[] getPos(){
+        return positionContainer.getPos();
+    }
+
+
      public static int getId(){
         return biometricsContainer.getId();
     }
@@ -37,7 +56,7 @@ public class TeleLIB : MonoBehaviour
         return biometricsContainer.getStartedAt();
     }
 
-    public static int getHeartBpm(){
+    public static  int getHeartBpm(){
         return biometricsContainer.getHeartBpm();
     }
 
@@ -57,14 +76,13 @@ public class TeleLIB : MonoBehaviour
         return biometricsContainer.getVFan();
     }
 
-    public static float getPO2(){
+    public static  float getPO2(){
         return biometricsContainer.getPO2();
     }
 
     public static float getRateO2(){
         return biometricsContainer.getRateO2();
     }
-
 
     public static float getBatteryPercent(){
         return biometricsContainer.getBatteryPercent();
@@ -106,7 +124,7 @@ public class TeleLIB : MonoBehaviour
         return biometricsContainer.getTOxygenSec();
     }
 
-    public static float getOxPrimary(){
+    public static  float getOxPrimary(){
         return biometricsContainer.getOxPrimary();
     }
 
@@ -128,6 +146,52 @@ public class TeleLIB : MonoBehaviour
     }
     public static string getUpdatedAt(){
         return biometricsContainer.getUpdatedAt();
+    }
+
+     public static IEnumerator startSim()
+    {
+        using (UnityWebRequest webRequest = UnityWebRequest.Get(globalURI + "/simulationcontrol/sim/1/stop"))
+        {
+            yield return webRequest.SendWebRequest();
+            switch(webRequest.result)
+            {
+                case UnityWebRequest.Result.ConnectionError:
+                    Debug.Log("Connection Error");
+                    break;
+                case UnityWebRequest.Result.DataProcessingError:
+                    Debug.Log("Data Processing Error");
+                    break;
+                case UnityWebRequest.Result.ProtocolError:
+                    Debug.Log("Protocol Error");
+                    break;
+                case UnityWebRequest.Result.Success:
+                    Debug.Log("Success" + " " + webRequest.downloadHandler.text);
+                    break;
+            }
+        }
+    }
+
+    public static IEnumerator stopSim()
+    {
+       using (UnityWebRequest webRequest = UnityWebRequest.Get(globalURI + "/simulationcontrol/sim/1/start"))
+        {
+            yield return webRequest.SendWebRequest();
+            switch(webRequest.result)
+            {
+                case UnityWebRequest.Result.ConnectionError:
+                    Debug.Log("Connection Error");
+                    break;
+                case UnityWebRequest.Result.DataProcessingError:
+                    Debug.Log("Data Processing Error");
+                    break;
+                case UnityWebRequest.Result.ProtocolError:
+                    Debug.Log("Protocol Error");
+                    break;
+                case UnityWebRequest.Result.Success:
+                    Debug.Log("Success" + " " + webRequest.downloadHandler.text);
+                    break;
+            }
+        }
     }
 
 }

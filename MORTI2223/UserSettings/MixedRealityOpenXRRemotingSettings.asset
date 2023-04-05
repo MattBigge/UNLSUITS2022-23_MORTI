@@ -1,7 +1,7 @@
 {
     "<RemoteHostName>k__BackingField": "169.254.129.223",
-    "<RemoteHostPort>k__BackingField": 8265,
+    "<RemoteHostPort>k__BackingField": 0,
     "<MaxBitrate>k__BackingField": 20000,
     "<VideoCodec>k__BackingField": 0,
-    "<EnableAudio>k__BackingField": false
+    "<EnableAudio>k__BackingField": true
 }
