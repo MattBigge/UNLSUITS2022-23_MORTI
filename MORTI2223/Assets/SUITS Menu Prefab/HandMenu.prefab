@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 8124566159270168603}
   - component: {fileID: 7584270498017527423}
   m_Layer: 5
-  m_Name: Action Button (3)
+  m_Name: Navigation Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2262,7 +2262,7 @@ GameObject:
   - component: {fileID: 6870632217067565822}
   - component: {fileID: 6840077045266190651}
   m_Layer: 5
-  m_Name: Action Button (4)
+  m_Name: Biometrics Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3049,7 +3049,7 @@ GameObject:
   - component: {fileID: 5089365693871266293}
   - component: {fileID: 723499582412179995}
   m_Layer: 5
-  m_Name: Action Button (2)
+  m_Name: Mission Log Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3288,7 +3288,31 @@ MonoBehaviour:
         m_Calls: []
   <OnClicked>k__BackingField:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5302297209287621415}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   <OnEnabled>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
@@ -4272,7 +4296,7 @@ GameObject:
   - component: {fileID: 8254559548686136611}
   - component: {fileID: 6385504399845294820}
   m_Layer: 5
-  m_Name: Action Button (1)
+  m_Name: Settings Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
