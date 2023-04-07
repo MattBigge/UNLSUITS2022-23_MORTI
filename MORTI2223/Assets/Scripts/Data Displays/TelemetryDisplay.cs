@@ -8,6 +8,7 @@ public class TelemetryDisplay : MonoBehaviour
 {
     private bool flag = false;
 
+
     //hud data displays
     public TMP_Text heartRate;
     public TMP_Text bodyTemp;
