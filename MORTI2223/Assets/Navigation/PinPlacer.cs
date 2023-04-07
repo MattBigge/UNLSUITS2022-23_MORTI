@@ -41,6 +41,7 @@ public class PinPlacer : MonoBehaviour
         {
             SpawnTimer = Time.time;
         }
+
         if (canSpawn)
         {
             MaxTimeForSpawn = Time.time;
@@ -62,7 +63,6 @@ public class PinPlacer : MonoBehaviour
     }
     private void Start()
     {
-
         leftHandReference.action.performed += ProcessLeftHand;
         rightHandReference.action.performed += ProcessRightHand;
     }
