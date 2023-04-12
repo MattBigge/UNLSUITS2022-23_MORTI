@@ -28,14 +28,14 @@ public class MenuDisplayPageOne : MonoBehaviour
             yield return new WaitForSeconds(1);
             while (true)
             {
-                waterPercentage.text = TeleLIB.getCapWater().ToString() + "%";
-                primaryOxygenPercentage.text = TeleLIB.getOxPrimary().ToString() + "%";
-                secondaryOxygenPercentage.text = TeleLIB.getOxSecondary().ToString() + "%";
-                externalPressure.text = TeleLIB.getPSub().ToString() + "psia";
-                suitPressure.text = TeleLIB.getPSuit().ToString() + "psid";
-                primaryOxygenPressure.text = TeleLIB.getPO2().ToString() + "psia";
-                secondaryOxygenPressure.text = TeleLIB.getPSop().ToString() + "psia";
-                fanSpeed.text = TeleLIB.getVFan().ToString() + "RPM";
+                waterPercentage.text = TeleLIB.getCapWater().ToString("0.00") + "%";
+                primaryOxygenPercentage.text = TeleLIB.getOxPrimary().ToString("0.00") + "%";
+                secondaryOxygenPercentage.text = TeleLIB.getOxSecondary().ToString("0.00") + "%";
+                externalPressure.text = TeleLIB.getPSub().ToString("0.00") + " psia";
+                suitPressure.text = TeleLIB.getPSuit().ToString("0.00") + " psid";
+                primaryOxygenPressure.text = TeleLIB.getPO2().ToString("0.00") + " psia";
+                secondaryOxygenPressure.text = TeleLIB.getPSop().ToString("0.00") + " psia";
+                fanSpeed.text = TeleLIB.getVFan().ToString() + " RPM";
                 yield return new WaitForSeconds(2);
             }
         }
