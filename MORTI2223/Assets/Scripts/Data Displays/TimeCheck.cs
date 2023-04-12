@@ -37,23 +37,21 @@ public class TimeCheck : MonoBehaviour
             oxygen = TimeToInt.TimeToSec(TeleLIB.getTOxygen());
             water = TimeToInt.TimeToSec(TeleLIB.getTWater());
         
+            oxygenTime.SetActive(false);
+            waterTime.SetActive(false);
+            batteryTime.SetActive(true);
+            yield return new WaitForSeconds(10);
 
-            if ((battery < oxygen) && (battery < water)){
-                oxygenTime.SetActive(false);
-                waterTime.SetActive(false);
-                batteryTime.SetActive(true);
-            }
-            if((oxygen < battery) && (oxygen < water)){
-                batteryTime.SetActive(false);
-                waterTime.SetActive(false);
-                oxygenTime.SetActive(true);
-            }
-            if((water < battery) && (water < oxygen)){
-                batteryTime.SetActive(false);
-                oxygenTime.SetActive(false);
-                waterTime.SetActive(true);
-                
-            }
+            waterTime.SetActive(false);
+            batteryTime.SetActive(false);
+            oxygenTime.SetActive(true);
+            yield return new WaitForSeconds(10);
+
+            oxygenTime.SetActive(false);
+            batteryTime.SetActive(false);
+            waterTime.SetActive(true);
+            yield return new WaitForSeconds(10); 
+            
             yield return new WaitForSeconds(1);
         }
     }
