@@ -7,66 +7,62 @@ using UnityEngine.InputSystem;
 
 public class PinPlacer : MonoBehaviour
 {
-    private bool canSpawn = true;
+    public bool PlaceDisable = false;
+    public List<GameObject> PinList = new List<GameObject>(); 
+    private bool canSpawn = false;
+    private float currentTime = 0;
     private float SpawnTimer = 0;
-    private float MaxTimeForSpawn = 3;
+    private float MaxTimeForSpawn = 0;
     public GameObject objectToSpawn;
+    private int frameCounter = 0;
     [SerializeField]
     private GameObject leftHand;
     [SerializeField]
     private GameObject rightHand;
-
     [SerializeField]
     private InputActionReference leftHandReference;
     [SerializeField]
     private InputActionReference rightHandReference;
     Vector3 currentLeftLocation;
     Vector3 currentRightLocation;
+    [SerializeField]
+    private GameObject breadCrumb;
+    [SerializeField]
+    private GameObject Camera;
+    private List<GameObject> breadList = new List<GameObject>();
     private void ProcessRightHand(InputAction.CallbackContext ctx)
     {
-        if (canSpawn)
+        currentTime = Time.time;
+        if (currentTime - SpawnTimer <= 3 && currentTime - MaxTimeForSpawn > 3)
         {
-            canSpawn = false;
-            print(currentRightLocation);
-            Instantiate(objectToSpawn).transform.position = currentRightLocation;
-        }
-       // ProcessHand(ctx, rightHand);
-    }
-
-    private void ProcessLeftHand(InputAction.CallbackContext ctx)
-    {
-        if (canSpawn)
-        {
-            canSpawn = false;
-            print(currentLeftLocation);
-            Instantiate(objectToSpawn).transform.position = currentLeftLocation;
-        }
-        //ProcessHand(ctx, leftHand);
-    }
-
-    private void ProcessHand(InputAction.CallbackContext ctx, GameObject g)
-    {
-        g.SetActive(ctx.ReadValue<float>() > 0.95f);
-    }
-    private void Update()
-    {
-        currentRightLocation = rightHand.transform.position;
-        currentLeftLocation = leftHand.transform.position;
-        if (!canSpawn && (SpawnTimer < MaxTimeForSpawn))
-        {
-            SpawnTimer += Time.deltaTime;
+            canSpawn = true;
         }
         else
         {
-            SpawnTimer = 0;
-            canSpawn = true;
+            SpawnTimer = Time.time;
         }
-        
+
+        if (canSpawn)
+        {
+            MaxTimeForSpawn = Time.time;
+            currentRightLocation = rightHand.transform.position;
+            canSpawn = false;
+            PinList.Add(Instantiate(objectToSpawn));
+            PinList[PinList.Count - 1].transform.position = currentRightLocation;
+        }
+    }
+     
+    private void ProcessLeftHand(InputAction.CallbackContext ctx)
+    {
+    } 
+    IEnumerator breadCrumbs()
+    {
+        breadList.Add(Instantiate(breadCrumb));
+        breadList[breadList.Count - 1].transform.position = currentRightLocation;
+        yield return null;
     }
     private void Start()
     {
-        //leftHand.SetActive(false);
-        //rightHand.SetActive(false);
         leftHandReference.action.performed += ProcessLeftHand;
         rightHandReference.action.performed += ProcessRightHand;
     }
