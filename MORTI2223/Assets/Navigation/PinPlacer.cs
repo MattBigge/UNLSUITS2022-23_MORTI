@@ -1,12 +1,15 @@
 using Microsoft.MixedReality.Toolkit;
 using Microsoft.MixedReality.Toolkit.Input;
+using Microsoft.MixedReality.Toolkit.SpatialManipulation;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Threading.Tasks;
 
 public class PinPlacer : MonoBehaviour
 {
+    public bool is_advance = true;
     public bool PlaceDisable = false;
     public List<GameObject> PinList = new List<GameObject>(); 
     private bool canSpawn = false;
@@ -14,6 +17,8 @@ public class PinPlacer : MonoBehaviour
     private float SpawnTimer = 0;
     private float MaxTimeForSpawn = 0;
     public GameObject objectToSpawn;
+    [SerializeField]
+    public GameObject indicator;
     private int frameCounter = 0;
     [SerializeField]
     private GameObject leftHand;
@@ -30,6 +35,8 @@ public class PinPlacer : MonoBehaviour
     [SerializeField]
     private GameObject Camera;
     private List<GameObject> breadList = new List<GameObject>();
+    private float waitTime;
+    private float thisTime;
     private void ProcessRightHand(InputAction.CallbackContext ctx)
     {
         currentTime = Time.time;
@@ -54,15 +61,50 @@ public class PinPlacer : MonoBehaviour
     private void ProcessLeftHand(InputAction.CallbackContext ctx)
     {
     } 
-    IEnumerator breadCrumbs()
+    
+    private void Update()
     {
-        breadList.Add(Instantiate(breadCrumb));
-        breadList[breadList.Count - 1].transform.position = currentRightLocation;
-        yield return null;
+        print(thisTime- waitTime);
+        if (is_advance)
+        {
+            thisTime = Time.time;
+            if (thisTime - waitTime >= 15)
+            {
+                if (breadList.Count == 0)
+                {
+                    GameObject tempObject = Instantiate(breadCrumb);
+                    breadList.Add(tempObject);
+                    breadList[breadList.Count - 1].transform.position = Camera.transform.position - new Vector3(0, 0, 0.3f);
+                }
+                waitTime = Time.time;
+                Vector3 combinedVectors = breadList[breadList.Count - 1].transform.position - Camera.transform.position;
+                if (combinedVectors[0] >= 1f && combinedVectors[0] <= -3f && combinedVectors[1] >= 3f && combinedVectors[1] <= -3f && combinedVectors[2] >= 3f && combinedVectors[2] <= -3f)
+                {
+                    GameObject tempObject = Instantiate(breadCrumb);
+                    breadList.Add(tempObject);
+                    breadList[breadList.Count - 1].transform.position = Camera.transform.position - new Vector3(0, 0, 0.3f);
+                    waitTime = Time.time;
+                }
+
+            }
+        }
+        else
+        {
+            if (breadList.Count != 0)
+            {
+                Vector3 combinedVectors = breadList[breadList.Count - 1].transform.position - Camera.transform.position;
+                if (combinedVectors[0] >= 1f && combinedVectors[0] <= -3f && combinedVectors[1] >= 3f && combinedVectors[1] <= -3f && combinedVectors[2] >= 3f && combinedVectors[2] <= -3f)
+                {
+                    breadList.RemoveAt(breadList.Count - 1);
+                }
+                indicator.GetComponent<DirectionalIndicator>().DirectionalTarget = breadList[breadList.Count -1].transform;
+            }
+        }
     }
+    
     private void Start()
     {
-
+        waitTime = Time.time;
         leftHandReference.action.performed += ProcessLeftHand;
         rightHandReference.action.performed += ProcessRightHand;
     }
