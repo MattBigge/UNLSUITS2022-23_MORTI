@@ -37,21 +37,21 @@ James Berck, NASA Deputy Project Manager
 https://www.linkedin.com/in/james-berck-5668b694/ 
 
 ## Project Timeline:
-Oct-Nov 22 - Team gathered and proposal developed/submitted to NASA for review \\
+Oct-Nov 22 - Team gathered and proposal developed/submitted to NASA for review  
 Dec 7th - Team Accepted for development  
 Dec 15th - Mission Briefing #1 Attended  
 Dec 17th-January 3rd - University Holiday Break  
-Jan 4th-20th - Predevelopment work, project initialization and setup, Production software and documentation \\
-Jan 21st - First day of classes and beginnning of Sprint #1 \\
-[] - Oakview Mall Aerospace Day \\
-Feb 26th - Project reformatted to use MRTK 3.0 \\
-Dates from Outreach events and other milestones \\
-[] - Newly Admitted Student day in Othmer Hall \\
-Apr 5th - Software Design Review Presentation \\
-Final Developement Period: Apr 5th- May 17th \\
-Sprint 1: Apr 6th - Apr 20th, Release 1.0 \\
-Sprint 2: Apr 21st - May 4th, Release 1.1 \\
-Sprint 3: May 4th - May 12th, Release 1.2 \\
-May 13th - May 17th: Test Week prep and bug fixes \\
-May 17th - 24th: NASA Test week at Johnson Space Center's Rockyard \\
-June: Final Report Due \\
+Jan 4th-20th - Predevelopment work, project initialization and setup, Production software and documentation  
+Jan 21st - First day of classes and beginnning of Sprint #1  
+[] - Oakview Mall Aerospace Day  
+Feb 26th - Project reformatted to use MRTK 3.0  
+Dates from Outreach events and other milestones  
+[] - Newly Admitted Student day in Othmer Hall  
+Apr 5th - Software Design Review Presentation  
+Final Developement Period: Apr 5th- May 17th  
+Sprint 1: Apr 6th - Apr 20th, Release 1.0  
+Sprint 2: Apr 21st - May 4th, Release 1.1  
+Sprint 3: May 4th - May 12th, Release 1.2  
+May 13th - May 17th: Test Week prep and bug fixes  
+May 17th - 24th: NASA Test week at Johnson Space Center's Rockyard  
+June: Final Report Due  
