@@ -48,6 +48,7 @@ public class PinPlacer : MonoBehaviour
         {
             SpawnTimer = Time.time;
         }
+
         if (canSpawn)
         {
             MaxTimeForSpawn = Time.time;
@@ -78,7 +79,7 @@ public class PinPlacer : MonoBehaviour
                 }
                 waitTime = Time.time;
                 Vector3 combinedVectors = breadList[breadList.Count - 1].transform.position - Camera.transform.position;
-                if (combinedVectors[0] >= 1f && combinedVectors[0] <= -3f && combinedVectors[1] >= 3f && combinedVectors[1] <= -3f && combinedVectors[2] >= 3f && combinedVectors[2] <= -3f)
+                if (!(combinedVectors[0] <= 3f && combinedVectors[0] >= -3f) || !(combinedVectors[1] <= 3f && combinedVectors[1] >= -3f) || !(combinedVectors[2] <= 3f && combinedVectors[2] >= -3f))
                 {
                     GameObject tempObject = Instantiate(breadCrumb);
                     breadList.Add(tempObject);
@@ -104,7 +105,6 @@ public class PinPlacer : MonoBehaviour
     
     private void Start()
     {
-        waitTime = Time.time;
         leftHandReference.action.performed += ProcessLeftHand;
         rightHandReference.action.performed += ProcessRightHand;
     }
