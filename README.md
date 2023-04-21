@@ -38,9 +38,9 @@ https://www.linkedin.com/in/james-berck-5668b694/
 
 ## Project Timeline:
 Oct-Nov 22 - Team gathered and proposal developed/submitted to NASA for review \\
-Dec 7th - Team Accepted for development \\
-Dec 15th - Mission Briefing #1 Attended \\
-Dec 17th-January 3rd - University Holiday Break \\
+Dec 7th - Team Accepted for development  
+Dec 15th - Mission Briefing #1 Attended  
+Dec 17th-January 3rd - University Holiday Break  
 Jan 4th-20th - Predevelopment work, project initialization and setup, Production software and documentation \\
 Jan 21st - First day of classes and beginnning of Sprint #1 \\
 [] - Oakview Mall Aerospace Day \\
