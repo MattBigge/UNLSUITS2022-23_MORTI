@@ -61,11 +61,11 @@ public class PinPlacer : MonoBehaviour
      
     private void ProcessLeftHand(InputAction.CallbackContext ctx)
     {
+        is_advance = false;
     } 
     
     private void Update()
     {
-        print(thisTime- waitTime);
         if (is_advance)
         {
             thisTime = Time.time;
@@ -94,7 +94,7 @@ public class PinPlacer : MonoBehaviour
             if (breadList.Count != 0)
             {
                 Vector3 combinedVectors = breadList[breadList.Count - 1].transform.position - Camera.transform.position;
-                if (combinedVectors[0] >= 1f && combinedVectors[0] <= -3f && combinedVectors[1] >= 3f && combinedVectors[1] <= -3f && combinedVectors[2] >= 3f && combinedVectors[2] <= -3f)
+                if (!(combinedVectors[0] <= 3f && combinedVectors[0] >= -3f) || !(combinedVectors[1] <= 3f && combinedVectors[1] >= -3f) || !(combinedVectors[2] <= 3f && combinedVectors[2] >= -3f))
                 {
                     breadList.RemoveAt(breadList.Count - 1);
                 }
