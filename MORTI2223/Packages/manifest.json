@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.endel.nativewebsocket": "https://github.com/endel/NativeWebSocket.git#upm",
-    "com.microsoft.mixedreality.openxr": "file:MixedReality/com.microsoft.mixedreality.openxr-1.7.0.tgz",
+    "com.microsoft.mixedreality.openxr": "file:MixedReality/com.microsoft.mixedreality.openxr-1.8.0.tgz",
     "com.microsoft.mrtk.accessibility": "file:MixedReality/com.microsoft.mrtk.accessibility-1.0.0-pre.14.tgz",
     "com.microsoft.mrtk.audio": "file:MixedReality/com.microsoft.mrtk.audio-3.0.0-pre.14.tgz",
     "com.microsoft.mrtk.core": "file:MixedReality/com.microsoft.mrtk.core-3.0.0-pre.14.tgz",
