@@ -17,7 +17,7 @@ public class MenuDisplayPageOne : MonoBehaviour
     public TMP_Text secondaryOxygenPressure;
     public TMP_Text fanSpeed;
 
-    void OnEnable()
+    void Start()
     {
         StartCoroutine(UpdateValues2Sec());
     }
