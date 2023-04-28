@@ -14,7 +14,7 @@ public class MenuDisplayPageTwo : MonoBehaviour
     public TMP_Text waterGasPressure;
     public TMP_Text waterLiquidPressure;
     
-    void OnEnable()
+    void Start()
     {
         StartCoroutine(UpdateValues2Sec());
     }
