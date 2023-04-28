@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86e6c47ac0498b440b5e1e635748d50a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlaceDisable: 0
+  PinList: []
   objectToSpawn: {fileID: 1875246217207493272, guid: 4b57a6fead204c74794e2da236f839a6,
     type: 3}
   leftHand: {fileID: 0}
@@ -54,6 +56,9 @@ MonoBehaviour:
     type: 3}
   rightHandReference: {fileID: 2995356199736570127, guid: 18c412191cdc9274897f101c7fd5316f,
     type: 3}
+  breadCrumb: {fileID: 3417880770092305536, guid: 475ad7d0ade8f564eb1f1bd9dee5ba3b,
+    type: 3}
+  Camera: {fileID: 0}
 --- !u!114 &3513225455338617910
 MonoBehaviour:
   m_ObjectHideFlags: 0
