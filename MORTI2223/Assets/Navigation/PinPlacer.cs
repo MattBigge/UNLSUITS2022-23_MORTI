@@ -11,7 +11,8 @@ public class PinPlacer : MonoBehaviour
 {
     public bool is_advance = true;
     public bool PlaceDisable = false;
-    public List<GameObject> PinList = new List<GameObject>(); 
+    public List<GameObject> PinList = new List<GameObject>();
+    public List<pinType> pinTypeList = new List<pinType>();
     private bool canSpawn = false;
     private float currentTime = 0;
     private float SpawnTimer = 0;
@@ -37,6 +38,13 @@ public class PinPlacer : MonoBehaviour
     private List<GameObject> breadList = new List<GameObject>();
     private float waitTime;
     private float thisTime;
+    public enum pinType
+    {
+        ROCK,
+        HOME,
+        POI,
+        NONE
+    }
     private void ProcessRightHand(InputAction.CallbackContext ctx)
     {
         currentTime = Time.time;
@@ -56,6 +64,7 @@ public class PinPlacer : MonoBehaviour
             canSpawn = false;
             PinList.Add(Instantiate(objectToSpawn));
             PinList[PinList.Count - 1].transform.position = currentRightLocation;
+            pinTypeList.Add(pinType.NONE);
         }
     }
      
@@ -76,6 +85,7 @@ public class PinPlacer : MonoBehaviour
                     GameObject tempObject = Instantiate(breadCrumb);
                     breadList.Add(tempObject);
                     breadList[breadList.Count - 1].transform.position = Camera.transform.position - new Vector3(0, 0, 0.3f);
+                    
                 }
                 waitTime = Time.time;
                 Vector3 combinedVectors = breadList[breadList.Count - 1].transform.position - Camera.transform.position;
@@ -85,6 +95,7 @@ public class PinPlacer : MonoBehaviour
                     breadList.Add(tempObject);
                     breadList[breadList.Count - 1].transform.position = Camera.transform.position - new Vector3(0, 0, 0.3f);
                     waitTime = Time.time;
+                    
                 }
 
             }
@@ -102,7 +113,17 @@ public class PinPlacer : MonoBehaviour
             }
         }
     }
-    
+    public void setPinType(GameObject pinToSet, pinType pinSet)
+    {
+        int I = 0;
+        foreach (GameObject pin in PinList){
+            if (pin == pinToSet)
+            {
+                pinTypeList[I] = pinSet;
+            }
+            I += 1;
+        }
+    }
     private void Start()
     {
         leftHandReference.action.performed += ProcessLeftHand;
