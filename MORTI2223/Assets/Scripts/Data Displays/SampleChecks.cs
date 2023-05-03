@@ -21,7 +21,8 @@ public class SampleChecks : MonoBehaviour
             while (true)
             {
 
+                yield return new WaitForSeconds(2);
             }
-        }
 
+        }
 }

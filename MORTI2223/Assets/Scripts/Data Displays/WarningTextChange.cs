@@ -17,17 +17,14 @@ public class WarningTextChange : MonoBehaviour
     void Start()
     {
         WarningSymbol.gameObject.SetActive(false);
-    }
-
-    void OnEnable()
-    {
         StartCoroutine(UpdateValues2Sec());
     }
-    IEnumerator UpdateValues2Sec()
-        {
+
+    
+       IEnumerator UpdateValues2Sec()
+        {   
             yield return new WaitForSeconds(1);
             while (true){
-                
             printList = "";
             listOfWarnings.Clear();
             WarningSymbol.gameObject.SetActive(false);
@@ -141,6 +138,7 @@ public class WarningTextChange : MonoBehaviour
             Warning_Text.text = printList;
             yield return new WaitForSeconds(2);
         }
+        }
+
     
     }
-}
