@@ -8,7 +8,7 @@
       "hash": "c5101c07762251edc82caad9e8a39d51b1229c31"
     },
     "com.microsoft.mixedreality.openxr": {
-      "version": "file:MixedReality/com.microsoft.mixedreality.openxr-1.8.0.tgz",
+      "version": "file:MixedReality/com.microsoft.mixedreality.openxr-1.7.0.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {
