@@ -44,7 +44,7 @@ public class ConnScript : MonoBehaviour
 
     public async void Connect()
     {
-        tssUri = "ws://ec2-3-137-219-57.us-east-2.compute.amazonaws.com:3001";
+        tssUri = "ws://ec2-3-138-141-82.us-east-2.compute.amazonaws.com:3001";
         var connecting = tss.ConnectToURI(tssUri);
         Debug.Log("Connecting to " + tssUri);
         // Create a function that takes asing TSSMsg parameter and returns void. For example:

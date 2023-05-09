@@ -8,7 +8,7 @@ public class TeleLIB : MonoBehaviour
     static EVAContainer biometricsContainer;
     static Position positionContainer;
 
-    public static string globalURI = "http://ec2-3-137-219-57.us-east-2.compute.amazonaws.com:8080/api";
+    public static string globalURI = "http://ec2-3-138-141-82.us-east-2.compute.amazonaws.com:8080/api";
     
     void Start(){
        StartCoroutine(startSim());
