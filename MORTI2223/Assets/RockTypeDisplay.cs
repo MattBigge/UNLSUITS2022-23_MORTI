@@ -107,6 +107,14 @@ public class RockTypeDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        display = !(inputSiO2 == 0 && inputTiO2 == 0 && inputAl2O3 == 0 && inputFeO == 0 && inputMnO == 0 && inputMgO == 0 && inputCaO == 0 && inputK2O == 0 && inputP2O3 == 0);
+
+        if (display)
+        {
+            int closestSampleIndex = FindClosestSampleIndex();
+            sample = closestSampleIndex;
+        }
+        
         if (display)
         {
             transportMP += 0.01f*moveSpeed;
@@ -115,12 +123,9 @@ public class RockTypeDisplay : MonoBehaviour
             transportMP -= 0.01f * moveSpeed;
         }
 
-        transportMP = Mathf.Clamp(transportMP, 0, 1); 
+        transportMP = Mathf.Clamp(transportMP, 0, 1);
         transport.anchoredPosition = Vector2.Lerp(transportDown, transportUp, transportMP);
-        
-        int closestSampleIndex = FindClosestSampleIndex();
-        sample = closestSampleIndex;
-        
+
         if (sample >= 0 && sample < SampleNumbers.Count)
         {
             SampleNumber.GetComponent<TextMeshProUGUI>().text = "Sample Number: " + SampleNumbers[sample];
