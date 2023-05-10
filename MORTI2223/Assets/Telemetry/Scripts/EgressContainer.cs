@@ -9,44 +9,42 @@ public class EgressContainer : MonoBehaviour
     // Start is called before the first frame update
 
     [SerializeField]
-    bool fan_switch;
+    bool emu1_pwr_switch;
     [SerializeField]
-    bool suit_power;
+    bool ev1_supply_switch;
     [SerializeField]
-    bool O2_switch;
+    bool ev1_water_waste_script;
     [SerializeField]
-    bool aux;
+    bool emu1_o2_supply_switch;
     [SerializeField]
-    bool rca;
+    bool o2_vent_switch;
     [SerializeField]
-    bool pump;
+    bool depress_pump_switch;
 
     float time = 2;
 
-    public bool fan_switch_is_on(){
-        return fan_switch;
+    getPwrSwitch(){
+        return emu1_pwr_switch;
     }
 
-    public bool suit_power_is_on(){
-        return suit_power;
+    getSupplySwitch(){
+        return ev1_supply_switch;
     }
 
-    public bool O2_switch_is_on(){
-        return O2_switch;
+    getWaterWasteScript(){
+        return ev1_water_waste_script;
     }
 
-    public bool aux_is_on(){
-        return aux;
+    getO2SupplySwitch(){
+        return emu1_o2_supply_switch;
     }
-
-    public bool rca_is_on(){
-        return rca;
+    getVentSwitch(){
+        return o2_vent_switch;
     }
-
-    public bool pump_is_on(){
-        return pump;
+    
+    getDepressPumpSwitch(){
+        return depress_pump_switch;
     }
-
     void Start()
     {
 
