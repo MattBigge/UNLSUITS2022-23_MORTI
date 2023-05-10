@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 563246911971515723}
-  - component: {fileID: 563246911971515724}
   - component: {fileID: 563246911971515725}
   - component: {fileID: 563246911971515726}
   - component: {fileID: 3967800899835068723}
@@ -35,35 +34,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &563246911971515724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 563246911971515727}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86e6c47ac0498b440b5e1e635748d50a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  is_advance: 1
-  PlaceDisable: 0
-  PinList: []
-  pinTypeList: 
-  objectToSpawn: {fileID: 1875246217207493272, guid: 4b57a6fead204c74794e2da236f839a6,
-    type: 3}
-  indicator: {fileID: 5164644236012026416, guid: 1f11a28e20c801e41b72becaf50d3385,
-    type: 3}
-  leftHand: {fileID: 0}
-  rightHand: {fileID: 0}
-  leftHandReference: {fileID: -3326005586356538449, guid: 18c412191cdc9274897f101c7fd5316f,
-    type: 3}
-  rightHandReference: {fileID: 187161793506945269, guid: 18c412191cdc9274897f101c7fd5316f,
-    type: 3}
-  breadCrumb: {fileID: 3417880770092305536, guid: 475ad7d0ade8f564eb1f1bd9dee5ba3b,
-    type: 3}
-  Camera: {fileID: 0}
 --- !u!114 &563246911971515725
 MonoBehaviour:
   m_ObjectHideFlags: 0

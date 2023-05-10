@@ -105,10 +105,12 @@ public class PinPlacer : MonoBehaviour
             if (breadList.Count != 0)
             {
                 Vector3 combinedVectors = breadList[breadList.Count - 1].transform.position - Camera.transform.position;
-                if (!(combinedVectors[0] <= 3f && combinedVectors[0] >= -3f) || !(combinedVectors[1] <= 3f && combinedVectors[1] >= -3f) || !(combinedVectors[2] <= 3f && combinedVectors[2] >= -3f))
+                print(combinedVectors);
+                if ((combinedVectors[0] <= 3f && combinedVectors[0] >= -3f) && (combinedVectors[1] <= 3f && combinedVectors[1] >= -3f) && (combinedVectors[2] <= 3f && combinedVectors[2] >= -3f))
                 {
                     breadList.RemoveAt(breadList.Count - 1);
                 }
+                print(breadList.Count);
                 indicator.GetComponent<DirectionalIndicator>().DirectionalTarget = breadList[breadList.Count -1].transform;
             }
         }
