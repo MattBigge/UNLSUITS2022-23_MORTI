@@ -746,7 +746,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.4108753, y: 0.294}
   m_AnchorMax: {x: 0.80924946, y: 0.6097309}
-  m_AnchoredPosition: {x: 37.200016, y: -7.3999996}
+  m_AnchoredPosition: {x: 37.200012, y: -7.3999996}
   m_SizeDelta: {x: 84, y: 27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &274303673
@@ -1483,6 +1483,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TSSConectionObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493181712350348451, guid: 536690e187e8a9946b2eaba4c99dcede,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1493181712350348476, guid: 536690e187e8a9946b2eaba4c99dcede,
         type: 3}
@@ -3017,7 +3022,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.77375, y: 0.41360235}
   m_AnchorMax: {x: 0.9526296, y: 0.43800002}
-  m_AnchoredPosition: {x: 2.2895508, y: -122.000015}
+  m_AnchoredPosition: {x: 2.2895508, y: -122.00002}
   m_SizeDelta: {x: 34.825256, y: 40.190506}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1375737368

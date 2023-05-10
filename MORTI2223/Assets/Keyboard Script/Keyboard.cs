@@ -1,36 +1,42 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using TMPro;
+
 
 
 public class Keyboard : MonoBehaviour
 {
+    private TouchScreenKeyboard keyboard;
+    public static string keyboardText = "";
+    public TextMeshProUGUI outputText;
+    private bool isKeyboardOpen = false;
 
     public void OnInputFieldClicked()
     {
-        TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
-    }
-
-    TouchScreenKeyboard keyboard;
-    public static string keyboardText = "";
-
-    void Start()
-    {
-        keyboard = new TouchScreenKeyboard("Sample text that goes into the textbox", TouchScreenKeyboardType.Default, false, false, false, false, "sample prompting text that goes above the textbox", 26);
-    }
-
-    void Update()
-    {
-
-        if (keyboard != null)
+        if (!isKeyboardOpen)
         {
+            keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
+            isKeyboardOpen = true;
+            outputText.enabled = true;
+        }
+    }
 
+    private void Update()
+    {
+        if (keyboard != null && keyboard.status == TouchScreenKeyboard.Status.Done)
+        {
             keyboardText = keyboard.text;
-            /*if (keyboard.done == true)
-            {
-                keyboardText = keyboard.text;
-                keyboard = null;
-            }*/
+            outputText.text = keyboardText;
+            outputText.enabled = false;
+            keyboard = null;
+            isKeyboardOpen = false;
+
+        }
+        else if (keyboard != null)
+        {
+            keyboardText = keyboard.text;
+            outputText.text = keyboardText;
         }
     }
 }
