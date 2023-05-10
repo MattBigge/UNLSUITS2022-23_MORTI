@@ -58,6 +58,8 @@ public class RockTypeDisplay : MonoBehaviour
     public float inputP2O3;
 
     public int sample;
+
+    public List<float> TSSInput;
     void Start()
     {
         transport = gameObject.GetComponent<RectTransform>();
@@ -107,6 +109,8 @@ public class RockTypeDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        UpdateInputValues();
+        
         display = !(inputSiO2 == 0 && inputTiO2 == 0 && inputAl2O3 == 0 && inputFeO == 0 && inputMnO == 0 && inputMgO == 0 && inputCaO == 0 && inputK2O == 0 && inputP2O3 == 0);
 
         if (display)
@@ -181,5 +185,21 @@ public class RockTypeDisplay : MonoBehaviour
         distance += Mathf.Pow(inputP2O3 - P2O3s[index], 2);
 
         return Mathf.Sqrt(distance);
+    }
+    
+    void UpdateInputValues()
+    {
+        if (TSSInput.Count >= 9)
+        {
+            inputSiO2 = TSSInput[0];
+            inputTiO2 = TSSInput[1];
+            inputAl2O3 = TSSInput[2];
+            inputFeO = TSSInput[3];
+            inputMnO = TSSInput[4];
+            inputMgO = TSSInput[5];
+            inputCaO = TSSInput[6];
+            inputK2O = TSSInput[7];
+            inputP2O3 = TSSInput[8];
+        }
     }
 }
