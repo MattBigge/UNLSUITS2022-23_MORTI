@@ -2212,6 +2212,8 @@ GameObject:
   - component: {fileID: 476427104}
   - component: {fileID: 476427106}
   - component: {fileID: 476427105}
+  - component: {fileID: 476427108}
+  - component: {fileID: 476427107}
   m_Layer: 5
   m_Name: Reference
   m_TagString: Untagged
@@ -2273,6 +2275,37 @@ MonoBehaviour:
   batteryTime: {fileID: 1179731420}
   oxygenTime: {fileID: 444668023}
   waterTime: {fileID: 1409508089}
+--- !u!114 &476427107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476427103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 701dddc44a648ce4c94383f3dd9e3f1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fan_switch: 0
+  suit_power: 0
+  O2_switch: 0
+  aux: 0
+  rca: 0
+  pump: 0
+--- !u!114 &476427108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476427103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aab60118e1afc2542a80ccd8f4174509, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  egressContiner: {fileID: 476427107}
 --- !u!1 &487324546
 GameObject:
   m_ObjectHideFlags: 0
