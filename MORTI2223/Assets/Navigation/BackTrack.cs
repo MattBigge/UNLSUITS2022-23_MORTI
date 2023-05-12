@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BackTrack : MonoBehaviour
 {
-    public GameObject NavSystem
+    public GameObject NavSystem;
     // Start is called before the first frame update
     void Start()
     {
