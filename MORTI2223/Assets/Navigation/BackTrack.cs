@@ -10,7 +10,7 @@ public class BackTrack : MonoBehaviour
     {
         
     }
-    void On_toggle()
+    public void On_toggle()
     {
         PinPlacer scriptb = NavSystem.GetComponent<PinPlacer>();
         scriptb.is_advance = !scriptb.is_advance;
