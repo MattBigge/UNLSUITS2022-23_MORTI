@@ -14,18 +14,17 @@ public class WarningTextChange : MonoBehaviour
     public AbnormalValues checker;
     private string printList = "";
 
-    // Start is called before the first frame update
     void Start()
     {
         WarningSymbol.gameObject.SetActive(false);
+        StartCoroutine(UpdateValues2Sec());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        delay -= Time.deltaTime;
-
-        if(delay < 0){
+    
+       IEnumerator UpdateValues2Sec()
+        {   
+            yield return new WaitForSeconds(1);
+            while (true){
             printList = "";
             listOfWarnings.Clear();
             WarningSymbol.gameObject.SetActive(false);
@@ -137,7 +136,9 @@ public class WarningTextChange : MonoBehaviour
             }
             
             Warning_Text.text = printList;
+            yield return new WaitForSeconds(2);
         }
+        }
+
     
     }
-}
