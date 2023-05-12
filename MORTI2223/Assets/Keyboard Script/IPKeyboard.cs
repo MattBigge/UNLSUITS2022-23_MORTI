@@ -3,16 +3,26 @@ using System.Collections;
 using UnityEngine.UI;
 using TMPro;
 
-
-
-public class Keyboard : MonoBehaviour
+public class IPKeyboard : MonoBehaviour
 {
     private TouchScreenKeyboard keyboard;
     public static string keyboardText = "";
     public TextMeshProUGUI outputText;
     private bool isKeyboardOpen = false;
 
+    public GameObject[] objectsToActivate;
+
+    private void Start()
+    {
+        OpenKeyboard();
+    }
+
     public void OnInputFieldClicked()
+    {
+        OpenKeyboard();
+    }
+
+    private void OpenKeyboard()
     {
         if (!isKeyboardOpen)
         {
@@ -32,11 +42,24 @@ public class Keyboard : MonoBehaviour
             keyboard = null;
             isKeyboardOpen = false;
 
+            // Activate other objects
+            StartCoroutine(ActivateObjects());
         }
         else if (keyboard != null)
         {
             keyboardText = keyboard.text;
             outputText.text = keyboardText;
+        }
+    }
+
+    private IEnumerator ActivateObjects()
+    {
+        yield return new WaitForEndOfFrame();
+
+        // Activate other objects
+        foreach (GameObject obj in objectsToActivate)
+        {
+            obj.SetActive(true);
         }
     }
 }

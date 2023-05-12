@@ -22,6 +22,7 @@ public class RockTypeDisplay : MonoBehaviour
     public GameObject P2O3;
 
     public bool display = false;
+    public bool input = false;
     
     private RectTransform transport;
     public float moveSpeed = 0.1f;
@@ -59,7 +60,11 @@ public class RockTypeDisplay : MonoBehaviour
 
     public int sample;
 
-    public List<float> TSSInput;
+    private float[] TSSInput;
+    public RockContainer rc;
+
+    public float displayTime = 0;
+    public float displayTimer = 10;
     void Start()
     {
         transport = gameObject.GetComponent<RectTransform>();
@@ -111,12 +116,29 @@ public class RockTypeDisplay : MonoBehaviour
     {
         UpdateInputValues();
         
-        display = !(inputSiO2 == 0 && inputTiO2 == 0 && inputAl2O3 == 0 && inputFeO == 0 && inputMnO == 0 && inputMgO == 0 && inputCaO == 0 && inputK2O == 0 && inputP2O3 == 0);
-
-        if (display)
+        input = !(inputSiO2 == 0 && inputTiO2 == 0 && inputAl2O3 == 0 && inputFeO == 0 && inputMnO == 0 && inputMgO == 0 && inputCaO == 0 && inputK2O == 0 && inputP2O3 == 0);
+        
+        if (input)
         {
             int closestSampleIndex = FindClosestSampleIndex();
-            sample = closestSampleIndex;
+            if (sample != closestSampleIndex)
+            {
+                sample = closestSampleIndex;
+                display = true;
+            }
+            else
+            {
+                displayTime += Time.deltaTime;  
+            }
+            if (displayTime >= displayTimer)
+            {
+                displayTime = 0;
+                display = false;
+            }
+        }
+        else
+        {
+            display = false;
         }
         
         if (display)
@@ -189,7 +211,8 @@ public class RockTypeDisplay : MonoBehaviour
     
     void UpdateInputValues()
     {
-        if (TSSInput.Count >= 9)
+        TSSInput = rc.getSample();
+        if (TSSInput.Length >= 9)
         {
             inputSiO2 = TSSInput[0];
             inputTiO2 = TSSInput[1];

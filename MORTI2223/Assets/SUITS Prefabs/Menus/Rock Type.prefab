@@ -420,6 +420,7 @@ GameObject:
   - component: {fileID: 1037070135079479177}
   - component: {fileID: 1037070135079479176}
   - component: {fileID: 1037070135079479190}
+  - component: {fileID: 7465152628065509476}
   m_Layer: 5
   m_Name: Rock Type
   m_TagString: Untagged
@@ -525,6 +526,7 @@ MonoBehaviour:
   K2O: {fileID: 1037070136095860985}
   P2O3: {fileID: 1037070135557306067}
   display: 0
+  input: 0
   moveSpeed: 0.2
   transportOffset: 300
   transportMP: 0
@@ -551,7 +553,31 @@ MonoBehaviour:
   inputK2O: 0
   inputP2O3: 0
   sample: 0
-  TSSInput: []
+  rc: {fileID: 7465152628065509476}
+  displayTime: 0
+  displayTimer: 10
+--- !u!114 &7465152628065509476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037070135079479181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd09788d85842be42a69a33e4b31c55d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SiO2: 0
+  TiO2: 0
+  Al2O3: 0
+  FeO: 0
+  MnO: 0
+  MgO: 0
+  CaO: 0
+  Na2O: 0
+  K2O: 0
+  P2O3: 0
 --- !u!1 &1037070135132972495
 GameObject:
   m_ObjectHideFlags: 0
