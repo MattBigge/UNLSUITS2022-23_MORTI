@@ -12,15 +12,8 @@ public class BackTrack : MonoBehaviour
     }
     void On_toggle()
     {
-        PinPlacer scriptb = NavSystem.GetComponent<PinPlacer>()
-        if (scriptb.is_advance)
-        {
-            scriptb.is_advance=false
-        }
-        else
-        {
-            scriptb.is_advance =true
-        }
+        PinPlacer scriptb = NavSystem.GetComponent<PinPlacer>();
+        scriptb.is_advance = !scriptb.is_advance;
     }
     // Update is called once per frame
     void Update()
