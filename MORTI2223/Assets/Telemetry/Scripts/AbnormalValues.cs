@@ -36,6 +36,7 @@ public class AbnormalValues : MonoBehaviour
     }
     public bool SuitPressureHigh(){
         return TeleLIB.getPSuit() > 4;
+        
     }
     public bool FanSpeedHigh(){
         return TeleLIB.getVFan() > 40000;
@@ -91,6 +92,7 @@ public class AbnormalValues : MonoBehaviour
     public bool BatteryLow(){
         return TeleLIB.getBatteryPercent() < 0.2;
     }
+    
 
     
      
