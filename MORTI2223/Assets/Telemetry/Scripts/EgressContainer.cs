@@ -23,40 +23,32 @@ public class EgressContainer : MonoBehaviour
 
     float time = 2;
 
-    getPwrSwitch(){
+    public bool getPwrSwitch(){
         return emu1_pwr_switch;
     }
 
-    getSupplySwitch(){
+    public bool getSupplySwitch(){
         return ev1_supply_switch;
     }
 
-    getWaterWasteSwitch(){
-        return ev1_water_waste_Switch;
+    public bool getWaterWasteSwitch(){
+        return ev1_water_waste_switch;
     }
 
-    getO2SupplySwitch(){
+    public bool getO2SupplySwitch(){
         return emu1_o2_supply_switch;
     }
-    getVentSwitch(){
+    public bool getVentSwitch(){
         return o2_vent_switch;
     }
     
-    getDepressPumpSwitch(){
+    public bool getDepressPumpSwitch(){
         return depress_pump_switch;
     }
     void Start()
     {
 
         
-    }
-
-    void Update(){
-        time += Time.deltaTime;
-        if(time > 2){
-            Debug.Log("fan_switch: " + fan_switch);
-            time = 0;
-        }
     }
 
     // Update is called once per frame
