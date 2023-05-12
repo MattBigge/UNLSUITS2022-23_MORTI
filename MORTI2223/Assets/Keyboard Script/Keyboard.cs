@@ -11,6 +11,7 @@ public class Keyboard : MonoBehaviour
     public static string keyboardText = "";
     public TextMeshProUGUI outputText;
     private bool isKeyboardOpen = false;
+    public GameObject[] objectsToActivate;
 
     public void OnInputFieldClicked()
     {
@@ -28,9 +29,13 @@ public class Keyboard : MonoBehaviour
         {
             keyboardText = keyboard.text;
             outputText.text = keyboardText;
-            outputText.enabled = false;
+            //outputText.enabled = false;
             keyboard = null;
             isKeyboardOpen = false;
+            foreach (GameObject obj in objectsToActivate)
+            {
+                obj.SetActive(true);
+            }
 
         }
         else if (keyboard != null)
