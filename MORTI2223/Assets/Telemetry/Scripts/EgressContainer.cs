@@ -23,6 +23,7 @@ public class EgressContainer : MonoBehaviour
 
     float time = 2;
 
+        /*
     getPwrSwitch(){
         return emu1_pwr_switch;
     }
@@ -45,6 +46,8 @@ public class EgressContainer : MonoBehaviour
     getDepressPumpSwitch(){
         return depress_pump_switch;
     }
+    
+    
     void Start()
     {
 
@@ -58,10 +61,12 @@ public class EgressContainer : MonoBehaviour
             time = 0;
         }
     }
+    */
 
     // Update is called once per frame
     public void UpdateValues(string json)
     {
         JsonUtility.FromJsonOverwrite(json, this);
     }
+    
 }
