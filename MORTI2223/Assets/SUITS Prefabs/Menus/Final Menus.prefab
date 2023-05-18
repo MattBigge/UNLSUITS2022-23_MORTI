@@ -19245,9 +19245,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: I'll take a double triple bossy deluxe, on a raft, four by four animal
-    style, extra shingles with a shimmy and a squeeze, light axle grease, make it
-    cry, burn it, and let it swim.
+  m_text: '"Mission Log Info Here"'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fea6b26abeefbc547b6aca1dbda0a34d, type: 2}
   m_sharedMaterial: {fileID: -2049848100760321927, guid: fea6b26abeefbc547b6aca1dbda0a34d,
