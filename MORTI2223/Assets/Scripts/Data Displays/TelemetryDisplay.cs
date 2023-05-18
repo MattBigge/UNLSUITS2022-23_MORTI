@@ -16,7 +16,6 @@ public class TelemetryDisplay : MonoBehaviour
     public TMP_Text batteryTime;
     public TMP_Text oxygenTime;
     public TMP_Text waterTime;
-    public TMP_Text position;
 
     void Start()
     {   
@@ -47,7 +46,6 @@ public class TelemetryDisplay : MonoBehaviour
             batteryTime.text = TeleLIB.getTBattery().ToString();
             oxygenTime.text = TeleLIB.getTOxygen().ToString();
             waterTime.text = TeleLIB.getTWater().ToString();
-            position.text = TeleLIB.getPos()[0].ToString() + "," + TeleLIB.getPos()[1].ToString();
             flag = false;
             }else{
             currentEVALength.text = TimeToInt.SecToTime(TimeToInt.TimeToSec(currentEVALength.text) + 1);
