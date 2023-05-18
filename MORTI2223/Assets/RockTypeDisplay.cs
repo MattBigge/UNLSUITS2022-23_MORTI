@@ -125,6 +125,7 @@ public class RockTypeDisplay : MonoBehaviour
             {
                 sample = closestSampleIndex;
                 display = true;
+                displayTime = 0;
             }
             else
             {
@@ -143,7 +144,7 @@ public class RockTypeDisplay : MonoBehaviour
         
         if (display)
         {
-            transportMP += 0.01f*moveSpeed;
+            transportMP += 0.01f * moveSpeed;
         } else 
         {
             transportMP -= 0.01f * moveSpeed;
