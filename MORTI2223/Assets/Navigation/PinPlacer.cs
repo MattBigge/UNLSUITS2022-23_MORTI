@@ -1,25 +1,19 @@
 using Microsoft.MixedReality.Toolkit;
 using Microsoft.MixedReality.Toolkit.Input;
-using Microsoft.MixedReality.Toolkit.SpatialManipulation;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using System.Threading.Tasks;
 
 public class PinPlacer : MonoBehaviour
 {
-    public bool is_advance = true;
     public bool PlaceDisable = false;
-    public List<GameObject> PinList = new List<GameObject>();
-    public List<pinType> pinTypeList = new List<pinType>();
+    public List<GameObject> PinList = new List<GameObject>(); 
     private bool canSpawn = false;
     private float currentTime = 0;
     private float SpawnTimer = 0;
     private float MaxTimeForSpawn = 0;
     public GameObject objectToSpawn;
-    [SerializeField]
-    public GameObject indicator;
     private int frameCounter = 0;
     [SerializeField]
     private GameObject leftHand;
@@ -36,15 +30,6 @@ public class PinPlacer : MonoBehaviour
     [SerializeField]
     private GameObject Camera;
     private List<GameObject> breadList = new List<GameObject>();
-    private float waitTime;
-    private float thisTime;
-    public enum pinType
-    {
-        ROCK,
-        HOME,
-        POI,
-        NONE
-    }
     private void ProcessRightHand(InputAction.CallbackContext ctx)
     {
         currentTime = Time.time;
@@ -64,67 +49,17 @@ public class PinPlacer : MonoBehaviour
             canSpawn = false;
             PinList.Add(Instantiate(objectToSpawn));
             PinList[PinList.Count - 1].transform.position = currentRightLocation;
-            pinTypeList.Add(pinType.NONE);
         }
     }
      
     private void ProcessLeftHand(InputAction.CallbackContext ctx)
     {
-        is_advance = false;
     } 
-    
-    private void Update()
+    IEnumerator breadCrumbs()
     {
-        if (is_advance)
-        {
-            thisTime = Time.time;
-            if (thisTime - waitTime >= 15)
-            {
-                if (breadList.Count == 0)
-                {
-                    GameObject tempObject = Instantiate(breadCrumb);
-                    breadList.Add(tempObject);
-                    breadList[breadList.Count - 1].transform.position = Camera.transform.position - new Vector3(0, 0, 0.3f);
-                    
-                }
-                waitTime = Time.time;
-                Vector3 combinedVectors = breadList[breadList.Count - 1].transform.position - Camera.transform.position;
-                if (!(combinedVectors[0] <= 3f && combinedVectors[0] >= -3f) || !(combinedVectors[1] <= 3f && combinedVectors[1] >= -3f) || !(combinedVectors[2] <= 3f && combinedVectors[2] >= -3f))
-                {
-                    GameObject tempObject = Instantiate(breadCrumb);
-                    breadList.Add(tempObject);
-                    breadList[breadList.Count - 1].transform.position = Camera.transform.position - new Vector3(0, 0, 0.3f);
-                    waitTime = Time.time;
-                    
-                }
-
-            }
-        }
-        else
-        {
-            if (breadList.Count != 0)
-            {
-                Vector3 combinedVectors = breadList[breadList.Count - 1].transform.position - Camera.transform.position;
-                print(combinedVectors);
-                if ((combinedVectors[0] <= 3f && combinedVectors[0] >= -3f) && (combinedVectors[1] <= 3f && combinedVectors[1] >= -3f) && (combinedVectors[2] <= 3f && combinedVectors[2] >= -3f))
-                {
-                    breadList.RemoveAt(breadList.Count - 1);
-                }
-                print(breadList.Count);
-                indicator.GetComponent<DirectionalIndicator>().DirectionalTarget = breadList[breadList.Count -1].transform;
-            }
-        }
-    }
-    public void setPinType(GameObject pinToSet, pinType pinSet)
-    {
-        int I = 0;
-        foreach (GameObject pin in PinList){
-            if (pin == pinToSet)
-            {
-                pinTypeList[I] = pinSet;
-            }
-            I += 1;
-        }
+        breadList.Add(Instantiate(breadCrumb));
+        breadList[breadList.Count - 1].transform.position = currentRightLocation;
+        yield return null;
     }
     private void Start()
     {

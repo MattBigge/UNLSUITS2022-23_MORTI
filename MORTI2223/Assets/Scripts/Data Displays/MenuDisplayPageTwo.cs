@@ -23,11 +23,11 @@ public class MenuDisplayPageTwo : MonoBehaviour
             yield return new WaitForSeconds(1);
             while (true)
             {
-                batteryCapacity.text = TeleLIB.getCapBattery().ToString() + "amp-hr";
-                primaryOxygenFlowrate.text = TeleLIB.getRateO2().ToString() + "psi/min";
-                secondaryOxygenFlowrate.text = TeleLIB.getRateSop().ToString() + "psi/min";
-                waterGasPressure.text = TeleLIB.getPH2OG().ToString() + "psia";
-                waterLiquidPressure.text = TeleLIB.getPH2OL().ToString() + "psia";
+                batteryCapacity.text = TeleLIB.getCapBattery().ToString() + " amp-hr";
+                primaryOxygenFlowrate.text = TeleLIB.getRateO2().ToString() + " psi/min";
+                secondaryOxygenFlowrate.text = TeleLIB.getRateSop().ToString() + " psi/min";
+                waterGasPressure.text = TeleLIB.getPH2OG().ToString() + " psia";
+                waterLiquidPressure.text = TeleLIB.getPH2OL().ToString() + " psia";
                 yield return new WaitForSeconds(2);
             }
         }
