@@ -10,6 +10,7 @@ public class roverPOI : MonoBehaviour
     public float latitude;
     public float longitude;
     public bool coords_updated = false;
+    public bool not_waypoint = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,10 +26,20 @@ public class roverPOI : MonoBehaviour
     }
 
     // Update is called once per frame
-    void setPOI(int index)
+    public void setPOI(int index)
     {
         latitude = coordinates[index].x;
         longitude = coordinates[index].y;
         coords_updated = true;
+    }
+
+    public void waypointMode()
+    {
+        not_waypoint = false;
+    }
+    
+    public void roverMode()
+    {
+        not_waypoint = true;
     }
 }
