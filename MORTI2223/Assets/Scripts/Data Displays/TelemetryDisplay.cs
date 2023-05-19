@@ -37,7 +37,7 @@ public class TelemetryDisplay : MonoBehaviour
 
     IEnumerator UpdateValues1Sec()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(5);
         while (true)
         {
             if(flag){
