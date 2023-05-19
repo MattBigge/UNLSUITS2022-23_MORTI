@@ -40,7 +40,6 @@ public class TelemetryDisplay : MonoBehaviour
         yield return new WaitForSeconds(1);
         while (true)
         {
-            yield return new WaitForSeconds(10);
             if(flag){
             currentEVALength.text = TeleLIB.getTimer().ToString();
             batteryTime.text = TeleLIB.getTBattery().ToString();

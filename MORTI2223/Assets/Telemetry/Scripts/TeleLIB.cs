@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class TeleLIB : MonoBehaviour
 {
-    public ConnScript connection;
+    public TSSManager connection;
     static EVAContainer biometricsContainer;
     static Position positionContainer;
 
-    public static string globalURI = "http://ec2-3-138-141-82.us-east-2.compute.amazonaws.com:8080/api";
+    public static string globalURI = "https://localhost:8080/api";
     
     void Start(){
-       StartCoroutine(startSim());
-       StartCoroutine(stopSim());
+       //StartCoroutine(startSim());
+       //StartCoroutine(stopSim());
     }
     
     public static void setBioContainer(EVAContainer container){
@@ -150,6 +150,8 @@ public class TeleLIB : MonoBehaviour
 
      public static IEnumerator startSim()
     {
+
+       if(TeleLIB.getIsRunning() == false){
         using (UnityWebRequest webRequest = UnityWebRequest.Get(globalURI + "/simulationcontrol/sim/1/stop"))
         {
             yield return webRequest.SendWebRequest();
@@ -169,10 +171,13 @@ public class TeleLIB : MonoBehaviour
                     break;
             }
         }
+       }
     }
 
     public static IEnumerator stopSim()
     {
+
+        if(TeleLIB.getIsRunning() == true){
        using (UnityWebRequest webRequest = UnityWebRequest.Get(globalURI + "/simulationcontrol/sim/1/start"))
         {
             yield return webRequest.SendWebRequest();
@@ -191,6 +196,7 @@ public class TeleLIB : MonoBehaviour
                     Debug.Log("Success" + " " + webRequest.downloadHandler.text);
                     break;
             }
+        }
         }
     }
 

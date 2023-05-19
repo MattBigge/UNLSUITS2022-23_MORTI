@@ -14,7 +14,7 @@ public class WarningTextChange : MonoBehaviour
     public AbnormalValues checker;
     private string printList = "";
 
-    void Start()
+    void OnEnable()
     {
         WarningSymbol.gameObject.SetActive(false);
         StartCoroutine(UpdateValues2Sec());
