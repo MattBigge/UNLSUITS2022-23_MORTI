@@ -100,7 +100,7 @@
 //                 else if (stage == 7){
 //                     mainWriting.text = "Switch O2 Supply to OPEN";
 //                     if (/* uia  supply pressure > 3000 psi*/){
-//                         mainWriting.text = "Switch O2 Supply to OPEN";
+//                         mainWriting.text = "Switch O2 Supply to CLOSE";
 //                         if (!container.getO2SupplySwitch()){
 //                             stage++;
 //                         }
