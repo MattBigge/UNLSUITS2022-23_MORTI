@@ -6,7 +6,7 @@ using UnityEngine;
 public class roverPOI : MonoBehaviour
 {
 
-    private List<Vector2> coordinates;
+    public List<Vector2> coordinates;
     public float latitude;
     public float longitude;
     public bool coords_updated = false;
