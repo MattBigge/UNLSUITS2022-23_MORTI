@@ -9,6 +9,7 @@
 //     public TMP_Text mainWriting;
 //     public TMP_Text subWriting;
 //     int stage = 0;
+//     EgressContainer container;
 
 //  void OnEnable()
 //     {
@@ -22,8 +23,8 @@
 //             while (true)
 //             {
 //                 if (stage == 0){
-//                     if(EgressContainer.getPwrSwitch() == false && EgressContainer.getSupplySwitch() == false && EgressContainer.getWaterWasteScript() == false &&
-//                     EgressContainer.getO2SupplySwitch() == false && EgressContainer.getVentSwitch() == false && EgressContainer.getDepressPumpSwitch() == false){
+//                     if(container.getPwrSwitch() == false && container.getSupplySwitch() == false && container.getWaterWasteSwitch() == false &&
+//                     container.getO2SupplySwitch() == false && container.getVentSwitch() == false && container.getDepressPumpSwitch() == false){
 //                         stage++;
 //                     }   
 //                 }
@@ -37,7 +38,7 @@
 //                     mainWriting.text = "Switch O2 Vent to OPEN";
 //                     if (/*UIA Supply Pressure < 23 psi*/){
 //                         mainWriting.text = "Switch O2 Vent to CLOSE";
-//                         if (!EgressContainer.getVentSwitch()){
+//                         if (!container.getVentSwitch()){
 //                         stage++;
 //                     }
 //                     } 
@@ -47,13 +48,13 @@
 //                     mainWriting.text = "Switch O2 Supply to OPEN";
 //                     if (/*UIA Supply pressure < 23 psi*/){
 //                         mainWriting.text = "Switch O2 Supply to CLOSE";
-//                         if (!EgressContainer.getO2SupplySwitch()){
+//                         if (!container.getO2SupplySwitch()){
 //                         mainWriting.text = "Switch O2 Vent to OPEN";
 //                     }
 //                     }
 //                     if (/*UIA Supply Pressure < 23 psi*/){
 //                         mainWriting.text = "Switch O2 Vent to CLOSE";
-//                         if (!EgressContainer.getVentSwitch()){
+//                         if (!container.getVentSwitch()){
 //                         stage++;
 //                     }
 //                     }
@@ -63,7 +64,7 @@
 //                     mainWriting.text = "Switch O2 Supply to OPEN";
 //                     if (/* UIA Supply pressure > 1500 */){
 //                         mainWriting.text = "Switch O2 Supply to CLOSE";
-//                         if (!EgressContainer.getO2SupplySwitch()){
+//                         if (!container.getO2SupplySwitch()){
 //                         stage++;
 //                     }     
 //                     }
@@ -72,14 +73,14 @@
 //                     mainWriting.text = "Dump waste water and Switch EV-1 Waste to OPEN";
 //                     if (/*when water level is < 5%*/){
 //                         mainWriting.text = "Switch EV-1 Waste to CLOSE";
-//                         if (!EgressContainer.getWaterWasteSwitch()){
+//                         if (!container.getWaterWasteSwitch()){
 //                         mainWriting.text = "Switch EV-1 Supply to OPEN";
 //                     }
 //                     }
                     
 //                     if (/* when water level is > 95%*/){
 //                         mainWriting.text = "Switch EV-1 Supply to CLOSE";
-//                         if (!EgressContainer.getSupplySwitch()){
+//                         if (!container.getSupplySwitch()){
 //                         stage++;
 //                     }
 //                     }
@@ -100,7 +101,7 @@
 //                     mainWriting.text = "Switch O2 Supply to OPEN";
 //                     if (/* uia  supply pressure > 3000 psi*/){
 //                         mainWriting.text = "Switch O2 Supply to OPEN";
-//                         if (!EgressContainer.getO2SupplySwitch()){
+//                         if (!container.getO2SupplySwitch()){
 //                             stage++;
 //                         }
 //                     }
@@ -109,7 +110,7 @@
 //                     mainWriting.text = "Switch Depress Pump to ON";
 //                     if (/* airlock pressure is  < 0.1 psi*/){
 //                         mainWriting.text = "Switch Depress Pump to OFF";
-//                         if(!EgressContainer.getDepressPumpSwitch()){
+//                         if(!container.getDepressPumpSwitch()){
 //                             stage++;
 //                         }
 //                     }
@@ -117,7 +118,7 @@
 //                 else if (stage == 9){
 //                     mainWriting.text = "UIA Procedures are complete, exit the airlock, close egress with menu";
 //                 }               
-//                 yield return new WaitForSeconds(0.5);
+//                 yield return new WaitForSeconds(1);
 //             }
 //         }
 
