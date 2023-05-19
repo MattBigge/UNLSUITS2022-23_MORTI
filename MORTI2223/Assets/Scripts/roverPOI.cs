@@ -42,4 +42,17 @@ public class roverPOI : MonoBehaviour
     {
         not_waypoint = true;
     }
+
+    public bool getMode(){
+        return not_waypoint;
+    }
+
+    public float getLat(){
+        return latitude;
+    }
+
+    public float getLon(){
+        return longitude;
+    }
+    
 }
