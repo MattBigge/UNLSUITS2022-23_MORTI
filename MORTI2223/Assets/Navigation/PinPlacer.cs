@@ -7,8 +7,11 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Threading.Tasks;
 
+
 public class PinPlacer : MonoBehaviour
 {
+    public float bearing;
+    public List<double> spawn_location;
     public bool is_advance = true;
     public bool PlaceDisable = false;
     public List<GameObject> PinList = new List<GameObject>();
@@ -70,7 +73,7 @@ public class PinPlacer : MonoBehaviour
      
     private void ProcessLeftHand(InputAction.CallbackContext ctx)
     {
-        is_advance = false;
+        is_advance = !is_advance;
     } 
     
     private void Update()
@@ -102,7 +105,7 @@ public class PinPlacer : MonoBehaviour
         }
         else
         {
-            if (breadList.Count != 0)
+            if (breadList.Count > 1)
             {
                 Vector3 combinedVectors = breadList[breadList.Count - 1].transform.position - Camera.transform.position;
                 print(combinedVectors);
@@ -125,6 +128,38 @@ public class PinPlacer : MonoBehaviour
             }
             I += 1;
         }
+    }
+    public List<double> getPinLocation(int index)
+    {
+        //This takes the angle of the orininal bearing then corrects it by finding the hipotinuse then using trig functions to find lat and lon of the real world.   |-_-|
+        List <double> result = new List<double>(); //                                                                                                                 /|\
+        double ingameLat = PinList[index].transform.position[0];//                                                                                                    / \
+        double ingameLon = PinList[index].transform.position[1];
+        int adjust=0;
+        int gpsadjustlat = 1;
+        int gpsadjustlon = 1;
+        if (ingameLat > 0 && ingameLon > 0)
+        {
+            adjust = 90;
+        } else if (ingameLat < 0 && ingameLon > 0)
+        {
+            gpsadjustlat = -1;
+            adjust = 360;
+        } else if (ingameLat < 0 && ingameLon < 0)
+        {
+            gpsadjustlat = -1;
+            gpsadjustlon = -1;
+            adjust = 270;
+        } else if (ingameLat >0 && ingameLon < 0)
+        {
+            gpsadjustlon = -1;
+            adjust = 180;
+        }
+        double anglelat = (System.Math.Acos(adjust - (bearing + ingameLat / ingameLon)));
+        double anglelon = (System.Math.Asin(adjust - (bearing + ingameLat / ingameLon)));
+        result.Add(spawn_location[0] + ((anglelon * System.Math.Sqrt(ingameLat * ingameLat + ingameLon * ingameLon)) * 180 / 6378100 * gpsadjustlon));
+        result.Add(spawn_location[1]+((anglelat * System.Math.Sqrt(ingameLat*ingameLat+ingameLon*ingameLon))*180/6378100* gpsadjustlat));
+        return(result);
     }
     private void Start()
     {
