@@ -40,5 +40,6 @@ public class DataDisplay : MonoBehaviour
 
     public void Send(){
         tss.SendNavigationButtonCallback(r.latitude, r.longitude);
+        r.coords_updated = false;
     }
 }
