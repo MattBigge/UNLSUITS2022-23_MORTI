@@ -29,7 +29,7 @@ public class RockContainer : MonoBehaviour
     [SerializeField]
 
 
-   public float [] getSample(){
+    public float [] getSample(){
         return new float[] {SiO2, TiO2, Al2O3, FeO, MnO, MgO, CaO, Na2O, K2O, P2O3};
     }
 

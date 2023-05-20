@@ -58,7 +58,7 @@ public class RockTypeDisplay : MonoBehaviour
     public float inputK2O;
     public float inputP2O3;
 
-    public int sample;
+    public int sample = -1;
 
     private float[] TSSInput;
     public RockContainer rc;
@@ -121,7 +121,7 @@ public class RockTypeDisplay : MonoBehaviour
         if (input)
         {
             int closestSampleIndex = FindClosestSampleIndex();
-            if (sample != closestSampleIndex)
+            if (sample != closestSampleIndex || sample == -1)
             {
                 sample = closestSampleIndex;
                 display = true;
@@ -174,6 +174,10 @@ public class RockTypeDisplay : MonoBehaviour
         {
             display = false;
         }
+
+        if (!display){
+            displayTime = 0;
+        }
     }
     int FindClosestSampleIndex()
     {
@@ -213,17 +217,14 @@ public class RockTypeDisplay : MonoBehaviour
     void UpdateInputValues()
     {
         TSSInput = rc.getSample();
-        if (TSSInput.Length >= 9)
-        {
-            inputSiO2 = TSSInput[0];
-            inputTiO2 = TSSInput[1];
-            inputAl2O3 = TSSInput[2];
-            inputFeO = TSSInput[3];
-            inputMnO = TSSInput[4];
-            inputMgO = TSSInput[5];
-            inputCaO = TSSInput[6];
-            inputK2O = TSSInput[7];
-            inputP2O3 = TSSInput[8];
-        }
+        inputSiO2 = TSSInput[0];
+        inputTiO2 = TSSInput[1];
+        inputAl2O3 = TSSInput[2];
+        inputFeO = TSSInput[3];
+        inputMnO = TSSInput[4];
+        inputMgO = TSSInput[5];
+        inputCaO = TSSInput[6];
+        inputK2O = TSSInput[7];
+        inputP2O3 = TSSInput[8];
     }
 }
