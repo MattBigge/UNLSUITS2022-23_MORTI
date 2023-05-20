@@ -45,7 +45,7 @@ public class RockContainer : MonoBehaviour
         
     }
 
-    void UpdateValues(string json){
+    public void UpdateValues(string json){
         JsonUtility.FromJsonOverwrite(json, this);
     }
 }

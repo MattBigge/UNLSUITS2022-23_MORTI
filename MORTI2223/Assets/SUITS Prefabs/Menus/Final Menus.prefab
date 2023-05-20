@@ -4066,16 +4066,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6b5b65409c2dc14bbd1dcd66c85acfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  A: {fileID: 0}
-  B: {fileID: 0}
-  C: {fileID: 0}
-  D: {fileID: 0}
-  E: {fileID: 0}
-  F: {fileID: 0}
-  G: {fileID: 0}
-  H: {fileID: 0}
-  I: {fileID: 0}
-  r: {fileID: 0}
+  tss: {fileID: 0}
+  A: {fileID: 8154611164084054985}
+  B: {fileID: 3165182904442023260}
+  C: {fileID: 56181696494357472}
+  D: {fileID: 123456225744739798}
+  E: {fileID: 8858982461782474858}
+  F: {fileID: 70301410353235165}
+  G: {fileID: 8236469539735571098}
+  H: {fileID: 2695183193864652722}
+  I: {fileID: 8701800169016601517}
+  r: {fileID: 8989468835313068990}
 --- !u!1 &1316477987918745529
 GameObject:
   m_ObjectHideFlags: 0
@@ -21716,8 +21717,8 @@ RectTransform:
   m_Father: {fileID: 1544904078149114864}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 152, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -30010,8 +30011,8 @@ RectTransform:
   m_Father: {fileID: 1544904078149114864}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 56, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -34905,7 +34906,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6338229114476281569
 Transform:
   m_ObjectHideFlags: 0
@@ -38552,6 +38553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6b5b65409c2dc14bbd1dcd66c85acfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tss: {fileID: 0}
   A: {fileID: 8154611164084054985}
   B: {fileID: 3165182904442023260}
   C: {fileID: 56181696494357472}
@@ -49142,7 +49144,19 @@ MonoBehaviour:
         m_Calls: []
   <OnClicked>k__BackingField:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2075114441137932711}
+        m_TargetAssemblyTypeName: DataDisplay, Assembly-CSharp
+        m_MethodName: Send
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   <OnEnabled>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
@@ -57275,8 +57289,8 @@ RectTransform:
   m_Father: {fileID: 1544904078149114864}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 232, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}

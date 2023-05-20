@@ -9,7 +9,7 @@ public class AlternateEgressProc : MonoBehaviour
     public TMP_Text mainWriting;
     public TMP_Text subWriting;
     int stage = 0;
-    EgressContainer container;
+    public EgressContainer container;
 
  void OnEnable()
     {

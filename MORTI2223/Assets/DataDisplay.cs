@@ -4,6 +4,8 @@ using UnityEngine;
 using TMPro;
 public class DataDisplay : MonoBehaviour
 {
+
+    public TSSManager tss;
     public GameObject A;
     public GameObject B;
     public GameObject C;
@@ -34,5 +36,9 @@ public class DataDisplay : MonoBehaviour
         G.GetComponent<TextMeshProUGUI>().text = "G: " + r.coordinates[6].x.ToString() + ", " + r.coordinates[6].y.ToString();
         H.GetComponent<TextMeshProUGUI>().text = "H: " + r.coordinates[7].x.ToString() + ", " + r.coordinates[7].y.ToString();
         I.GetComponent<TextMeshProUGUI>().text = "I: " + r.coordinates[8].x.ToString() + ", " + r.coordinates[8].y.ToString();
+    }
+
+    public void Send(){
+        tss.SendNavigationButtonCallback(r.latitude, r.longitude);
     }
 }

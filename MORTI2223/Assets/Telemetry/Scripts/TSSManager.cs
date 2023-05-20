@@ -12,6 +12,10 @@ public class TSSManager : MonoBehaviour
      EVAContainer evaContainer;
 
      Position position;
+
+     public EgressContainer egressContainer;
+
+     public RockContainer rockContainer;
      
     int msgCount = 0;
 
@@ -45,7 +49,7 @@ public class TSSManager : MonoBehaviour
         string username = "VK08";
         string university = "University of Nebraska-Lincoln";
         string user_guid = "66b6f3a5-63ca-4c49-95d1-e64d3a85a3a9";
-        tssUri = "ws://localhost:3001";
+        tssUri = "ws://192.168.50.10:3001";
 
         // Pass in your team's information here. user_guid is most important - it must match your visionkit
         var connecting = tss.ConnectToURI(tssUri, team_name, username, university, user_guid);
@@ -77,7 +81,9 @@ public class TSSManager : MonoBehaviour
             evaContainer.setData(JsonUtility.ToJson(telemMsg.simulationStates));
 
             //specMsgBox.text = "Spec Msg:\n" + JsonUtility.ToJson(telemMsg.specMsg, prettyPrint: true);
+            rockContainer.UpdateValues(JsonUtility.ToJson(telemMsg.specMsg));
             //uiaSwitchesMsgBox.text = "UIA Switches Msg:\n" + JsonUtility.ToJson(telemMsg.uiaMsg, prettyPrint: true);
+            egressContainer.UpdateValues(JsonUtility.ToJson(telemMsg.uiaMsg));
             //simulationFailuresMsgBox.text = "Simulation Failures Msg: " + JsonUtility.ToJson(telemMsg.simulationFailures, prettyPrint: true);
 
             //roverMsgBox.text = "Rover Msg: " + JsonUtility.ToJson(telemMsg.roverMsg, prettyPrint: true);
@@ -107,10 +113,10 @@ public class TSSManager : MonoBehaviour
 
     }
 
-    public void SendNavigationButtonCallback()
+    public void SendNavigationButtonCallback(float lat, float lon)
     {
         // However you get the lat and lon from the user, pass them to the following method
-        tss.SendRoverNavigateCommand(10.023f, 11.245f);
+        tss.SendRoverNavigateCommand(lat, lon);
     }
     public void SendRecallButtonCallback()
     {
