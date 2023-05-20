@@ -30,7 +30,10 @@ public class AlternateEgressProc : MonoBehaviour
                 }
                 else if (stage == 1){
                     mainWriting.text = "Switch EMU-1 Power to ON";
-                    stage++;       
+                    if (container.getPwrSwitch()){
+                        stage++;
+                    }
+                           
                 }
                 else if (stage == 2){
                     mainWriting.text = "Switch O2 Vent to OPEN";
