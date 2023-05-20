@@ -50,30 +50,31 @@ public class PinPlacer : MonoBehaviour
     }
     private void ProcessRightHand(InputAction.CallbackContext ctx)
     {
-        currentTime = Time.time;
-        if (currentTime - SpawnTimer <= 3 && currentTime - MaxTimeForSpawn > 3)
-        {
-            canSpawn = true;
-        }
-        else
-        {
-            SpawnTimer = Time.time;
-        }
+        
+        //currentTime = Time.time;
+        //if (currentTime - SpawnTimer <= 3 && currentTime - MaxTimeForSpawn > 3)
+        //{
+        //    canSpawn = true;
+        //}
+        //else
+        //{
+        //    SpawnTimer = Time.time;
+        //}
 
-        if (canSpawn)
-        {
-            MaxTimeForSpawn = Time.time;
-            currentRightLocation = rightHand.transform.position;
-            canSpawn = false;
-            PinList.Add(Instantiate(objectToSpawn));
-            PinList[PinList.Count - 1].transform.position = currentRightLocation;
-            pinTypeList.Add(pinType.NONE);
-        }
+        //if (canSpawn)
+        //{
+        //    MaxTimeForSpawn = Time.time;
+        //    currentRightLocation = rightHand.transform.position;
+        //    canSpawn = false;
+        //    PinList.Add(Instantiate(objectToSpawn));
+        //    PinList[PinList.Count - 1].transform.position = currentRightLocation;
+        //    pinTypeList.Add(pinType.NONE);
+        //}
     }
      
     private void ProcessLeftHand(InputAction.CallbackContext ctx)
     {
-        is_advance = !is_advance;
+        //is_advance = !is_advance;
     } 
     
     private void Update()
