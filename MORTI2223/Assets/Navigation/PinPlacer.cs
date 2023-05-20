@@ -106,7 +106,7 @@ public class PinPlacer : MonoBehaviour
         }
         else
         {
-            if (breadList.Count > 1)
+            if (breadList.Count >= 1)
             {
                 Vector3 combinedVectors = breadList[breadList.Count - 1].transform.position - Camera.transform.position;
                 print(combinedVectors);
