@@ -21,7 +21,7 @@ Link to NASA SUITS Website: https://microgravityuniversity.jsc.nasa.gov/nasasuit
 ## 2022-2023 Developers:
 Matthew Bigge - Team Lead, Senior Computer Science and Music  
 Joseph Seibel - Telemetry Stream Developer, Freshmen Computer Science and Mathmatics  
-Michael McDevournett - Navigation, Freshmen Software Engineering  
+Michael Dejournett - Navigation, Freshmen Software Engineering  
 Charlie McIver - Menus and UX, Freshman Computer Engineering  
 Preston Ward - UX, Freshman Computer Engineering  
 Peyton Comer - UI, Freshman Computer Science  
