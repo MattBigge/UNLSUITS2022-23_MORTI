@@ -5176,7 +5176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uF169"
+  m_text: "\uF3DB"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9b0d0ee11ff70b04d901a29b519cbaa0, type: 2}
   m_sharedMaterial: {fileID: 5762245003366665926, guid: 9b0d0ee11ff70b04d901a29b519cbaa0,
@@ -5259,7 +5259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fontIcons: {fileID: 11400000, guid: b490f983baa13694cb7e5ecc6bd0dae3, type: 2}
-  currentIconName: Icon 40
+  currentIconName: Icon 84
   textMeshProComponent: {fileID: 5896915403148112445}
   iconFontAsset: {fileID: 0}
 --- !u!1 &1562988292278375044
@@ -28268,7 +28268,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Cancel
+  m_text: Recall
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9b0d0ee11ff70b04d901a29b519cbaa0, type: 2}
   m_sharedMaterial: {fileID: 5762245003366665926, guid: 9b0d0ee11ff70b04d901a29b519cbaa0,
@@ -28536,7 +28536,7 @@ RectTransform:
   - {fileID: 6405539187138936511}
   - {fileID: 6405539186715083700}
   m_Father: {fileID: 8999942554763629636}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -34825,7 +34825,7 @@ RectTransform:
   - {fileID: 5675889284261248097}
   - {fileID: 5675889284623335786}
   m_Father: {fileID: 8999942554763629636}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -38286,7 +38286,7 @@ RectTransform:
   - {fileID: 8606444301087993033}
   - {fileID: 8606444300780507586}
   m_Father: {fileID: 8999942554763629636}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -39229,9 +39229,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '"I''ll take a Double Triple Bossy Deluxe, on a raft, four-by-four animal-style,
-    extra shingles with a shimmy and a squeeze, light axle grease, make it cry, burn
-    it, and let it swim."'
+  m_text: Mission Log Info Here
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fea6b26abeefbc547b6aca1dbda0a34d, type: 2}
   m_sharedMaterial: {fileID: -2049848100760321927, guid: fea6b26abeefbc547b6aca1dbda0a34d,
@@ -39259,8 +39257,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 8
-  m_fontSizeBase: 8
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -39802,7 +39800,7 @@ GameObject:
   - component: {fileID: 4403535469287520027}
   - component: {fileID: 5285772510555777523}
   m_Layer: 5
-  m_Name: Cancel Button
+  m_Name: Recall Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46727,10 +46725,10 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6551207281198458171}
-  - {fileID: 5533609507115870181}
   - {fileID: 9188622718696431158}
   - {fileID: 7160270454103995795}
+  - {fileID: 6551207281198458171}
+  - {fileID: 5533609507115870181}
   - {fileID: 5065469267277397266}
   m_Father: {fileID: 8893100826569849608}
   m_RootOrder: 0
@@ -53098,9 +53096,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Navigation
-
-'
+  m_text: Sampling
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 533bdd8d5c92b52448ee2ecf7bd828a4, type: 2}
   m_sharedMaterial: {fileID: -1005824763306460071, guid: 533bdd8d5c92b52448ee2ecf7bd828a4,
@@ -53504,7 +53500,7 @@ RectTransform:
   - {fileID: 7758247337711044460}
   - {fileID: 7758247338407033447}
   m_Father: {fileID: 8999942554763629636}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
