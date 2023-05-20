@@ -93,7 +93,7 @@ public class PinPlacer : MonoBehaviour
                 }
                 waitTime = Time.time;
                 Vector3 combinedVectors = breadList[breadList.Count - 1].transform.position - Camera.transform.position;
-                if (!(combinedVectors[0] <= 3f && combinedVectors[0] >= -3f) || !(combinedVectors[1] <= 3f && combinedVectors[1] >= -3f) || !(combinedVectors[2] <= 3f && combinedVectors[2] >= -3f))
+                if (!(combinedVectors[0] <= 30f && combinedVectors[0] >= -30f) || !(combinedVectors[1] <= 30f && combinedVectors[1] >= -30f) || !(combinedVectors[2] <= 30f && combinedVectors[2] >= -30f))
                 {
                     GameObject tempObject = Instantiate(breadCrumb);
                     breadList.Add(tempObject);
@@ -110,7 +110,7 @@ public class PinPlacer : MonoBehaviour
             {
                 Vector3 combinedVectors = breadList[breadList.Count - 1].transform.position - Camera.transform.position;
                 print(combinedVectors);
-                if ((combinedVectors[0] <= 3f && combinedVectors[0] >= -3f) && (combinedVectors[1] <= 3f && combinedVectors[1] >= -3f) && (combinedVectors[2] <= 3f && combinedVectors[2] >= -3f))
+                if ((combinedVectors[0] <= 30f && combinedVectors[0] >= -30f) && (combinedVectors[1] <= 30f && combinedVectors[1] >= -30f) && (combinedVectors[2] <= 30f && combinedVectors[2] >= -30f))
                 {
                     breadList.RemoveAt(breadList.Count - 1);
                 }
