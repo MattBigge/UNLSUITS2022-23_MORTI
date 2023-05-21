@@ -7,7 +7,7 @@ using TMPro;
 public class AlternateEgressProc : MonoBehaviour
 {
     public TMP_Text mainWriting;
-    int stage = 0;
+    private int stage = 0;
     public EgressContainer container;
 
  void OnEnable()
@@ -34,7 +34,7 @@ public class AlternateEgressProc : MonoBehaviour
                         stage++;
                         break;
                     }
-                           
+                    yield return null;        
                 }
                 while (stage == 2){
                     mainWriting.text = "Switch O2 Vent to OPEN";
@@ -45,6 +45,7 @@ public class AlternateEgressProc : MonoBehaviour
                         break;
                     }
                     } 
+                    yield return null;
                     
                 }
                 while (stage == 3){
@@ -62,6 +63,7 @@ public class AlternateEgressProc : MonoBehaviour
                         break;
                     }
                     }
+                    yield return null;
                     
                 }
                 while (stage == 4){
@@ -73,6 +75,7 @@ public class AlternateEgressProc : MonoBehaviour
                         break;
                     }     
                     }
+                    yield return null;
                 }
                 while (stage == 5){
                     mainWriting.text = "Dump waste water and Switch EV-1 Waste to OPEN";
@@ -90,6 +93,7 @@ public class AlternateEgressProc : MonoBehaviour
                         break;
                     }
                     }
+                    yield return null;
                     
                 }
                 while (stage == 6){
@@ -98,6 +102,7 @@ public class AlternateEgressProc : MonoBehaviour
                             stage++;
                             break;
                         }
+                        yield return null;
                     }
                 
                 while (stage == 7){
@@ -109,6 +114,7 @@ public class AlternateEgressProc : MonoBehaviour
                             break;
                         }
                     }
+                    yield return null;
                 }
                 while (stage == 8){
                     mainWriting.text = "Switch Depress Pump to ON";
@@ -119,9 +125,11 @@ public class AlternateEgressProc : MonoBehaviour
                             break;
                         }
                     }
+                    yield return null;
                 }
                 while (stage == 9){
                     mainWriting.text = "UIA Procedures are complete, exit the airlock, close egress with menu";
+                    break;
                 }               
                 yield return new WaitForSeconds(1);
             }
