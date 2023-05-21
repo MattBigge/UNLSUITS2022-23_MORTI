@@ -21,6 +21,7 @@ public class AlternateEgressProc : MonoBehaviour
             yield return new WaitForSeconds(1);
             while (true)
             {
+                yield return new WaitForSeconds(1);
                 while (stage == 0){
                     if(container.getPwrSwitch() == false && container.getSupplySwitch() == false && container.getWaterWasteSwitch() == false &&
                     container.getO2SupplySwitch() == false && container.getVentSwitch() == false && container.getDepressPumpSwitch() == false){
@@ -28,6 +29,7 @@ public class AlternateEgressProc : MonoBehaviour
                         break;
                     }   
                 }
+                yield return new WaitForSeconds(1);
                 while (stage == 1){
                     mainWriting.text = "Switch EMU-1 Power to ON";
                     if (container.getPwrSwitch()){
@@ -36,6 +38,7 @@ public class AlternateEgressProc : MonoBehaviour
                     }
                            
                 }
+                yield return new WaitForSeconds(1);
                 while (stage == 2){
                     mainWriting.text = "Switch O2 Vent to OPEN";
                     if (container.getVentSwitch()){
@@ -47,6 +50,7 @@ public class AlternateEgressProc : MonoBehaviour
                     } 
                     
                 }
+                yield return new WaitForSeconds(1);
                 while (stage == 3){
                     mainWriting.text = "Switch O2 Supply to OPEN";
                     if (container.getO2SupplySwitch()){
@@ -64,6 +68,7 @@ public class AlternateEgressProc : MonoBehaviour
                     }
                     
                 }
+                yield return new WaitForSeconds(1);
                 while (stage == 4){
                     mainWriting.text = "Switch O2 Supply to OPEN";
                     if (container.getO2SupplySwitch()){
@@ -74,6 +79,7 @@ public class AlternateEgressProc : MonoBehaviour
                     }     
                     }
                 }
+                yield return new WaitForSeconds(1);
                 while (stage == 5){
                     mainWriting.text = "Dump waste water and Switch EV-1 Waste to OPEN";
                     if (container.getWaterWasteSwitch()){
@@ -92,14 +98,15 @@ public class AlternateEgressProc : MonoBehaviour
                     }
                     
                 }
+                yield return new WaitForSeconds(1);
                 while (stage == 6){
                         mainWriting.text = "Switch the Depress Pump to ON";
                         if (container.getDepressPumpSwitch()){
                             stage++;
                             break;
                         }
-                    }
-                
+                }
+                yield return new WaitForSeconds(1);
                 while (stage == 7){
                     mainWriting.text = "Switch O2 Supply to OPEN";
                     if (container.getO2SupplySwitch()){
@@ -110,6 +117,7 @@ public class AlternateEgressProc : MonoBehaviour
                         }
                     }
                 }
+                yield return new WaitForSeconds(1);
                 while (stage == 8){
                     mainWriting.text = "Switch Depress Pump to ON";
                     if (container.getDepressPumpSwitch()){
@@ -120,6 +128,7 @@ public class AlternateEgressProc : MonoBehaviour
                         }
                     }
                 }
+                yield return new WaitForSeconds(1);
                 while (stage == 9){
                     mainWriting.text = "UIA Procedures are complete, exit the airlock, close egress with menu";
                 }               
