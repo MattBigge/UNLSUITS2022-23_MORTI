@@ -14,9 +14,8 @@ public class WarningTextChange : MonoBehaviour
     public AbnormalValues checker;
     private string printList = "";
 
-    void OnEnable()
+    void OnStart()
     {
-        WarningSymbol.gameObject.SetActive(false);
         StartCoroutine(UpdateValues2Sec());
     }
 
@@ -125,10 +124,27 @@ public class WarningTextChange : MonoBehaviour
             if (checker.BatteryLow()){
                 listOfWarnings.Add("Battery Is Low!");
             }
+            //
+            // if (checker.getO2Error()){
+            //     listOfWarnings.Add("O2 Error Detected!");
+            // }
+
+            // if (checker.getPumpError()){
+            //     listOfWarnings.Add("Pump Error Detected!");
+            // }
+
+            // if (checker.getPowerError()){
+            //     listOfWarnings.Add("Power Error Detected!");
+            // }
+
+            // if (checker.getFanError()){
+            //     listOfWarnings.Add("Fan Error Detected!");
+            // }
 
             if (listOfWarnings.Count >= 1){
                 WarningSymbol.gameObject.SetActive(true);
             }
+
 
             foreach(string x in listOfWarnings){
                 printList += x;

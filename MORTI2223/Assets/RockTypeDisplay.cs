@@ -60,6 +60,8 @@ public class RockTypeDisplay : MonoBehaviour
 
     public int sample = -1;
 
+    public bool compound = true;
+
     private float[] TSSInput;
     public RockContainer rc;
 
@@ -159,6 +161,7 @@ public class RockTypeDisplay : MonoBehaviour
             Mission.GetComponent<TextMeshProUGUI>().text = "Mission: " + Missions[sample].ToString();
             RockType.GetComponent<TextMeshProUGUI>().text = "Rock Type: " + RockTypes[sample];
             Petrology.GetComponent<TextMeshProUGUI>().text = "Petrology: " + Petrologies[sample];
+            if (compound){
             SiO2.GetComponent<TextMeshProUGUI>().text = "SiO2: " + SiO2s[sample].ToString();
             TiO2.GetComponent<TextMeshProUGUI>().text = "TiO2: " + TiO2s[sample].ToString();
             Al2O3.GetComponent<TextMeshProUGUI>().text = "Al2O3: " + Al2O3s[sample].ToString();
@@ -168,6 +171,7 @@ public class RockTypeDisplay : MonoBehaviour
             CaO.GetComponent<TextMeshProUGUI>().text = "CaO: " + CaOs[sample].ToString();
             K2O.GetComponent<TextMeshProUGUI>().text = "K2O: " + K2Os[sample].ToString();
             P2O3.GetComponent<TextMeshProUGUI>().text = "P2O3: " + P2O3s[sample].ToString();
+            }
 
         }
         else
