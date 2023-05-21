@@ -49,7 +49,7 @@ public class TSSManager : MonoBehaviour
         string username = "VK08";
         string university = "University of Nebraska-Lincoln";
         string user_guid = "66b6f3a5-63ca-4c49-95d1-e64d3a85a3a9";
-        tssUri = "ws://localhost:3001";
+        tssUri = "ws://192.168.220.26:3001";
 
         // Pass in your team's information here. user_guid is most important - it must match your visionkit
         var connecting = tss.ConnectToURI(tssUri, team_name, username, university, user_guid);
