@@ -3433,7 +3433,7 @@ PrefabInstance:
         type: 3}
       propertyPath: <IsToggled>k__BackingField.onExited.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1915774250}
+      objectReference: {fileID: 794201311}
     - target: {fileID: 5573217574769607836, guid: 3de4f2ab3af00e44cac8df214587e675,
         type: 3}
       propertyPath: <IsToggled>k__BackingField.onEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -6646,12 +6646,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1853019113}
   m_CullTransparentMesh: 1
---- !u!1 &1915774250 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4221555565163315340, guid: 3de4f2ab3af00e44cac8df214587e675,
-    type: 3}
-  m_PrefabInstance: {fileID: 838143517}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1929108974
 GameObject:
   m_ObjectHideFlags: 0
