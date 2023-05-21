@@ -30,4 +30,20 @@ public class ErrorContainer : MonoBehaviour
     public void UpdateFromJson(string json){
         JsonUtility.FromJsonOverwrite(json, this);
     }
+
+    public bool getO2Error(){
+        return o2_error;
+    }
+
+    public bool getPumpError(){
+        return pump_error;
+    }
+    
+    public bool getPowerError(){
+        return power_error;
+    }
+
+    public bool getFanError(){
+        return fan_error;
+    }
 }
