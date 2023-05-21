@@ -10582,7 +10582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4220fa33d0e48745b2cb5c52731e75e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 0f446a1202fa7ad47a4603a5ad08cb9e, type: 2}
+  m_Material: {fileID: 2100000, guid: 7262ddcbedb3df8499b1fb977a78fd01, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -10917,7 +10917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4220fa33d0e48745b2cb5c52731e75e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 0f446a1202fa7ad47a4603a5ad08cb9e, type: 2}
+  m_Material: {fileID: 2100000, guid: 7262ddcbedb3df8499b1fb977a78fd01, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -20652,7 +20652,7 @@ MonoBehaviour:
   leftInteractor: {fileID: 0}
   rightInteractor: {fileID: 0}
   trackedTargetType: 2
-  trackedHandedness: 3
+  trackedHandedness: 1
   trackedHandJoint: 2
   transformOverride: {fileID: 0}
   additionalOffset: {x: 0, y: 0, z: 0}
@@ -20735,7 +20735,7 @@ MonoBehaviour:
   onHandDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  facingCameraTrackingThreshold: 80
+  facingCameraTrackingThreshold: 45
   requireFlatHand: 0
   flatHandThreshold: 45
   followHandUntilFacingCamera: 0
