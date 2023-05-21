@@ -50,7 +50,7 @@ public class PinPlacer : MonoBehaviour
     }
     private void ProcessRightHand(InputAction.CallbackContext ctx)
     {
-        
+
         //currentTime = Time.time;
         //if (currentTime - SpawnTimer <= 3 && currentTime - MaxTimeForSpawn > 3)
         //{
@@ -71,58 +71,66 @@ public class PinPlacer : MonoBehaviour
         //    pinTypeList.Add(pinType.NONE);
         //}
     }
-     
+
     private void ProcessLeftHand(InputAction.CallbackContext ctx)
     {
         //is_advance = !is_advance;
-    } 
-    
-    private void Update()
+    }
+
+    private IEnumerator loop()
     {
-        if (is_advance)
+        while (true)
         {
-            thisTime = Time.time;
-            if (thisTime - waitTime >= 15)
+            yield return new WaitForSeconds(10);
+            bool isNear = false;
+            if (is_advance)
             {
                 if (breadList.Count == 0)
                 {
                     GameObject tempObject = Instantiate(breadCrumb);
                     breadList.Add(tempObject);
                     breadList[breadList.Count - 1].transform.position = Camera.transform.position - new Vector3(0, 0, 0.3f);
-                    
+
                 }
                 waitTime = Time.time;
-                Vector3 combinedVectors = breadList[breadList.Count - 1].transform.position - Camera.transform.position;
-                if (!(combinedVectors[0] <= 30f && combinedVectors[0] >= -30f) || !(combinedVectors[1] <= 30f && combinedVectors[1] >= -30f) || !(combinedVectors[2] <= 30f && combinedVectors[2] >= -30f))
+                foreach (GameObject crumbs in breadList)
+                {
+                    Vector3 combinedVectors = crumbs.transform.position - Camera.transform.position;
+                    if ((combinedVectors[0] <= 3f && combinedVectors[0] >= -3f) && (combinedVectors[1] <= 3f && combinedVectors[1] >= -3f) && (combinedVectors[2] <= 3f && combinedVectors[2] >= -3f))
+                    {
+                        isNear = true;
+                    }
+                }
+                if (!isNear)
                 {
                     GameObject tempObject = Instantiate(breadCrumb);
                     breadList.Add(tempObject);
                     breadList[breadList.Count - 1].transform.position = Camera.transform.position - new Vector3(0, 0, 0.3f);
                     waitTime = Time.time;
-                    
-                }
 
-            }
-        }
-        else
-        {
-            if (breadList.Count >= 1)
-            {
-                Vector3 combinedVectors = breadList[breadList.Count - 1].transform.position - Camera.transform.position;
-                print(combinedVectors);
-                if ((combinedVectors[0] <= 30f && combinedVectors[0] >= -30f) && (combinedVectors[1] <= 30f && combinedVectors[1] >= -30f) && (combinedVectors[2] <= 30f && combinedVectors[2] >= -30f))
-                {
-                    breadList.RemoveAt(breadList.Count - 1);
                 }
-                print(breadList.Count);
-                indicator.GetComponent<DirectionalIndicator>().DirectionalTarget = breadList[breadList.Count -1].transform;
+            }
+            else
+            {
+                if (breadList.Count >= 1)
+                {
+                    Vector3 combinedVectors = breadList[breadList.Count - 1].transform.position - Camera.transform.position;
+                    print(combinedVectors);
+                    if ((combinedVectors[0] <= 3f && combinedVectors[0] >= -3f) && (combinedVectors[1] <= 3f && combinedVectors[1] >= -3f) && (combinedVectors[2] <= 3f && combinedVectors[2] >= -3f))
+                    {
+                        breadList.RemoveAt(breadList.Count - 1);
+                    }
+                    print(breadList.Count);
+                    indicator.GetComponent<DirectionalIndicator>().DirectionalTarget = breadList[breadList.Count - 1].transform;
+                }
             }
         }
     }
     public void setPinType(GameObject pinToSet, pinType pinSet)
     {
         int I = 0;
-        foreach (GameObject pin in PinList){
+        foreach (GameObject pin in PinList)
+        {
             if (pin == pinToSet)
             {
                 pinTypeList[I] = pinSet;
@@ -133,25 +141,28 @@ public class PinPlacer : MonoBehaviour
     public List<double> getPinLocation(int index)
     {
         //This takes the angle of the orininal bearing then corrects it by finding the hipotinuse then using trig functions to find lat and lon of the real world.   |-_-|
-        List <double> result = new List<double>(); //                                                                                                                 /|\
+        List<double> result = new List<double>(); //                                                                                                                 /|\
         double ingameLat = PinList[index].transform.position[0];//                                                                                                    / \
         double ingameLon = PinList[index].transform.position[1];
-        int adjust=0;
+        int adjust = 0;
         int gpsadjustlat = 1;
         int gpsadjustlon = 1;
         if (ingameLat > 0 && ingameLon > 0)
         {
             adjust = 90;
-        } else if (ingameLat < 0 && ingameLon > 0)
+        }
+        else if (ingameLat < 0 && ingameLon > 0)
         {
             gpsadjustlat = -1;
             adjust = 360;
-        } else if (ingameLat < 0 && ingameLon < 0)
+        }
+        else if (ingameLat < 0 && ingameLon < 0)
         {
             gpsadjustlat = -1;
             gpsadjustlon = -1;
             adjust = 270;
-        } else if (ingameLat >0 && ingameLon < 0)
+        }
+        else if (ingameLat > 0 && ingameLon < 0)
         {
             gpsadjustlon = -1;
             adjust = 180;
@@ -159,18 +170,19 @@ public class PinPlacer : MonoBehaviour
         double anglelat = (System.Math.Acos(adjust - (bearing + ingameLat / ingameLon)));
         double anglelon = (System.Math.Asin(adjust - (bearing + ingameLat / ingameLon)));
         result.Add(spawn_location[0] + ((anglelon * System.Math.Sqrt(ingameLat * ingameLat + ingameLon * ingameLon)) * 180 / 6378100 * gpsadjustlon));
-        result.Add(spawn_location[1]+((anglelat * System.Math.Sqrt(ingameLat*ingameLat+ingameLon*ingameLon))*180/6378100* gpsadjustlat));
-        return(result);
+        result.Add(spawn_location[1] + ((anglelat * System.Math.Sqrt(ingameLat * ingameLat + ingameLon * ingameLon)) * 180 / 6378100 * gpsadjustlat));
+        return (result);
     }
     private void Start()
     {
+        StartCoroutine(loop());
         leftHandReference.action.performed += ProcessLeftHand;
         rightHandReference.action.performed += ProcessRightHand;
     }
     private void OnDestroy()
     {
+
         leftHandReference.action.performed -= ProcessLeftHand;
         rightHandReference.action.performed -= ProcessRightHand;
     }
-
 }
