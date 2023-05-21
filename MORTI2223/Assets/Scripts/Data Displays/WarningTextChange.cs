@@ -16,7 +16,7 @@ public class WarningTextChange : MonoBehaviour
 
     public ErrorContainer container;
 
-    void OnStart()
+    void Start()
     {
         StartCoroutine(UpdateValues2Sec());
     }
