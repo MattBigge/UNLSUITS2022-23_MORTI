@@ -14,6 +14,8 @@ public class WarningTextChange : MonoBehaviour
     public AbnormalValues checker;
     private string printList = "";
 
+    public ErrorContainer contianer;
+
     void OnStart()
     {
         StartCoroutine(UpdateValues2Sec());
