@@ -7737,10 +7737,10 @@ MonoBehaviour:
   display: 0
   input: 0
   transport: {fileID: 0}
-  moveSpeed: 0.2
+  moveSpeed: 0.3
   transportDown: {x: 0, y: 0}
   transportUp: {x: 0, y: 0}
-  transportOffset: 300
+  transportOffset: 500
   transportMP: 0
   SampleNumbers: []
   Missions: 
