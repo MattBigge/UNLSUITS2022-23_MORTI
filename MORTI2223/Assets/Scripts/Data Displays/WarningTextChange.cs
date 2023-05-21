@@ -29,6 +29,22 @@ public class WarningTextChange : MonoBehaviour
             printList = "";
             listOfWarnings.Clear();
             WarningSymbol.gameObject.SetActive(false);
+            
+            if (container.getO2Error()){
+                listOfWarnings.Add("O2 Error Detected!");
+            }
+
+            if (container.getPumpError()){
+                listOfWarnings.Add("Pump Error Detected!");
+            }
+
+            if (container.getPowerError()){
+                listOfWarnings.Add("Power Error Detected!");
+            }
+
+            if (container.getFanError()){
+                listOfWarnings.Add("Fan Error Detected!");
+            }
 
             if (checker.PrimaryOxygenLow()){
                 listOfWarnings.Add("Primary Oxygen Low!");
@@ -123,25 +139,10 @@ public class WarningTextChange : MonoBehaviour
                 listOfWarnings.Add("Secondary Oxygen Flow Rate High!");
             }
 
-            if (checker.BatteryLow()){
-                listOfWarnings.Add("Battery Is Low!");
-            }
+            // if (checker.BatteryLow()){
+            //     listOfWarnings.Add("Battery Is Low!");
+            // }
             
-            if (container.getO2Error()){
-                listOfWarnings.Add("O2 Error Detected!");
-            }
-
-            if (container.getPumpError()){
-                listOfWarnings.Add("Pump Error Detected!");
-            }
-
-            if (container.getPowerError()){
-                listOfWarnings.Add("Power Error Detected!");
-            }
-
-            if (container.getFanError()){
-                listOfWarnings.Add("Fan Error Detected!");
-            }
 
             if (listOfWarnings.Count >= 1){
                 WarningSymbol.gameObject.SetActive(true);
