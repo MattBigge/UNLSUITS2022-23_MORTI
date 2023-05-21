@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1821,7 +1821,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   egressContainer: {fileID: 794201318}
-  rockContainer: {fileID: 0}
+  rockContainer: {fileID: 6847208336682817699}
+  errorContainer: {fileID: 1377265297}
 --- !u!1 &580116709
 GameObject:
   m_ObjectHideFlags: 0
@@ -5056,6 +5057,7 @@ GameObject:
   - component: {fileID: 1377265294}
   - component: {fileID: 1377265296}
   - component: {fileID: 1377265295}
+  - component: {fileID: 1377265297}
   m_Layer: 5
   m_Name: ValueChecker
   m_TagString: Untagged
@@ -5098,6 +5100,7 @@ MonoBehaviour:
   WarningSymbol: {fileID: 1799508447}
   Warning_Text: {fileID: 1622617573}
   checker: {fileID: 1377265296}
+  contianer: {fileID: 1377265297}
 --- !u!114 &1377265296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5110,6 +5113,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6accbea6f1166004b9d09f21af7e1e4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1377265297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377265293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be082662841a7104a9e962e07e529a26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  o2_error: 0
+  pump_error: 0
+  power_error: 0
+  fan_error: 0
 --- !u!1 &1420402249
 GameObject:
   m_ObjectHideFlags: 0
