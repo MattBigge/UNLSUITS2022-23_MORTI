@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -963,7 +963,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.4108753, y: 0.294}
   m_AnchorMax: {x: 0.80924946, y: 0.6097309}
-  m_AnchoredPosition: {x: 37.200005, y: -7.3999977}
+  m_AnchoredPosition: {x: 37.20001, y: -7.3999977}
   m_SizeDelta: {x: 84, y: 27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &240510155 stripped
@@ -1821,7 +1821,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   egressContainer: {fileID: 794201318}
-  rockContainer: {fileID: 0}
+  rockContainer: {fileID: 6847208336682817699}
+  errorContainer: {fileID: 1377265297}
 --- !u!1 &580116709
 GameObject:
   m_ObjectHideFlags: 0
@@ -4904,10 +4905,10 @@ RectTransform:
   m_Father: {fileID: 1964602101}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.056242287, y: 0.1598919}
-  m_AnchorMax: {x: 0.2545454, y: 0.19500001}
-  m_AnchoredPosition: {x: 4.299988, y: -11.799988}
-  m_SizeDelta: {x: 16.825256, y: 36.190506}
+  m_AnchorMin: {x: 0.044696916, y: 0.32781082}
+  m_AnchorMax: {x: 0.2733031, y: 0.3656217}
+  m_AnchoredPosition: {x: 1.7999878, y: -15.599998}
+  m_SizeDelta: {x: -10.174744, y: 35.190506}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1354334453
 GameObject:
@@ -5056,6 +5057,7 @@ GameObject:
   - component: {fileID: 1377265294}
   - component: {fileID: 1377265296}
   - component: {fileID: 1377265295}
+  - component: {fileID: 1377265297}
   m_Layer: 5
   m_Name: ValueChecker
   m_TagString: Untagged
@@ -5098,6 +5100,7 @@ MonoBehaviour:
   WarningSymbol: {fileID: 1799508447}
   Warning_Text: {fileID: 1622617573}
   checker: {fileID: 1377265296}
+  container: {fileID: 0}
 --- !u!114 &1377265296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5110,6 +5113,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6accbea6f1166004b9d09f21af7e1e4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1377265297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377265293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be082662841a7104a9e962e07e529a26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  o2_error: 0
+  pump_error: 0
+  power_error: 0
+  fan_error: 0
 --- !u!1 &1420402249
 GameObject:
   m_ObjectHideFlags: 0
@@ -5848,32 +5867,32 @@ PrefabInstance:
     - target: {fileID: 637777329012690658, guid: 2e8d9a5f349ef0749b423408749bb1a4,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.279
+      value: 0.27800003
       objectReference: {fileID: 0}
     - target: {fileID: 637777329012690658, guid: 2e8d9a5f349ef0749b423408749bb1a4,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5865136
+      value: 0.665
       objectReference: {fileID: 0}
     - target: {fileID: 637777329012690658, guid: 2e8d9a5f349ef0749b423408749bb1a4,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.056242287
+      value: 0.0573784
       objectReference: {fileID: 0}
     - target: {fileID: 637777329012690658, guid: 2e8d9a5f349ef0749b423408749bb1a4,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.38081086
+      value: 0.46210814
       objectReference: {fileID: 0}
     - target: {fileID: 637777329012690658, guid: 2e8d9a5f349ef0749b423408749bb1a4,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 122.29999
+      value: 124.29999
       objectReference: {fileID: 0}
     - target: {fileID: 637777329012690658, guid: 2e8d9a5f349ef0749b423408749bb1a4,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 203.5
+      value: 204.5
       objectReference: {fileID: 0}
     - target: {fileID: 637777329012690658, guid: 2e8d9a5f349ef0749b423408749bb1a4,
         type: 3}
@@ -5898,12 +5917,12 @@ PrefabInstance:
     - target: {fileID: 637777329012690658, guid: 2e8d9a5f349ef0749b423408749bb1a4,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 4.4000015
+      value: 6.299999
       objectReference: {fileID: 0}
     - target: {fileID: 637777330668104905, guid: 2e8d9a5f349ef0749b423408749bb1a4,
         type: 3}
       propertyPath: m_text
-      value: Power on EMU-1
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 637777330668104906, guid: 2e8d9a5f349ef0749b423408749bb1a4,
         type: 3}
@@ -6278,7 +6297,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1799508446
 RectTransform:
   m_ObjectHideFlags: 0
