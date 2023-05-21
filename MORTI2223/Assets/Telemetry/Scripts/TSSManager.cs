@@ -16,6 +16,8 @@ public class TSSManager : MonoBehaviour
      public EgressContainer egressContainer;
 
      public RockContainer rockContainer;
+
+     public ErrorContainer errorContainer;
      
     int msgCount = 0;
 
@@ -85,6 +87,7 @@ public class TSSManager : MonoBehaviour
             //uiaSwitchesMsgBox.text = "UIA Switches Msg:\n" + JsonUtility.ToJson(telemMsg.uiaMsg, prettyPrint: true);
             egressContainer.UpdateValues(JsonUtility.ToJson(telemMsg.uiaMsg));
             //simulationFailuresMsgBox.text = "Simulation Failures Msg: " + JsonUtility.ToJson(telemMsg.simulationFailures, prettyPrint: true);
+            errorContainer.UpdateFromJson(JsonUtility.ToJson(telemMsg.simulationFailures));
 
             //roverMsgBox.text = "Rover Msg: " + JsonUtility.ToJson(telemMsg.roverMsg, prettyPrint: true);
 
