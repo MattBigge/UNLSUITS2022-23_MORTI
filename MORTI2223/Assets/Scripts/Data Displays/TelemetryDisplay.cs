@@ -10,6 +10,8 @@ public class TelemetryDisplay : MonoBehaviour
 
 
     //hud data displays
+
+    public Position position;
     public TMP_Text heartRate;
     public TMP_Text bodyTemp;
     public TMP_Text currentEVALength;
@@ -32,7 +34,7 @@ public class TelemetryDisplay : MonoBehaviour
         {
             heartRate.text = TeleLIB.getHeartBpm().ToString();
             bodyTemp.text = TeleLIB.getTSub().ToString();
-            //longitudeAndLatitude.text = TeleLIB.get
+            longitudeAndLatitude.text = position.getPos().ToString();
             yield return new WaitForSeconds(2);
         }
     }
