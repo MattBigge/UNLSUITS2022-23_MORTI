@@ -21,53 +21,53 @@ public class EVAContainer : MonoBehaviour
     [SerializeField]
     string started_at;
     [SerializeField]
-    int heart_rate;
+    int heart_rate =0;
     [SerializeField]
-    float sub_pressure;
+    float sub_pressure =0;
     [SerializeField]
-    float suit_pressure;
+    float suit_pressure =0;
     [SerializeField]
-    float temperature;
+    float temperature=0;
     [SerializeField]
-    float fan_tachometer;
+    float fan_tachometer=0;
     [SerializeField]
-    float o2_pressure;
+    float o2_pressure=0;
     [SerializeField]
-    float o2_rate;
+    float o2_rate=0;
     [SerializeField]
-    float battery_percent;
+    float battery_percent=0;
     [SerializeField]
-    int battery_capacity;
+    int battery_capacity=0;
     [SerializeField]
-    float battery_outputput;
+    float battery_outputput=0;
     [SerializeField]
-    float h2o_gas_pressure;
+    float h2o_gas_pressure=0;
     [SerializeField]
-    float h2o_liquid_pressure;
+    float h2o_liquid_pressure=0;
     [SerializeField]
-    float sop_pressure;
+    float sop_pressure=0;
     [SerializeField]
-    float sop_rate;
+    float sop_rate=0;
     [SerializeField]
-    string battery_time_left;
+    string battery_time_left= "00:00:00";
     [SerializeField]
-    float oxygen_primary_time;
+    float oxygen_primary_time =0;
     [SerializeField]
-    float oxygen_secondary_time;
+    float oxygen_secondary_time = 0;
     [SerializeField]
-    float primary_oxygen;
+    float primary_oxygen =0;
     [SerializeField]
-    float secondary_oxygen;
+    float secondary_oxygen=0;
     [SerializeField]
-    string o2_time_left;
+    string o2_time_left = "00:00:00";
     [SerializeField]
-    float water_capacity;
+    float water_capacity= 0;
     [SerializeField]
-    string h2o_time_left;
+    string h2o_time_left = "00:00:00";
     [SerializeField]
-    string created_at;
+    string created_at= "";
     [SerializeField]
-    string updated_at;
+    string updated_at = "";
     [SerializeField]
 
     

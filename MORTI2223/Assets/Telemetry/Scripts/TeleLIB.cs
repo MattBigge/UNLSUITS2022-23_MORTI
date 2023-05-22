@@ -8,11 +8,11 @@ public class TeleLIB : MonoBehaviour
     static EVAContainer biometricsContainer;
     static Position positionContainer;
 
-    public static string globalURI = "https://localhost:8080/api";
+    public static string globalURI = "https://192.168.160.26:8080/api";
     
     void Start(){
-      StartCoroutine(startSim());
-      StartCoroutine(stopSim());
+      //StartCoroutine(startSim());
+      //StartCoroutine(stopSim());
     }
     
     public static void setBioContainer(EVAContainer container){
