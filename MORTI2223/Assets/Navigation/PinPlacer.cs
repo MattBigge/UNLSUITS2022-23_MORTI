@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 
 public class PinPlacer : MonoBehaviour
 {
+    Position pos;
+    IMU imu;
     public float bearing;
     public List<double> spawn_location;
     public bool is_advance = true;
@@ -178,6 +180,8 @@ public class PinPlacer : MonoBehaviour
         StartCoroutine(loop());
         leftHandReference.action.performed += ProcessLeftHand;
         rightHandReference.action.performed += ProcessRightHand;
+        //spawn_location = pos.getPos();
+        //bearing = imu.getHeading();
     }
     private void OnDestroy()
     {

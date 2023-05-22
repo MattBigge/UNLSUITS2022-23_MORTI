@@ -11,8 +11,8 @@ public class TeleLIB : MonoBehaviour
     public static string globalURI = "https://localhost:8080/api";
     
     void Start(){
-      // StartCoroutine(startSim());
-      // StartCoroutine(stopSim());
+      StartCoroutine(startSim());
+      StartCoroutine(stopSim());
     }
     
     public static void setBioContainer(EVAContainer container){
@@ -152,7 +152,7 @@ public class TeleLIB : MonoBehaviour
     {
 
        if(TeleLIB.getIsRunning() == false){
-        using (UnityWebRequest webRequest = UnityWebRequest.Get(globalURI + "/simulationcontrol/sim/1/stop"))
+        using (UnityWebRequest webRequest = UnityWebRequest.Get(globalURI + "/simulationcontrol/sim/8/stop"))
         {
             yield return webRequest.SendWebRequest();
             switch(webRequest.result)
@@ -178,7 +178,7 @@ public class TeleLIB : MonoBehaviour
     {
 
         if(TeleLIB.getIsRunning() == true){
-       using (UnityWebRequest webRequest = UnityWebRequest.Get(globalURI + "/simulationcontrol/sim/1/start"))
+       using (UnityWebRequest webRequest = UnityWebRequest.Get(globalURI + "/simulationcontrol/sim/8/start"))
         {
             yield return webRequest.SendWebRequest();
             switch(webRequest.result)

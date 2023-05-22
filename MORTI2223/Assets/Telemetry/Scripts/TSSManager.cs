@@ -13,6 +13,8 @@ public class TSSManager : MonoBehaviour
 
      Position position;
 
+     IMU imu;
+
      public EgressContainer egressContainer;
 
      public RockContainer rockContainer;
@@ -71,9 +73,13 @@ public class TSSManager : MonoBehaviour
 
 
            // gpsMsgBox.text = "GPS Msg:\n" + JsonUtility.ToJson(telemMsg.gpsMsg, prettyPrint: true);
-           if(telemMsg.gpsMsg != null){
-            position.setPos(JsonUtility.ToJson(telemMsg.gpsMsg));
+           if(telemMsg.gpsMsg != null){ 
+               position.setPos(JsonUtility.ToJson(telemMsg.gpsMsg));
+           }
 
+           if (telemMsg.imuMsg != null)
+           {
+               imu.setIMU(JsonUtility.ToJson(telemMsg.imuMsg));
            }
            
 
