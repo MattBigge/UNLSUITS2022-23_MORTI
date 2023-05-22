@@ -34,7 +34,7 @@ public class TelemetryDisplay : MonoBehaviour
         {
             heartRate.text = TeleLIB.getHeartBpm().ToString();
             bodyTemp.text = TeleLIB.getTSub().ToString();
-            longitudeAndLatitude.text = position.getPos().ToString();
+            longitudeAndLatitude.text = position.getPos()[0].ToString() + ", " + position.getPos()[1].ToString();
             yield return new WaitForSeconds(2);
         }
     }
