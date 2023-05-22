@@ -146,7 +146,6 @@ public class EgressProcedure : MonoBehaviour
                     mainWriting.text = "UIA Procedures are Complete, Exit the Airlock, Close Egress with Menu";
                     yield return null;
                 }               
-                yield return new WaitForSeconds(1);
             }
         }
 }
