@@ -12,7 +12,7 @@ public class EgressProcedure : MonoBehaviour
 
     public UIAStatesContainer stateContainer;
 
-    private bool firstPassed;
+    private bool firstPassed = false;
 
  void OnEnable()
     {
@@ -49,6 +49,7 @@ public class EgressProcedure : MonoBehaviour
                         stage++;
                         break;
                     }
+                    yield return null;
                     } 
                     yield return null;
                     
@@ -62,6 +63,7 @@ public class EgressProcedure : MonoBehaviour
                         firstPassed = true;
                         break;
                     }
+                    yield return null;
                     }
                     while (stateContainer.getUIASupplyPressure() < 23 && firstPassed){
                         mainWriting.text = "Switch O2 Vent to CLOSE and Wait for Confirmation";
@@ -70,6 +72,7 @@ public class EgressProcedure : MonoBehaviour
                         stage++;
                         break;
                     }
+                    yield return null;
                     }
                     yield return null;
                     
