@@ -91,7 +91,7 @@ public class TSSManager : MonoBehaviour
             evaContainer.setData(JsonUtility.ToJson(telemMsg.simulationStates));
 
             //specMsgBox.text = "Spec Msg:\n" + JsonUtility.ToJson(telemMsg.specMsg, prettyPrint: true);
-            rockContainer.UpdateValues(JsonUtility.ToJson(telemMsg.specMsg));
+            //rockContainer.UpdateValues(JsonUtility.ToJson(telemMsg.specMsg));
             //uiaSwitchesMsgBox.text = "UIA Switches Msg:\n" + JsonUtility.ToJson(telemMsg.uiaMsg, prettyPrint: true);
             egressContainer.UpdateValues(JsonUtility.ToJson(telemMsg.uiaMsg));
             //simulationFailuresMsgBox.text = "Simulation Failures Msg: " + JsonUtility.ToJson(telemMsg.simulationFailures, prettyPrint: true);
@@ -100,7 +100,9 @@ public class TSSManager : MonoBehaviour
             //roverMsgBox.text = "Rover Msg: " + JsonUtility.ToJson(telemMsg.roverMsg, prettyPrint: true);
 
             // evaMsgBox.text = "EVA Msg: " + JsonUtility.ToJson(telemMsg.simulationStates, prettyPrint: true);
-            //uiaStatesContainer.UpdateValues(JsonUtility.ToJson(telemMsg.simulationStates));
+            uiaStatesContainer.UpdateValues(JsonUtility.ToJson(telemMsg.uiaState));
+            Debug.Log("Switches : " + JsonUtility.ToJson(telemMsg.uiaMsg, prettyPrint: true));
+    
 
         };
 
