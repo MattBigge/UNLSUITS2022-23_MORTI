@@ -16,6 +16,7 @@ public class TelemetryDisplay : MonoBehaviour
     public TMP_Text batteryTime;
     public TMP_Text oxygenTime;
     public TMP_Text waterTime;
+    public TMP_Text longitudeAndLatitude;
 
     void Start()
     {   
@@ -31,6 +32,7 @@ public class TelemetryDisplay : MonoBehaviour
         {
             heartRate.text = TeleLIB.getHeartBpm().ToString();
             bodyTemp.text = TeleLIB.getTSub().ToString();
+            longitudeAndLatitude.text = TeleLIB.get
             yield return new WaitForSeconds(2);
         }
     }
