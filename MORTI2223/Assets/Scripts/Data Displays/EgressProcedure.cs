@@ -33,7 +33,7 @@ public class EgressProcedure : MonoBehaviour
                     }   
                 }
                 while (stage == 1){
-                    mainWriting.text = "Switch EMU-1 Power to ON and Wait For Confirmation";
+                    mainWriting.text = "Switch EMU-1 Power to ON and Wait For Boot";
                     if (stateContainer.getEmu1IsBooted()){
                         stage++;
                         break;
