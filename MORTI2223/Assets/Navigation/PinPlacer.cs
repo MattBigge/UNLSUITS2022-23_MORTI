@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 public class PinPlacer : MonoBehaviour
 {
     Position pos;
-    IMU imu;
+    public IMU imu;
     public float bearing;
     public List<double> spawn_location;
     public bool is_advance = true;

@@ -13,7 +13,7 @@ public class TSSManager : MonoBehaviour
 
      Position position;
 
-     IMU imu;
+     public IMU imu;
 
      public EgressContainer egressContainer;
 
