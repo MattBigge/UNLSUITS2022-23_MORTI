@@ -16,6 +16,8 @@ public class TSSManager : MonoBehaviour
      public EgressContainer egressContainer;
 
      public RockContainer rockContainer;
+
+     public ErrorContainer errorContainer;
      
     int msgCount = 0;
 
@@ -49,7 +51,7 @@ public class TSSManager : MonoBehaviour
         string username = "VK08";
         string university = "University of Nebraska-Lincoln";
         string user_guid = "66b6f3a5-63ca-4c49-95d1-e64d3a85a3a9";
-        tssUri = "ws://192.168.125.26:3001";
+        tssUri = "ws://localhost:3001";
 
         // Pass in your team's information here. user_guid is most important - it must match your visionkit
         var connecting = tss.ConnectToURI(tssUri, team_name, username, university, user_guid);
@@ -85,6 +87,7 @@ public class TSSManager : MonoBehaviour
             //uiaSwitchesMsgBox.text = "UIA Switches Msg:\n" + JsonUtility.ToJson(telemMsg.uiaMsg, prettyPrint: true);
             egressContainer.UpdateValues(JsonUtility.ToJson(telemMsg.uiaMsg));
             //simulationFailuresMsgBox.text = "Simulation Failures Msg: " + JsonUtility.ToJson(telemMsg.simulationFailures, prettyPrint: true);
+            errorContainer.UpdateFromJson(JsonUtility.ToJson(telemMsg.simulationFailures));
 
             //roverMsgBox.text = "Rover Msg: " + JsonUtility.ToJson(telemMsg.roverMsg, prettyPrint: true);
 

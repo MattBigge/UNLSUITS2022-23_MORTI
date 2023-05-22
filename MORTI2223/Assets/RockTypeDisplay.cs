@@ -24,11 +24,11 @@ public class RockTypeDisplay : MonoBehaviour
     public bool display = false;
     public bool input = false;
     
-    private RectTransform transport;
+    public RectTransform transport;
     public float moveSpeed = 0.1f;
     
-    private Vector2 transportDown;
-    private Vector2 transportUp;
+    public Vector2 transportDown;
+    public Vector2 transportUp;
 
     public float transportOffset = 0.085f;
     private float podStartMovement = 0;
@@ -59,6 +59,8 @@ public class RockTypeDisplay : MonoBehaviour
     public float inputP2O3;
 
     public int sample = -1;
+
+    public bool compound = true;
 
     private float[] TSSInput;
     public RockContainer rc;
@@ -109,6 +111,9 @@ public class RockTypeDisplay : MonoBehaviour
 
         // P2O3
         P2O3s.AddRange(new float[] { 0.34f, 0.29f, 0.28f, 0.65f, 0.38f, 0.34f, 0.44f });
+        
+        transport.anchoredPosition = transportDown;
+        gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -124,59 +129,42 @@ public class RockTypeDisplay : MonoBehaviour
             if (sample != closestSampleIndex || sample == -1)
             {
                 sample = closestSampleIndex;
-                display = true;
-                displayTime = 0;
             }
-            else
-            {
-                displayTime += Time.deltaTime;  
-            }
-            if (displayTime >= displayTimer)
-            {
-                displayTime = 0;
-                display = false;
-            }
-        }
-        else
-        {
-            display = false;
-        }
-        
-        if (display)
-        {
-            transportMP += 0.01f * moveSpeed;
-        } else 
-        {
-            transportMP -= 0.01f * moveSpeed;
-        }
-
-        transportMP = Mathf.Clamp(transportMP, 0, 1);
-        transport.anchoredPosition = Vector2.Lerp(transportDown, transportUp, transportMP);
-
-        if (sample >= 0 && sample < SampleNumbers.Count)
-        {
+            
             SampleNumber.GetComponent<TextMeshProUGUI>().text = "Sample Number: " + SampleNumbers[sample];
             Mission.GetComponent<TextMeshProUGUI>().text = "Mission: " + Missions[sample].ToString();
             RockType.GetComponent<TextMeshProUGUI>().text = "Rock Type: " + RockTypes[sample];
             Petrology.GetComponent<TextMeshProUGUI>().text = "Petrology: " + Petrologies[sample];
-            SiO2.GetComponent<TextMeshProUGUI>().text = "SiO2: " + SiO2s[sample].ToString();
-            TiO2.GetComponent<TextMeshProUGUI>().text = "TiO2: " + TiO2s[sample].ToString();
-            Al2O3.GetComponent<TextMeshProUGUI>().text = "Al2O3: " + Al2O3s[sample].ToString();
-            FeO.GetComponent<TextMeshProUGUI>().text = "FeO: " + FeOs[sample].ToString();
-            MnO.GetComponent<TextMeshProUGUI>().text = "MnO: " + MnOs[sample].ToString();
-            MgO.GetComponent<TextMeshProUGUI>().text = "MgO: " + MgOs[sample].ToString();
-            CaO.GetComponent<TextMeshProUGUI>().text = "CaO: " + CaOs[sample].ToString();
-            K2O.GetComponent<TextMeshProUGUI>().text = "K2O: " + K2Os[sample].ToString();
-            P2O3.GetComponent<TextMeshProUGUI>().text = "P2O3: " + P2O3s[sample].ToString();
+            if (compound){
+                SiO2.GetComponent<TextMeshProUGUI>().text = "SiO2: " + SiO2s[sample].ToString() + "%";
+                TiO2.GetComponent<TextMeshProUGUI>().text = "TiO2: " + TiO2s[sample].ToString() + "%";
+                Al2O3.GetComponent<TextMeshProUGUI>().text = "Al2O3: " + Al2O3s[sample].ToString() + "%";
+                FeO.GetComponent<TextMeshProUGUI>().text = "FeO: " + FeOs[sample].ToString() + "%";
+                MnO.GetComponent<TextMeshProUGUI>().text = "MnO: " + MnOs[sample].ToString() + "%";
+                MgO.GetComponent<TextMeshProUGUI>().text = "MgO: " + MgOs[sample].ToString() + "%";
+                CaO.GetComponent<TextMeshProUGUI>().text = "CaO: " + CaOs[sample].ToString() + "%";
+                K2O.GetComponent<TextMeshProUGUI>().text = "K2O: " + K2Os[sample].ToString() + "%";
+                P2O3.GetComponent<TextMeshProUGUI>().text = "P2O3: " + P2O3s[sample].ToString() + "%";
+            }
 
         }
         else
         {
-            display = false;
-        }
-
-        if (!display){
-            displayTime = 0;
+            SampleNumber.GetComponent<TextMeshProUGUI>().text = "";
+            Mission.GetComponent<TextMeshProUGUI>().text = "";
+            RockType.GetComponent<TextMeshProUGUI>().text = "                                  Initiate  Scan";
+            Petrology.GetComponent<TextMeshProUGUI>().text = "                                     To  Begin";
+            if (compound){
+                SiO2.GetComponent<TextMeshProUGUI>().text = "";
+                TiO2.GetComponent<TextMeshProUGUI>().text = "";
+                Al2O3.GetComponent<TextMeshProUGUI>().text = "";
+                FeO.GetComponent<TextMeshProUGUI>().text = "";
+                MnO.GetComponent<TextMeshProUGUI>().text = "";
+                MgO.GetComponent<TextMeshProUGUI>().text = "";
+                CaO.GetComponent<TextMeshProUGUI>().text = "";
+                K2O.GetComponent<TextMeshProUGUI>().text = "";
+                P2O3.GetComponent<TextMeshProUGUI>().text = "";
+            }
         }
     }
     int FindClosestSampleIndex()
