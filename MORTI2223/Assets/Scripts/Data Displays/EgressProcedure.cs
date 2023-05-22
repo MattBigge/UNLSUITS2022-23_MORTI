@@ -38,7 +38,7 @@ public class EgressProcedure : MonoBehaviour
                         stage++;
                         break;
                     }
-                    yield return null;        
+                    yield return new WaitForSeconds(1);        
                 }
                 while (stage == 2){
                     mainWriting.text = "Switch O2 Vent to OPEN and Wait for Pressure Change";
@@ -142,9 +142,9 @@ public class EgressProcedure : MonoBehaviour
                     }
                     yield return null;
                 }
-                while (stage == 9){
+                if (stage == 9){
                     mainWriting.text = "UIA Procedures are Complete, Exit the Airlock, Close Egress with Menu";
-                    yield return null;
+                    
                 }               
             }
         }
