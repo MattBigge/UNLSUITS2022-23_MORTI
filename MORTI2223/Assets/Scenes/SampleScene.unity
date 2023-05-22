@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1854,6 +1854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab2b77ddf34dff246a07728e8771b46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiaStatesContainer: {fileID: 794201319}
   imu: {fileID: 546996163}
   egressContainer: {fileID: 794201318}
   rockContainer: {fileID: 6847208336682817699}
@@ -2192,20 +2193,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1616710084}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &794201317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 794201311}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3aac6eea72eb374388b79a22d516337, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainWriting: {fileID: 1479626997}
-  container: {fileID: 794201318}
 --- !u!114 &794201318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2224,6 +2211,38 @@ MonoBehaviour:
   emu1_o2_supply_switch: 0
   o2_vent_switch: 0
   depress_pump_switch: 0
+--- !u!114 &794201319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794201311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b1827fa1aac7c1499af0aece1c10cb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emu1_is_booted: 0
+  uia_supply_pressure: 0
+  water_level: 0
+  airlock_pressure: 0
+  depress_pump_fault: 0
+--- !u!114 &794201320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794201311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc2e7f0f185ef434cab1ebd48ab9d5e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainWriting: {fileID: 1479626997}
+  container: {fileID: 794201318}
+  stateContainer: {fileID: 794201319}
 --- !u!1 &815685343
 GameObject:
   m_ObjectHideFlags: 0
