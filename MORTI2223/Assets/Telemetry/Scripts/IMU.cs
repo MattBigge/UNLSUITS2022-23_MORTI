@@ -3,21 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Position : MonoBehaviour
+public class IMU : MonoBehaviour
 {
 
     [SerializeField]
-    float lon = 0;
-    [SerializeField]
-    float lat = 0;
+    float heading = 0;
     // Start is called before the first frame update
 
-    public float[] getPos()
+    public float getHeading()
     {
-        return new float[] { lat, lon };
+        return heading;
     }
 
-    public void setPos(string json)
+    public void setIMU(string json)
     {
         JsonUtility.FromJsonOverwrite(json, this);
     }

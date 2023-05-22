@@ -3,10 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="272bf3fa-016c-4090-b0f2-d190eb20872e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MORTI2223/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MORTI2223/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RockTypeDisplay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/RockTypeDisplay.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Navigation/PinPlacer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Navigation/PinPlacer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Telemetry/Scripts/Position.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Telemetry/Scripts/Position.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Telemetry/Scripts/TSSManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Telemetry/Scripts/TSSManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XR/Settings/OpenXR Package Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XR/Settings/OpenXR Package Settings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Telemetry/Scripts/TeleLIB.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Telemetry/Scripts/TeleLIB.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +19,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/ActivationSwitch.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/DataDisplay.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/roverPOI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Telemetry/Scripts/IMU.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -95,6 +98,7 @@
       <workItem from="1683849735032" duration="1962000" />
       <workItem from="1684442930991" duration="854000" />
       <workItem from="1684644468217" duration="4427000" />
+      <workItem from="1684728167781" duration="2648000" />
     </task>
     <servers />
   </component>
