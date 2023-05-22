@@ -87,11 +87,12 @@ public class PinPlacer : MonoBehaviour
             bool isNear = false;
             if (is_advance)
             {
+                indicator.GetComponent<DirectionalIndicator>().DirectionalTarget = null;
                 if (breadList.Count == 0)
                 {
                     GameObject tempObject = Instantiate(breadCrumb);
                     breadList.Add(tempObject);
-                    breadList[breadList.Count - 1].transform.position = Camera.transform.position - new Vector3(0, 0, 0.3f);
+                    breadList[breadList.Count - 1].transform.position = Camera.transform.position - new Vector3(0, 0, .8f);
 
                 }
                 waitTime = Time.time;
@@ -120,7 +121,9 @@ public class PinPlacer : MonoBehaviour
                     print(combinedVectors);
                     if ((combinedVectors[0] <= 3f && combinedVectors[0] >= -3f) && (combinedVectors[1] <= 3f && combinedVectors[1] >= -3f) && (combinedVectors[2] <= 3f && combinedVectors[2] >= -3f))
                     {
+                        GameObject objecttobedeleted = breadList[-1];
                         breadList.RemoveAt(breadList.Count - 1);
+                        Destroy(objecttobedeleted);
                     }
                     print(breadList.Count);
                     indicator.GetComponent<DirectionalIndicator>().DirectionalTarget = breadList[breadList.Count - 1].transform;
