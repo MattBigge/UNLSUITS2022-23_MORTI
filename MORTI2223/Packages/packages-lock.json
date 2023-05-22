@@ -399,12 +399,13 @@
       "url": "https://packages.unity.com"
     },
     "suits.tss": {
-      "version": "file:SUITS-TSS-Unity",
+      "version": "https://github.com/SUITS-Techteam/SUITS-TSS-Unity.git",
       "depth": 0,
-      "source": "embedded",
+      "source": "git",
       "dependencies": {
         "com.endel.nativewebsocket": "1.1.4"
-      }
+      },
+      "hash": "c6f9de2ad3edd26d140c4465291192b19b44b908"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
