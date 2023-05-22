@@ -83,7 +83,7 @@ public class PinPlacer : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(10);
+            yield return new WaitForSeconds(1);
             bool isNear = false;
             if (is_advance)
             {
@@ -115,7 +115,7 @@ public class PinPlacer : MonoBehaviour
             }
             else
             {
-                if (breadList.Count >= 1)
+                if (breadList.Count > 1)
                 {
                     Vector3 combinedVectors = breadList[breadList.Count - 1].transform.position - Camera.transform.position;
                     print(combinedVectors);
@@ -125,8 +125,10 @@ public class PinPlacer : MonoBehaviour
                         breadList.RemoveAt(breadList.Count - 1);
                         Destroy(objecttobedeleted);
                     }
-                    print(breadList.Count);
-                    indicator.GetComponent<DirectionalIndicator>().DirectionalTarget = breadList[breadList.Count - 1].transform;
+                    indicator.GetComponent<DirectionalIndicator>().DirectionalTarget = breadList[breadList.Count - 1].transform
+                }
+                else { 
+                    indicator.GetComponent<DirectionalIndicator>().DirectionalTarget = breadList[0]; 
                 }
             }
         }
