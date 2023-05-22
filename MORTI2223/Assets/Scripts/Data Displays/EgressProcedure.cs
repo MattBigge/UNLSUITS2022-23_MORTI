@@ -25,6 +25,7 @@ public class EgressProcedure : MonoBehaviour
             yield return new WaitForSeconds(1);
             while (true)
             {
+                yield return new WaitForSeconds(1);
                 while (stage == 0){
                     if(container.getPwrSwitch() == false && container.getSupplySwitch() == false && container.getWaterWasteSwitch() == false &&
                     container.getO2SupplySwitch() == false && container.getVentSwitch() == false && container.getDepressPumpSwitch() == false){
@@ -38,12 +39,12 @@ public class EgressProcedure : MonoBehaviour
                         stage++;
                         break;
                     }
-                    yield return new WaitForSeconds(1);        
+                    yield return null;        
                 }
                 while (stage == 2){
                     mainWriting.text = "Switch O2 Vent to OPEN and Wait for Pressure Change";
-                    if (stateContainer.getUIASupplyPressure() < 23){
-                        mainWriting.text = "Switch O2 Vent to CLOSE and Wait for Confirmation";
+                    while (stateContainer.getUIASupplyPressure() < 23){
+                        mainWriting.text = "Switch O2 Vent to CLOSE";
                         if (!container.getVentSwitch()){
                         stage++;
                         break;
@@ -53,15 +54,16 @@ public class EgressProcedure : MonoBehaviour
                     
                 }
                 while (stage == 3){
-                    mainWriting.text = "Switch O2 Supply to OPEN and Wait for Pressure Change";
-                    if (stateContainer.getUIASupplyPressure()>3000){
-                        mainWriting.text = "Switch O2 Supply to CLOSE and Wait for Confirmation";
+                    if (!firstPassed) mainWriting.text = "Switch O2 Supply to OPEN and Wait for Pressure Change";
+                    while (stateContainer.getUIASupplyPressure()>3000 && !firstPassed){
+                        mainWriting.text = "Switch O2 Supply to CLOSE and Wait";
                         if (!container.getO2SupplySwitch()){
                         mainWriting.text = "Switch O2 Vent to OPEN and Wait for Prssure Change";
                         firstPassed = true;
+                        break;
                     }
                     }
-                    if (stateContainer.getUIASupplyPressure() < 23 && firstPassed){
+                    while (stateContainer.getUIASupplyPressure() < 23 && firstPassed){
                         mainWriting.text = "Switch O2 Vent to CLOSE and Wait for Confirmation";
                         if (!container.getVentSwitch()){
                         firstPassed = false;
