@@ -7,11 +7,10 @@ public class UIAStatesContainer : MonoBehaviour
 {
 
     [SerializeField]
-    bool emu1_is_booted = false;
+    public bool emu1_is_booted = false;
     [SerializeField]
-    float uia_supply_pressure = 0;
+    public float uia_supply_pressure = 3000;
     [SerializeField]
-    float water_level = 0;
     [SerializeField]
     float airlock_pressure = 0;
     [SerializeField]
@@ -60,6 +59,35 @@ public class UIAStatesContainer : MonoBehaviour
     {
         JsonUtility.FromJsonOverwrite(json, this);
     }
+
+    public void setEmu1IsBooted(bool value)
+    {
+        emu1_is_booted = value;
+    }
+
+    public void setUIASupplyPressure(float value)
+    {
+        uia_supply_pressure = value;
+    }
+
+    public void setWaterLevel(float value)
+    {
+        water_level = value;
+    }
+
+    public void setAirlockPressure(float value)
+    {
+        airlock_pressure = value;
+    }
+
+
+    public void setDepressPumpFault(bool value)
+    {
+        depress_pump_fault = value;
+    }
+
+
+
 
 
 }
