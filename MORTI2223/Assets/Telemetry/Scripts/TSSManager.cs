@@ -12,6 +12,8 @@ public class TSSManager : MonoBehaviour
      EVAContainer evaContainer;
 
      Position position;
+     
+     public UIAStatesContainer uiaStatesContainer;
 
      public IMU imu;
 
@@ -98,6 +100,7 @@ public class TSSManager : MonoBehaviour
             //roverMsgBox.text = "Rover Msg: " + JsonUtility.ToJson(telemMsg.roverMsg, prettyPrint: true);
 
             // evaMsgBox.text = "EVA Msg: " + JsonUtility.ToJson(telemMsg.simulationStates, prettyPrint: true);
+            uiaStatesContainer.UpdateValues(JsonUtility.ToJson(telemMsg.simulationStates));
 
         };
 
