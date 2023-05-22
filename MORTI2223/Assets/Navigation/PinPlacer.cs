@@ -91,7 +91,7 @@ public class PinPlacer : MonoBehaviour
                 {
                     GameObject tempObject = Instantiate(breadCrumb);
                     breadList.Add(tempObject);
-                    breadList[breadList.Count - 1].transform.position = Camera.transform.position - new Vector3(0, 0, 0.3f);
+                    breadList[breadList.Count - 1].transform.position = Camera.transform.position - new Vector3(0, 0, .8f);
 
                 }
                 waitTime = Time.time;
