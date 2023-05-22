@@ -121,14 +121,12 @@ public class PinPlacer : MonoBehaviour
                     print(combinedVectors);
                     if ((combinedVectors[0] <= 3f && combinedVectors[0] >= -3f) && (combinedVectors[1] <= 3f && combinedVectors[1] >= -3f) && (combinedVectors[2] <= 3f && combinedVectors[2] >= -3f))
                     {
-                        GameObject objecttobedeleted = breadList[-1];
                         breadList.RemoveAt(breadList.Count - 1);
-                        Destroy(objecttobedeleted);
                     }
-                    indicator.GetComponent<DirectionalIndicator>().DirectionalTarget = breadList[breadList.Count - 1].transform
+                    indicator.GetComponent<DirectionalIndicator>().DirectionalTarget = breadList[breadList.Count - 1].transform;
                 }
                 else { 
-                    indicator.GetComponent<DirectionalIndicator>().DirectionalTarget = breadList[0]; 
+                    indicator.GetComponent<DirectionalIndicator>().DirectionalTarget = breadList[0].transform; 
                 }
             }
         }
