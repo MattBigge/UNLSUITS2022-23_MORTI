@@ -26,28 +26,30 @@ public class EgressProcedure : MonoBehaviour
             while (true)
             {
                 yield return new WaitForSeconds(1);
+                
                 while (stage == 0){
+                    mainWriting.text = "Make Sure all Switches are Off";
                     if(container.getPwrSwitch() == false && container.getSupplySwitch() == false && container.getWaterWasteSwitch() == false &&
                     container.getO2SupplySwitch() == false && container.getVentSwitch() == false && container.getDepressPumpSwitch() == false){
-                        stage++;
+                        stage=1;
                         break;
                     }   
+                    yield return null;
                 }
                 while (stage == 1){
                     mainWriting.text = "Switch EMU-1 Power to ON and Wait For Boot";
                     if (stateContainer.getEmu1IsBooted()){
-                        stage++;
+                        stage=2;
                         break;
                     }
                     yield return null;        
                 }
                 while (stage == 2){
                     mainWriting.text = "Switch O2 Vent to OPEN and Wait for Pressure Change";
-                    while (stateContainer.getUIASupplyPressure() < 23){
+                    while (stateContainer.getUIASupplyPressure() < 23 && stage == 2){
                         mainWriting.text = "Switch O2 Vent to CLOSE";
                         if (!container.getVentSwitch()){
-                        stage++;
-                        break;
+                        stage=3;
                     }
                     yield return null;
                     } 
@@ -55,9 +57,9 @@ public class EgressProcedure : MonoBehaviour
                     
                 }
                 while (stage == 3){
-                    if (!firstPassed) mainWriting.text = "Switch O2 Supply to OPEN and Wait for Pressure Change";
+                    if (!firstPassed) mainWriting.text = "Switch EV-1 Oxygen to OPEN and Wait for Pressure Change";
                     while (stateContainer.getUIASupplyPressure()>3000 && !firstPassed){
-                        mainWriting.text = "Switch O2 Supply to CLOSE and Wait";
+                        mainWriting.text = "Switch EV-1 Oxygen to CLOSE and Wait";
                         if (!container.getO2SupplySwitch()){
                         mainWriting.text = "Switch O2 Vent to OPEN and Wait for Prssure Change";
                         firstPassed = true;
@@ -69,7 +71,7 @@ public class EgressProcedure : MonoBehaviour
                         mainWriting.text = "Switch O2 Vent to CLOSE and Wait for Confirmation";
                         if (!container.getVentSwitch()){
                         firstPassed = false;
-                        stage++;
+                        stage=4;
                         break;
                     }
                     yield return null;
@@ -78,33 +80,36 @@ public class EgressProcedure : MonoBehaviour
                     
                 }
                 while (stage == 4){
-                    mainWriting.text = "Switch O2 Supply to OPEN and Wait for Pressure Change";
+                    mainWriting.text = "Switch EV-1 Oxygen to OPEN and Wait for Pressure Change";
                     if (stateContainer.getUIASupplyPressure() > 1500){
-                        mainWriting.text = "Switch O2 Supply to CLOSE and Wait for Confirmation";
+                        mainWriting.text = "Switch EV-1 Oxygen to CLOSE and Wait for Confirmation";
                         if (!container.getO2SupplySwitch()){
-                        stage++;
+                        stage=5;
                         break;
                     }     
                     }
                     yield return null;
                 }
                 while (stage == 5){
-                    mainWriting.text = "Dump waste water and Switch EV-1 Waste to OPEN, Wait for Water Level to Fall";
-                    if (stateContainer.getWaterLevel() < 5){
+                    if (!firstPassed) mainWriting.text = "Dump waste water and Switch EV-1 Waste to OPEN, Wait for Water Level to Fall";
+                    while (stateContainer.getWaterLevel() < 5){
                         mainWriting.text = "Switch EV-1 Waste to CLOSE and Wait for Confirmation";
                         if (!container.getWaterWasteSwitch()){
                         mainWriting.text = "Switch EV-1 Supply to OPEN and Wait for Water Level to Rise";
                         firstPassed = true;
+                        break;
                     }
+                    yield return null;
                     }
                     
-                    if (stateContainer.getWaterLevel() > 95 && firstPassed){
+                    while (stateContainer.getWaterLevel() > 95 && firstPassed){
                         mainWriting.text = "Switch EV-1 Supply to CLOSE and Wait for Confirmation";
                         if (!container.getSupplySwitch()){
                         firstPassed = false;
-                        stage++;
+                        stage=6;
                         break;
                     }
+                    yield return null;
                     }
                     yield return null;
                     
@@ -115,10 +120,10 @@ public class EgressProcedure : MonoBehaviour
                     }
                     else{
                         mainWriting.text = "Switch the Depress Pump to ON and Wait for Airlock Pressure Change";
-                        if (stateContainer.getAirlockPressure() < 10.2){
+                        if (stateContainer.getAirlockPressure() < 10.2 && !stateContainer.getDepressPumpFault()){
                             mainWriting.text = "Switch the Depress Pump to OFF and Wait for Confirmation";
                             if (!container.getDepressPumpSwitch()){
-                            stage++;
+                            stage=7;
                             }
                         }
                     }
@@ -126,11 +131,11 @@ public class EgressProcedure : MonoBehaviour
                 }
                 
                 while (stage == 7){
-                    mainWriting.text = "Switch O2 Supply to OPEN and Wait for Pressure Change";
+                    mainWriting.text = "Switch EV-1 Oxygen to OPEN and Wait for Pressure Change";
                     if (stateContainer.getUIASupplyPressure() > 3000){
-                        mainWriting.text = "Switch O2 Supply to CLOSE and Wait for Confirmation";
+                        mainWriting.text = "Switch EV-1 Oxygen to CLOSE and Wait for Confirmation";
                         if (!container.getO2SupplySwitch()){
-                            stage++;
+                            stage=8;
                             break;
                         }
                     }
@@ -141,7 +146,7 @@ public class EgressProcedure : MonoBehaviour
                     if (stateContainer.getAirlockPressure() < 0.1){
                         mainWriting.text = "Switch Depress Pump to OFF and Wait for Confirmation";
                         if(!container.getDepressPumpSwitch()){
-                            stage++;
+                            stage=9;
                             break;
                         }
                     }

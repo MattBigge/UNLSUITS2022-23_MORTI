@@ -980,7 +980,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.4108753, y: 0.294}
   m_AnchorMax: {x: 0.80924946, y: 0.6097309}
-  m_AnchoredPosition: {x: 37.20001, y: -7.3999977}
+  m_AnchoredPosition: {x: 37.2, y: -7.3999977}
   m_SizeDelta: {x: 84, y: 27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &240510155 stripped
@@ -1872,33 +1872,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heading: 0
---- !u!114 &546996166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 546996159}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4e041360fb63bb45ab92b30a0a81d90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rock: {fileID: 6847208336682817699}
---- !u!114 &546996167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 546996159}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 168f3cee22bdf5649b71448f6c58d312, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiaStatesContainer: {fileID: 794201319}
-  egressContainer: {fileID: 794201318}
 --- !u!1 &580116709
 GameObject:
   m_ObjectHideFlags: 0
@@ -2309,7 +2282,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   emu1_pwr_switch: 0
   ev1_supply_switch: 0
-  ev1_water_waste_switch: 0
+  emu1_water_waste: 0
   emu1_o2_supply_switch: 0
   o2_vent_switch: 0
   depress_pump_switch: 0
@@ -6266,7 +6239,7 @@ PrefabInstance:
     - target: {fileID: 637777330858839680, guid: 2e8d9a5f349ef0749b423408749bb1a4,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5565166814046409220, guid: 2e8d9a5f349ef0749b423408749bb1a4,
         type: 3}

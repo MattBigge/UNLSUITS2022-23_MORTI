@@ -55,7 +55,7 @@ public class TSSManager : MonoBehaviour
         string username = "VK08";
         string university = "University of Nebraska-Lincoln";
         string user_guid = "66b6f3a5-63ca-4c49-95d1-e64d3a85a3a9";
-        tssUri = "ws://192.168.160.26:3001";
+        tssUri = "ws://192.168.50.10:3001";
 
         // Pass in your team's information here. user_guid is most important - it must match your visionkit
         var connecting = tss.ConnectToURI(tssUri, team_name, username, university, user_guid);
@@ -87,11 +87,10 @@ public class TSSManager : MonoBehaviour
 
             //imuMsgBox.text = "IMU Msg:\n" + JsonUtility.ToJson(telemMsg.imuMsg, prettyPrint: true);
             //simulationStatesMsgBox.text = "Simulation States Msg:\n" + JsonUtility.ToJson(telemMsg.simulationStates, prettyPrint: true);
-            Debug.Log("EVA Msg:\n" + JsonUtility.ToJson(telemMsg.simulationStates, prettyPrint: true));
             evaContainer.setData(JsonUtility.ToJson(telemMsg.simulationStates));
 
             //specMsgBox.text = "Spec Msg:\n" + JsonUtility.ToJson(telemMsg.specMsg, prettyPrint: true);
-            //rockContainer.UpdateValues(JsonUtility.ToJson(telemMsg.specMsg));
+            rockContainer.UpdateValues(JsonUtility.ToJson(telemMsg.specMsg));
             //uiaSwitchesMsgBox.text = "UIA Switches Msg:\n" + JsonUtility.ToJson(telemMsg.uiaMsg, prettyPrint: true);
             egressContainer.UpdateValues(JsonUtility.ToJson(telemMsg.uiaMsg));
             //simulationFailuresMsgBox.text = "Simulation Failures Msg: " + JsonUtility.ToJson(telemMsg.simulationFailures, prettyPrint: true);
@@ -101,7 +100,6 @@ public class TSSManager : MonoBehaviour
 
             // evaMsgBox.text = "EVA Msg: " + JsonUtility.ToJson(telemMsg.simulationStates, prettyPrint: true);
             uiaStatesContainer.UpdateValues(JsonUtility.ToJson(telemMsg.uiaState));
-            Debug.Log("Switches : " + JsonUtility.ToJson(telemMsg.uiaMsg, prettyPrint: true));
     
 
         };
