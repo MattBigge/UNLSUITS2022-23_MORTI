@@ -11,10 +11,11 @@ public class UIAStatesContainer : MonoBehaviour
     [SerializeField]
     public float uia_supply_pressure = 3000;
     [SerializeField]
+    public float water_level = 100;
     [SerializeField]
-    float airlock_pressure = 0;
+    public float airlock_pressure = 14.7f;
     [SerializeField]
-    bool depress_pump_fault = false;
+    public bool depress_pump_fault = false;
 
 
 
@@ -55,36 +56,10 @@ public class UIAStatesContainer : MonoBehaviour
         return depress_pump_fault;
     }
 
-    public void UpdateValues(string json)
-    {
+    public void UpdateValues(string json){
         JsonUtility.FromJsonOverwrite(json, this);
     }
-
-    public void setEmu1IsBooted(bool value)
-    {
-        emu1_is_booted = value;
-    }
-
-    public void setUIASupplyPressure(float value)
-    {
-        uia_supply_pressure = value;
-    }
-
-    public void setWaterLevel(float value)
-    {
-        water_level = value;
-    }
-
-    public void setAirlockPressure(float value)
-    {
-        airlock_pressure = value;
-    }
-
-
-    public void setDepressPumpFault(bool value)
-    {
-        depress_pump_fault = value;
-    }
+  
 
 
 
