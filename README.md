@@ -60,9 +60,9 @@ May 17th - 24th: NASA Test week at Johnson Space Center's Rockyard
 June: Final Report Due  
 
 ### Outreach
-Link to club twitter page: https://twitter.com/redteamsUNL
-Link to club Instagram: https://www.instagram.com/redteams.unl/
+Link to club twitter page: https://twitter.com/redteamsUNL <br>
+Link to club Instagram: https://www.instagram.com/redteams.unl/ <br>
 
-We were published in the Lincoln General Star talking about our project and facilities. Read Here: https://journalstar.com/news/local/unl-engineering-teams-prepare-for-national-research-challenge-hosted-by-nasa/article_e8d87490-110a-5ea8-ab67-9981c22e4a84.html
-The article and its information were also presented in the School of Computing's weekly newletter: https://newsroom.unl.edu/announce/cse/15384/86526
-Link to article shared in newsletter on May 10th: https://newsroom.unl.edu/announce/cse/15833/88010
+We were published in the Lincoln General Star talking about our project and facilities. Read Here: https://journalstar.com/news/local/unl-engineering-teams-prepare-for-national-research-challenge-hosted-by-nasa/article_e8d87490-110a-5ea8-ab67-9981c22e4a84.html <br>
+The article and its information were also presented in the School of Computing's weekly newletter: https://newsroom.unl.edu/announce/cse/15384/86526 <br>
+Link to article shared in newsletter on May 10th: https://newsroom.unl.edu/announce/cse/15833/88010 <br>
