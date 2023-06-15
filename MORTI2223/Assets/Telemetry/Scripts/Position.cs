@@ -7,9 +7,9 @@ public class Position : MonoBehaviour
 {
 
     [SerializeField]
-    float lon =0;
+    float lon = 0;
     [SerializeField]
-    float lat =0;
+    float lat = 0;
     // Start is called before the first frame update
 
     public float[] getPos()

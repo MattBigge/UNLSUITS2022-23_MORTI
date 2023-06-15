@@ -25,7 +25,7 @@ Michael McDevournett - Navigation, Freshmen Software Engineering
 Charlie McIver - Menus and UX, Freshman Computer Engineering  
 Preston Ward - UX, Freshman Computer Engineering  
 Peyton Comer - UI, Freshman Computer Science  
-Eli Schoneweis - [Team Role], Sophomore Computer Science  
+Eli Schoneweis - Sample Id System Developer, Sophomore Computer Science  
 Lindsey Johnson- Graphic Design, Freshman Studio Art and Graphic Design  
 
 ## Faculty Advisor:
@@ -45,10 +45,9 @@ Dec 15th - Mission Briefing #1 Attended
 Dec 17th-January 3rd - University Holiday Break  
 Jan 4th-20th - Predevelopment work, project initialization and setup, Production software and documentation  
 Jan 21st - First day of classes and beginnning of Sprint #1  
-[] - Oakview Mall Aerospace Day  
-Feb 26th - Project reformatted to use MRTK 3.0  
-Dates from Outreach events and other milestones  
-[] - Newly Admitted Student day in Othmer Hall  
+Feb 18th - Oakview Mall Aerospace Day  
+Feb 26th - Project reformatted to use MRTK 3.0
+Mar 25th - Newly Admitted Student day in Othmer Hall  
 Apr 5th - Software Design Review Presentation  
 Final Developement Period: Apr 5th- May 17th  
 Sprint 1: Apr 6th - Apr 20th, Release 1.0  

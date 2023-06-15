@@ -10,13 +10,15 @@ public class TelemetryDisplay : MonoBehaviour
 
 
     //hud data displays
+
+    public Position position;
     public TMP_Text heartRate;
     public TMP_Text bodyTemp;
     public TMP_Text currentEVALength;
     public TMP_Text batteryTime;
     public TMP_Text oxygenTime;
     public TMP_Text waterTime;
-    public TMP_Text position;
+    public TMP_Text longitudeAndLatitude;
 
     void Start()
     {   
@@ -32,22 +34,21 @@ public class TelemetryDisplay : MonoBehaviour
         {
             heartRate.text = TeleLIB.getHeartBpm().ToString();
             bodyTemp.text = TeleLIB.getTSub().ToString();
+            longitudeAndLatitude.text = "Latitude: " + position.getPos()[0].ToString() + "\n" + "Longitude: " + position.getPos()[1].ToString() + "";
             yield return new WaitForSeconds(2);
         }
     }
 
     IEnumerator UpdateValues1Sec()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(5);
         while (true)
         {
-            yield return new WaitForSeconds(10);
             if(flag){
             currentEVALength.text = TeleLIB.getTimer().ToString();
             batteryTime.text = TeleLIB.getTBattery().ToString();
             oxygenTime.text = TeleLIB.getTOxygen().ToString();
             waterTime.text = TeleLIB.getTWater().ToString();
-            position.text = TeleLIB.getPos()[0].ToString() + "," + TeleLIB.getPos()[1].ToString();
             flag = false;
             }else{
             currentEVALength.text = TimeToInt.SecToTime(TimeToInt.TimeToSec(currentEVALength.text) + 1);

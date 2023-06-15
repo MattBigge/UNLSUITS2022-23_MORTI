@@ -13,7 +13,7 @@ public class EgressContainer : MonoBehaviour
     [SerializeField]
     bool ev1_supply_switch;
     [SerializeField]
-    bool ev1_water_waste_switch;
+    bool emu1_water_waste;
     [SerializeField]
     bool emu1_o2_supply_switch;
     [SerializeField]
@@ -32,7 +32,7 @@ public class EgressContainer : MonoBehaviour
     }
 
     public bool getWaterWasteSwitch(){
-        return ev1_water_waste_switch;
+        return emu1_water_waste;
     }
 
     public bool getO2SupplySwitch(){

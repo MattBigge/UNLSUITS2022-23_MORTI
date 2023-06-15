@@ -21,16 +21,14 @@ public class RockContainer : MonoBehaviour
     [SerializeField]
     float CaO;
     [SerializeField]
-    float Na2O;
-    [SerializeField]
     float K2O;
     [SerializeField]
     float P2O3;
     [SerializeField]
 
 
-   public float [] getSample(){
-        return new float[] {SiO2, TiO2, Al2O3, FeO, MnO, MgO, CaO, Na2O, K2O, P2O3};
+    public float [] getSample(){
+        return new float[] {SiO2, TiO2, Al2O3, FeO, MnO, MgO, CaO, K2O, P2O3};
     }
 
     // Start is called before the first frame update
@@ -45,7 +43,19 @@ public class RockContainer : MonoBehaviour
         
     }
 
-    void UpdateValues(string json){
+    public void UpdateValues(string json){
         JsonUtility.FromJsonOverwrite(json, this);
+    }
+
+    public void updateTest(float[] values){
+        SiO2 = values[0];
+        TiO2 = values[1];
+        Al2O3 = values[2];
+        FeO = values[3];
+        MnO = values[4];
+        MgO = values[5];
+        CaO = values[6];
+        K2O = values[7];
+        P2O3 = values[8];
     }
 }

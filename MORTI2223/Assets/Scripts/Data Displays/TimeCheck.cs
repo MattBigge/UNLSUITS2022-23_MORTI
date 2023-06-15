@@ -24,8 +24,8 @@ public class TimeCheck : MonoBehaviour
         waterTime.SetActive(false);
         oxygenTime.SetActive(false);
         StartCoroutine(UpdateValues());
-        
-        
+
+
     }
 
     IEnumerator UpdateValues()
@@ -36,7 +36,7 @@ public class TimeCheck : MonoBehaviour
             battery = TimeToInt.TimeToSec(TeleLIB.getTBattery());
             oxygen = TimeToInt.TimeToSec(TeleLIB.getTOxygen());
             water = TimeToInt.TimeToSec(TeleLIB.getTWater());
-        
+
             oxygenTime.SetActive(false);
             waterTime.SetActive(false);
             batteryTime.SetActive(true);
@@ -51,13 +51,13 @@ public class TimeCheck : MonoBehaviour
             batteryTime.SetActive(false);
             waterTime.SetActive(true);
             yield return new WaitForSeconds(10); 
-            
+
             yield return new WaitForSeconds(1);
         }
     }
 
     void Update()
     {
-        
+
 }
 }

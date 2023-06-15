@@ -9,11 +9,11 @@ public class EVAContainer : MonoBehaviour
     [SerializeField]
     int id = -1;
     [SerializeField]
-    int room = -1;
+    int room_id = -1;
     [SerializeField]
-    bool isRunning;
+    bool is_running;
     [SerializeField]
-    bool isPaused;
+    bool is_paused;
     [SerializeField]
     float time;
     [SerializeField]
@@ -21,58 +21,61 @@ public class EVAContainer : MonoBehaviour
     [SerializeField]
     string started_at;
     [SerializeField]
-    int heart_bpm;
+    int heart_rate =0;
     [SerializeField]
-    float p_sub;
+    float sub_pressure =0;
     [SerializeField]
-    float p_suit;
+    float suit_pressure =0;
     [SerializeField]
-    float t_sub;
+    float temperature=0;
     [SerializeField]
-    float v_fan;
+    float fan_tachometer=0;
     [SerializeField]
-    float p_o2;
+    float o2_pressure=0;
     [SerializeField]
-    float rate_o2;
+    float o2_rate=0;
     [SerializeField]
-    float batteryPercent;
+    float battery_percent=0;
     [SerializeField]
-    int cap_battery;
+    int battery_capacity=0;
     [SerializeField]
-    float battery_out;
+    float battery_outputput=0;
     [SerializeField]
-    float p_h2o_g;
+    float h2o_gas_pressure=0;
     [SerializeField]
-    float p_h2o_l;
+    float h2o_liquid_pressure=0;
     [SerializeField]
-    float p_sop;
+    float sop_pressure=0;
     [SerializeField]
-    float rate_sop;
+    float sop_rate=0;
     [SerializeField]
-    string t_battery;
+    string battery_time_left= "00:00:00";
     [SerializeField]
-    float t_oxygenPrimary;
+    float oxygen_primary_time =0;
     [SerializeField]
-    float t_oxygenSec;
+    float oxygen_secondary_time = 0;
     [SerializeField]
-    float ox_primary;
+    float primary_oxygen =0;
     [SerializeField]
-    float ox_secondary;
+    float secondary_oxygen=0;
     [SerializeField]
-    string t_oxygen;
+    string o2_time_left = "00:00:00";
     [SerializeField]
-    float cap_water;
+    float water_capacity= 0;
     [SerializeField]
-    string t_water;
+    string h2o_time_left = "00:00:00";
     [SerializeField]
-    string created_at;
+    string created_at= "";
     [SerializeField]
-    string updated_at;
+    string updated_at = "";
     [SerializeField]
 
     
 
     // Start is called before the first frame update
+
+    void Update(){
+    }
     
     public void setData(string json){
         JsonUtility.FromJsonOverwrite(json, this);
@@ -82,14 +85,14 @@ public class EVAContainer : MonoBehaviour
         return id;
     }
     public int getRoom(){
-        return room;
+        return room_id;
     }
 
     public bool getIsRunning(){
-        return isRunning;
+        return is_running;
     }
     public bool getIsPaused(){
-        return isPaused;
+        return is_paused;
 
     }
     public float getTime(){
@@ -102,70 +105,70 @@ public class EVAContainer : MonoBehaviour
         return started_at;
     }
     public int getHeartBpm(){
-        return heart_bpm;
+        return heart_rate;
     }
     public float getPSub(){
-        return p_sub;
+        return sub_pressure;
     }
     public float getPSuit(){
-        return p_suit;
+        return suit_pressure;
     }
     public float getTSub(){
-        return t_sub;
+        return temperature;
     }
     public float getVFan(){
-        return v_fan;
+        return fan_tachometer;
     }
     public float getPO2(){
-        return p_o2;
+        return o2_pressure;
     }
     public float getRateO2(){
-        return rate_o2;
+        return o2_rate;
     }
     public float getBatteryPercent(){
-        return batteryPercent;
+        return battery_percent;
     }
     public int getCapBattery(){
-        return cap_battery;
+        return battery_capacity;
     }
     public float getBatteryOut(){
-        return battery_out;
+        return battery_outputput;
     }
     public float getPH2OG(){
-        return p_h2o_g;
+        return h2o_gas_pressure;
     }
     public float getPH2OL(){
-        return p_h2o_l;
+        return h2o_liquid_pressure;
     }
     public float getPSop(){
-        return p_sop;
+        return sop_pressure;
     }
     public float getRateSop(){
-        return rate_sop;
+        return sop_rate;
     }
     public string getTBattery(){
-        return t_battery;
+        return battery_time_left;
     }
     public float getTOxygenPrimary(){
-        return t_oxygenPrimary;
+        return oxygen_primary_time;
     }
     public float getTOxygenSec(){
-        return t_oxygenSec;
+        return oxygen_secondary_time;
     }
     public float getOxPrimary(){
-        return ox_primary;
+        return primary_oxygen;
     }
     public float getOxSecondary(){
-        return ox_secondary;
+        return secondary_oxygen;
     }
     public string getTOxygen(){
-        return t_oxygen;
+        return o2_time_left;
     }
     public float getCapWater(){
-        return cap_water;
+        return water_capacity;
     }
     public string getTWater(){
-        return t_water;
+        return h2o_time_left;
     }
     public string getCreatedAt(){
         return created_at;

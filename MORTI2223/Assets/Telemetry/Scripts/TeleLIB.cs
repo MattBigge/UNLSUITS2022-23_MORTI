@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class TeleLIB : MonoBehaviour
 {
-    public ConnScript connection;
+    public TSSManager connection;
     static EVAContainer biometricsContainer;
     static Position positionContainer;
 
-    public static string globalURI = "http://ec2-3-138-141-82.us-east-2.compute.amazonaws.com:8080/api";
+    public static string globalURI = "https://192.168.160.26:8080/api";
     
     void Start(){
-       StartCoroutine(startSim());
-       StartCoroutine(stopSim());
+      //StartCoroutine(startSim());
+      //StartCoroutine(stopSim());
     }
     
     public static void setBioContainer(EVAContainer container){
@@ -150,7 +150,9 @@ public class TeleLIB : MonoBehaviour
 
      public static IEnumerator startSim()
     {
-        using (UnityWebRequest webRequest = UnityWebRequest.Get(globalURI + "/simulationcontrol/sim/1/stop"))
+
+       if(TeleLIB.getIsRunning() == false){
+        using (UnityWebRequest webRequest = UnityWebRequest.Get(globalURI + "/simulationcontrol/sim/8/stop"))
         {
             yield return webRequest.SendWebRequest();
             switch(webRequest.result)
@@ -169,11 +171,14 @@ public class TeleLIB : MonoBehaviour
                     break;
             }
         }
+       }
     }
 
     public static IEnumerator stopSim()
     {
-       using (UnityWebRequest webRequest = UnityWebRequest.Get(globalURI + "/simulationcontrol/sim/1/start"))
+
+        if(TeleLIB.getIsRunning() == true){
+       using (UnityWebRequest webRequest = UnityWebRequest.Get(globalURI + "/simulationcontrol/sim/8/start"))
         {
             yield return webRequest.SendWebRequest();
             switch(webRequest.result)
@@ -191,6 +196,7 @@ public class TeleLIB : MonoBehaviour
                     Debug.Log("Success" + " " + webRequest.downloadHandler.text);
                     break;
             }
+        }
         }
     }
 

@@ -14,9 +14,10 @@ public class WarningTextChange : MonoBehaviour
     public AbnormalValues checker;
     private string printList = "";
 
+    public ErrorContainer container;
+
     void Start()
     {
-        WarningSymbol.gameObject.SetActive(false);
         StartCoroutine(UpdateValues2Sec());
     }
 
@@ -28,107 +29,125 @@ public class WarningTextChange : MonoBehaviour
             printList = "";
             listOfWarnings.Clear();
             WarningSymbol.gameObject.SetActive(false);
-
-            if (checker.PrimaryOxygenLow()){
-                listOfWarnings.Add("Primary Oxygen Low!");
+            
+            if (container.getO2Error()){
+                listOfWarnings.Add("O2 Error Detected!");
             }
 
-            if (checker.SecondaryOxygenLow()){
-                listOfWarnings.Add("Secondary Oxygen Low!");
+            if (container.getPumpError()){
+                listOfWarnings.Add("Pump Error Detected!");
             }
 
-            if (checker.BPMLow()){
-                listOfWarnings.Add("Heart Rate Slow!");
+            if (container.getPowerError()){
+                listOfWarnings.Add("Power Error Detected!");
             }
 
-            if(checker.BPMHigh()){
-                listOfWarnings.Add("Heart Rate High!");
+            if (container.getFanError()){
+                listOfWarnings.Add("Fan Error Detected!");
             }
 
-            if(checker.SubPressureLow()){
-                listOfWarnings.Add("External Pressure Low!");
-            }
+            // if (checker.PrimaryOxygenLow()){
+            //     listOfWarnings.Add("Primary Oxygen Low!");
+            // }
 
-            if (checker.SubPressureHigh()){
-                listOfWarnings.Add("External Pressure High!");
-            }
+            // if (checker.SecondaryOxygenLow()){
+            //     listOfWarnings.Add("Secondary Oxygen Low!");
+            // }
 
-            if (checker.SuitPressureLow()){
-                listOfWarnings.Add("Suit Pressure Low!");
-            }
+            // if (checker.BPMLow()){
+            //     listOfWarnings.Add("Heart Rate Slow!");
+            // }
+
+            // if(checker.BPMHigh()){
+            //     listOfWarnings.Add("Heart Rate High!");
+            // }
+
+            // if(checker.SubPressureLow()){
+            //     listOfWarnings.Add("External Pressure Low!");
+            // }
+
+            // if (checker.SubPressureHigh()){
+            //     listOfWarnings.Add("External Pressure High!");
+            // }
+
+            // if (checker.SuitPressureLow()){
+            //     listOfWarnings.Add("Suit Pressure Low!");
+            // }
 
             
-            if (checker.SuitPressureHigh()){
-                listOfWarnings.Add("Suit Pressure High!");
-            }
+            // if (checker.SuitPressureHigh()){
+            //     listOfWarnings.Add("Suit Pressure High!");
+            // }
 
-            if (checker.FanSpeedLow()){
-                listOfWarnings.Add("Suit Fan Speed Slow!");
-            }
+            // if (checker.FanSpeedLow()){
+            //     listOfWarnings.Add("Suit Fan Speed Slow!");
+            // }
 
-            if (checker.FanSpeedHigh()){
-                listOfWarnings.Add("Suit Fan Speed High!");
-            }
+            // if (checker.FanSpeedHigh()){
+            //     listOfWarnings.Add("Suit Fan Speed High!");
+            // }
 
-            if (checker.OxygenPressureLow()){
-                listOfWarnings.Add("Primary Oxygen Pressure Low!");
-            }
+            // if (checker.OxygenPressureLow()){
+            //     listOfWarnings.Add("Primary Oxygen Pressure Low!");
+            // }
 
-            if (checker.OxygenPressureHigh()){
-                listOfWarnings.Add("Primary Oxygen Pressure High!");
-            }
+            // if (checker.OxygenPressureHigh()){
+            //     listOfWarnings.Add("Primary Oxygen Pressure High!");
+            // }
 
-            if (checker.OxygenRateLow()){
-                listOfWarnings.Add("Oxygen Flow Rate Low!");
-            }
+            // if (checker.OxygenRateLow()){
+            //     listOfWarnings.Add("Oxygen Flow Rate Low!");
+            // }
 
-            if (checker.OxygenRateHigh()){
-                listOfWarnings.Add("Oxygen Flow Rate High!");
-            }
+            // if (checker.OxygenRateHigh()){
+            //     listOfWarnings.Add("Oxygen Flow Rate High!");
+            // }
 
-            if (checker.BatteryCapacityLow()){
-                listOfWarnings.Add("Battery Capaciy Low!");
-            }
+            // if (checker.BatteryCapacityLow()){
+            //     listOfWarnings.Add("Battery Capaciy Low!");
+            // }
 
-            if (checker.H20GasPressureLow()){
-                listOfWarnings.Add("H2O Gas Pressure Low!");
-            }
+            // if (checker.H20GasPressureLow()){
+            //     listOfWarnings.Add("H2O Gas Pressure Low!");
+            // }
 
-            if (checker.H20GasPressureHigh()){
-                listOfWarnings.Add("H2O Gas Pressure High");
-            }
+            // if (checker.H20GasPressureHigh()){
+            //     listOfWarnings.Add("H2O Gas Pressure High");
+            // }
 
-            if (checker.H20LiquidPressureLow()){
-                listOfWarnings.Add("H2O Liquid Pressure Low!");
-            }
+            // if (checker.H20LiquidPressureLow()){
+            //     listOfWarnings.Add("H2O Liquid Pressure Low!");
+            // }
 
-            if (checker.H20LiquidPressureHigh()){
-                listOfWarnings.Add("H2O Liquid Pressure High!");
-            }
+            // if (checker.H20LiquidPressureHigh()){
+            //     listOfWarnings.Add("H2O Liquid Pressure High!");
+            // }
 
-            if (checker.SecondaryOxygenPressureLow()){
-                listOfWarnings.Add("Secondary Oxygen Pressure Low!");
-            }
+            // if (checker.SecondaryOxygenPressureLow()){
+            //     listOfWarnings.Add("Secondary Oxygen Pressure Low!");
+            // }
 
-            if (checker.SecondaryOxygenPressureHigh()){
-                listOfWarnings.Add("Secondary Oxygen Pressure High!");
-            }
+            // if (checker.SecondaryOxygenPressureHigh()){
+            //     listOfWarnings.Add("Secondary Oxygen Pressure High!");
+            // }
 
-            if (checker.SecondaryOxygenRateLow()){
-                listOfWarnings.Add("Secondary Oxyegn Flow Rate Low!");
-            }
+            // if (checker.SecondaryOxygenRateLow()){
+            //     listOfWarnings.Add("Secondary Oxyegn Flow Rate Low!");
+            // }
 
-            if (checker.SecondaryOxygenRateLow()){
-                listOfWarnings.Add("Secondary Oxygen Flow Rate High!");
-            }
+            // if (checker.SecondaryOxygenRateLow()){
+            //     listOfWarnings.Add("Secondary Oxygen Flow Rate High!");
+            // }
 
-            if (checker.BatteryLow()){
-                listOfWarnings.Add("Battery Is Low!");
-            }
+            // if (checker.BatteryLow()){
+            //     listOfWarnings.Add("Battery Is Low!");
+            // }
+            
 
             if (listOfWarnings.Count >= 1){
                 WarningSymbol.gameObject.SetActive(true);
             }
+
 
             foreach(string x in listOfWarnings){
                 printList += x;
