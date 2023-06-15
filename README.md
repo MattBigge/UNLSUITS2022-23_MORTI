@@ -25,7 +25,7 @@ Michael McDevournett - Navigation, Freshmen Software Engineering
 Charlie McIver - Menus and UX, Freshman Computer Engineering  
 Preston Ward - UX, Freshman Computer Engineering  
 Peyton Comer - UI, Freshman Computer Science  
-Eli Schoneweis - [Team Role], Sophomore Computer Science  
+Eli Schoneweis - Sample Id System Developer, Sophomore Computer Science  
 Lindsey Johnson- Graphic Design, Freshman Studio Art and Graphic Design  
 
 ## Faculty Advisor:
