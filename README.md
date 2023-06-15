@@ -27,6 +27,8 @@ Preston Ward - UX, Freshman Computer Engineering
 Peyton Comer - UI, Freshman Computer Science  
 Eli Schoneweis - Sample Id System Developer, Sophomore Computer Science  
 Lindsey Johnson- Graphic Design, Freshman Studio Art and Graphic Design  
+![](https://drive.google.com/file/d/1b300fspRSNi-vSgEdLnFgREfUEKLsD5j/view?usp=sharing)
+
 
 ## Faculty Advisor:
 Dr Chris Bourke, Associate Professor of Practice, School of Computing, University of Nebraska-Lincoln  
